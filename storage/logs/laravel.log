@@ -1,0 +1,3 @@
+[2026-06-24 15:09:51] local.ERROR: initiateFintechPayment failed: Route [api.webinar.free.response] not defined.  
+[2026-06-24 15:10:55] local.ERROR: Webinar FB Conversion Failed {"message":"Undefined array key 0","line":794,"file":"D:\\workplace\\www\\wisemudra\\app\\Helpers\\SiteHelper.php"} 
+[2026-06-24 15:20:07] local.ERROR: Facebook Conversion Failed {"message":"Undefined array key 0","line":794} 

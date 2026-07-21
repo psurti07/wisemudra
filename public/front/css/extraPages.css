@@ -1,0 +1,60 @@
+/*#hero-7{ padding-bottom:100px!important; }
+        .cibil-img{ padding: 80px!important;}*/
+.form-control{ line-height: 3}
+.extra-page-submit{
+    position:absolute!important;
+    z-index: 555!important;
+    margin-left:-140px!important;
+    margin-top: 10px!important;
+}
+.home-img img { width:330px!important; }
+.cibil-img{
+    max-width: 70%!important;
+}
+/* emi calc css starts */
+.comment-form { margin-top: 25px!important; }
+.comment-form .form-control{ margin-bottom: 5px!important; }
+#loanamountslider, #loaninterestslider, #loantermslider{ top: 15px!important; }
+#loanterm{ border-top-right-radius: 0px!important;border-bottom-right-radius: 0px!important; }
+#loanmonths, #loanyears { height: 24px!important; }
+#loanmonths { border-top-left-radius: 0px!important;border-bottom-left-radius: 0px!important; }
+#emitotalamount{padding:0 15px!important; font-size:18px;}
+.input-group-text { border-top-left-radius: 5px!important;border-bottom-left-radius: 5px!important; }
+.custm-box, .months-input{ border-top-right-radius: 5px!important;border-bottom-right-radius: 5px!important; }
+.months-input { border-top-left-radius: 0px!important;border-bottom-left-radius: 0px!important; }
+.months-input span.s-14 { font-size: 16px; }
+@media screen and (min-width: 768px) {
+    .emi-details-response {
+        border-left: 1px solid #e3e3e3;
+    }
+    .emi-details{ padding-left:25px!important; }
+    #loaninterest, #loanamount{ width:115px!important;flex:0 0 115px!important; }
+    #loanterm { width:60px!important;flex:0 0 60px!important; }
+}
+.section-id{margin-bottom:10px!important;}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{ background: #ffffff!important;border: 5px solid #02a6fc !important; }
+.ui-widget-header{ background:#02a6fc !important }
+.input-group-text{color: #02a6fc !important;background-color: #eee !important;}
+.custm-box, .custm-box-2{ color: #02a6fc !important;background-color: #eeeeee !important; }
+.ui-slider-horizontal{ height:0.35rem!important; }
+.bc-1-wrapper{padding:80px 80px}
+.emi-details .card {
+    border-radius: 10px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+.emi-details .card-body {
+    padding: 2rem;
+}
+.emi-details .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.bg-emicalc{
+    background: #E9F2FB;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+/* emi calc css ends */
+.in_tool-txt{
+    display:flex; align-items:center;
+}

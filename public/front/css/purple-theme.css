@@ -234,7 +234,7 @@ section,
 /*------------------------------------------*/
 
 .bg--white-500 { background-color: #f2f4f8; }
-.bg--white-400 { background-color: #f4f4f9; }
+.bg--white-400 { background-color: #e5faff; }
 .bg--white-300 { background-color: #f7f8f9; }
 .bg--white-200 { background-color: #fbfbfd; }
 .bg--white-100 { background-color: #fff; }
@@ -301,8 +301,8 @@ section,
 .gr--ghost { background-image: linear-gradient(180deg, rgba(247, 248, 249, .8) 50%, rgba(247, 248, 249, .05) 100%); }
 .gr--snow { background-image: linear-gradient(to left, #f3edf7, #f9f6fa); }
 .gr--cotton { background-image: linear-gradient(180deg, rgba(223, 225, 250, .8) 50%, rgba(223, 225, 250, .05) 100%); }
-.gr--ghostwhite { background-image: linear-gradient(to left, #e9e9f5, #f4f4f9); }
-.gr--smoke { background: linear-gradient(180deg, #f8f9fe 0%, #f4f4f9 100%); }
+.gr--ghostwhite { background-image: linear-gradient(to left, #e9e9f5, #e5faff); }
+.gr--smoke { background: linear-gradient(180deg, #f8f9fe 0%, #e5faff 100%); }
 .gr--whitesmoke { background-image: linear-gradient(180deg, rgba(244, 244, 249, .8) 50%, rgba(244, 244, 249, .05) 100%); }
 .gr--green { background-image: linear-gradient(90deg, rgba(233, 255, 230, 1) 50%, rgba(252, 255, 252, 1) 100%); }
 .gr--black{ background-color: #000000; }
@@ -387,7 +387,7 @@ section,
 .shape--whitesmoke:after { background-color: rgba(123, 104, 238, .05); }
 
 .shape--white-500:after { background-color: #f2f4f8; }
-.shape--white-400:after { background-color: #f4f4f9; }
+.shape--white-400:after { background-color: #e5faff; }
 .shape--white-300:after { background-color: #f7f8f9; }
 .shape--white-200:after { background-color: #fbfbfd; }
 
@@ -3867,7 +3867,7 @@ span.sm-info {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(180deg, #f4f4f9, #fbfbfd);
+  background-image: linear-gradient(180deg, #e5faff, #fbfbfd);
 }
 
 .hero-20-txt {
@@ -5207,7 +5207,7 @@ h5.h5-title {
 }
 
 .txt-block .accordion-1 .accordion-item.is-active {
-  background-color: #f4f4f9;
+  background-color: #e5faff;
   padding: 35px 30px 19px 30px;
   margin-bottom: 15px;
   margin-top: 15px;

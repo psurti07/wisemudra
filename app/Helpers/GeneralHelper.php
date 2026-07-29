@@ -179,7 +179,7 @@ if (!function_exists('getPostalDetailsByPincode')) {
             CURLOPT_POSTFIELDS => json_encode(['pincode' => $pincode]),
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/json',
-                'Authorization: Bearer '.env('GEOLOC_KEY')
+                'Authorization: Bearer '.config('constant.GEOLOC_KEY')
             ],
         ]);
         $response = curl_exec($curl);

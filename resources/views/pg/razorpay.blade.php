@@ -14,7 +14,7 @@
 	<form action="{{ $postData['successURL'] }}" name="paymentForm" id="paymentForm" method="post">
 	    @csrf
       <p>Please wait.......</p>
-      <input type="hidden" name="razorpaykey" id="razorpaykey" value='{{ env('RAZOR_KEY_ID') }}'/>
+      <input type="hidden" name="razorpaykey" id="razorpaykey" value='{{ config('constant.RAZOR_KEY_ID') }}'/>
       <input type="hidden" name="applyid" id="applyid" value='{{ $postData['applyid'] }}'/>
       <input type="hidden" name="fullname" id="fullname" value='{{ $postData['fullname'] }}'/>
       <input type="hidden" name="mobile" id="mobile" value='{{ $postData['mobile'] }}'/>

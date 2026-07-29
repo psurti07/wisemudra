@@ -10,7 +10,7 @@ if(!function_exists('generateRazorpayOrder')){
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_USERPWD => env('RAZOR_KEY_ID') . ':' . env('RAZOR_KEY_SECRET'),
+            CURLOPT_USERPWD => config('constant.RAZOR_KEY_ID') . ':' . config('constant.RAZOR_KEY_SECRET'),
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS =>  json_encode($data),
             CURLOPT_HTTPHEADER => [

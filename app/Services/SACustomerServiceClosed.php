@@ -68,8 +68,8 @@ class SACustomerServiceClosed {
                             if ($users->isNotEmpty()) {
                                 foreach ($users as $user) {
                                     $dataset .= "<sms>
-                                        <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                        <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                        <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                        <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                         <mobiles>{$user->mobile}</mobiles>
                                         <message>{$msgTemplate}</message>
                                         <accusage>1</accusage>
@@ -91,22 +91,22 @@ class SACustomerServiceClosed {
                                 // Send tracking SMS for job run confirmation
                                 $trackingMsg = $msgTemplate;
                                 $dataset .= "<sms>
-                                    <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                    <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                     <mobiles>7016318366</mobiles>
                                     <message>{$trackingMsg}</message>
                                     <accusage>1</accusage>
                                     <senderid>{$senderId}</senderid>
                                 </sms><sms>
-                                    <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                    <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                     <mobiles>9998807547</mobiles>
                                     <message>{$trackingMsg}</message>
                                     <accusage>1</accusage>
                                     <senderid>{$senderId}</senderid>
                                 </sms><sms>
-                                    <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                    <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                     <mobiles>9408881214</mobiles>
                                     <message>{$trackingMsg}</message>
                                     <accusage>1</accusage>

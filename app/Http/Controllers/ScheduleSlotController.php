@@ -197,7 +197,7 @@ class ScheduleSlotController extends Controller
 
             // Prepare data for API
             $data = [
-                'company_code' => 'KREBZ1234',
+                'company_code' => config('constant.COMPANY_CODE'),
                 'company_name' => 'Wisemudra',
                 'user_name' => $user->first_name . ' ' . $user->last_name,
                 'user_email' => $user->email,

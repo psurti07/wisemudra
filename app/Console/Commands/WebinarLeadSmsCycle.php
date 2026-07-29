@@ -83,8 +83,8 @@ class WebinarLeadSmsCycle extends Command
                                 foreach ($users as $user) {
 
                                     $dataset .= "<sms>
-                                            <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                            <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                            <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                            <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                             <mobiles>{$user->mobile}</mobiles>
                                             <message>{$msgTemplate}</message>
                                             <accusage>1</accusage>
@@ -94,8 +94,8 @@ class WebinarLeadSmsCycle extends Command
                                 }
 
                                 $dataset .= "<sms>
-                                    <user>" . env('SMS_OBB_USERNAME') . "</user>
-                                    <password>" . env('SMS_OBB_PASSWORD') . "</password>
+                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
+                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                     <mobiles>9408881214</mobiles>
                                     <message>{$msgTemplate}</message>
                                     <accusage>1</accusage>

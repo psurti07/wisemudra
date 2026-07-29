@@ -11,24 +11,24 @@
                     </div>
                     <ul class="footer-socials mt-4 ico-25 text-center clearfix">
                         <li>
-                            <a href="{{env('SM_FACEBOOK')}}" target="_blank"><span class="flaticon-facebook text-light"></span></a>
+                            <a href="{{config('constant.SM_FACEBOOK')}}" target="_blank"><span class="flaticon-facebook text-light"></span></a>
                         </li>
                         <li>
-                            <a href="{{env('SM_INSTAGRAM')}}" target="_blank"><span class="flaticon-instagram text-light"></span></a>
+                            <a href="{{config('constant.SM_INSTAGRAM')}}" target="_blank"><span class="flaticon-instagram text-light"></span></a>
                         </li>
                         <li>
-                            <a href="{{env('SM_YOUTUBE')}}" target="_blank"><span class="flaticon-youtube text-light"></span></a>
+                            <a href="{{config('constant.SM_YOUTUBE')}}" target="_blank"><span class="flaticon-youtube text-light"></span></a>
                         </li>
                         <li>
-                            <a href="{{env('SM_TWITTER')}}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="flaticon-twitter" x="0px" y="0px" viewBox="0 0 50 50" style="fill:#ffffff;height:1.39rem;top:-5px; position: relative;">
+                            <a href="{{config('constant.SM_TWITTER')}}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="flaticon-twitter" x="0px" y="0px" viewBox="0 0 50 50" style="fill:#ffffff;height:1.39rem;top:-5px; position: relative;">
                                     <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
                                 </svg></a>
                         </li>
                         <li>
-                            <a href="{{env('SM_PINTEREST')}}" target="_blank"><span class="flaticon-pinterest-logo text-light"></span></a>
+                            <a href="{{config('constant.SM_PINTEREST')}}" target="_blank"><span class="flaticon-pinterest-logo text-light"></span></a>
                         </li>
                         <li>
-                            <a href="{{env('SM_LINKEDIN')}}" target="_blank"><span class="flaticon-linkedin-logo text-light"></span></a>
+                            <a href="{{config('constant.SM_LINKEDIN')}}" target="_blank"><span class="flaticon-linkedin-logo text-light"></span></a>
                         </li>
                     </ul>
                 </div>
@@ -94,15 +94,15 @@
                     <!-- Mail Link -->
                     <h6 class="s-14 w-700 kbz-h6 text-light" style="margin-bottom:5px!important;">Email Us</h6>
                     <p class="footer-mail-link ico-25">
-                        <a href="mailto:{{ env('INFO_EMAIL') }}" class="text-light">{{ env('INFO_EMAIL') }}</a>
+                        <a href="mailto:{{ config('constant.INFO_EMAIL') }}" class="text-light">{{ config('constant.INFO_EMAIL') }}</a>
                     </p>
                     <h6 class="s-14 w-700 mt-15 kbz-h6 text-light" style="margin-bottom:5px!important;">Call Us</h6>
                     <p class="footer-mail-link ico-25">
-                        <a href="tel:{{str_ireplace(' ','',env('COMPANY_MOBILE'))}}" class="text-light">{{ env('COMPANY_MOBILE') }}</a>
+                        <a href="tel:{{str_ireplace(' ','',config('constant.COMPANY_MOBILE'))}}" class="text-light">{{ config('constant.COMPANY_MOBILE') }}</a>
                     </p>
                     <h6 class="s-14 w-700 mt-15 kbz-h6 text-light" style="margin-bottom:5px!important;">Address</h6>
                     <p class="footer-mail-link ico-25">
-                        <a href="javascript:;" class="text-light">{{ env('COMPANY_ADDRESS') }}</a>
+                        <a href="javascript:;" class="text-light">{{ config('constant.COMPANY_ADDRESS') }}</a>
                     </p>
                 </div>
             </div>
@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="footer-copyright">
-                        <p><span class="text-light">{{ date('Y') }} &copy; {{ env('COMPANY_NAME') }} All Rights Reserved.</span></p>
+                        <p><span class="text-light">{{ date('Y') }} &copy; {{ config('constant.COMPANY_NAME') }} All Rights Reserved.</span></p>
                     </div>
                 </div>
                 <!-- FOOTER SECONDARY LINK -->

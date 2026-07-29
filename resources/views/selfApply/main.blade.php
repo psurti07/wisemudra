@@ -311,7 +311,7 @@
                                 <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://wisemudra.com and NOT through any other source, directly or indirectly. Thanks!
                             </p>
                             <p class="s-14">
-                                <strong>Registered Office Address:</strong> {{ env('COMPANY_ADDRESS') }} <br/> Mobile: {{ env('COMPANY_MOBILE') }} | Email: {{ env('INFO_EMAIL') }}
+                                <strong>Registered Office Address:</strong> {{ config('constant.COMPANY_ADDRESS') }} <br/> Mobile: {{ config('constant.COMPANY_MOBILE') }} | Email: {{ config('constant.INFO_EMAIL') }}
                             </p>
                         </div>
                     </div>

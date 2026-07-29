@@ -134,28 +134,26 @@ if (!function_exists('raiseRequestFaqs')) {
             <ul class="accordion">
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I have already paid. However, my account has not been created yet. What should I do?</h6>
+                        <h6 class="s-16 w-500">I made the payment but the account is still not created. What should I do?</h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                This could occur if the payment gateway is still holding your funds and they have not been credited to the company`s account.
-                                Do not worry; as soon as the funds are credited to the company`s account, your account will be created and you will be notified via email.
-                                Otherwise, the payment gateway will refund your funds in accordance with their policies.</p>
+                                This may happen if your amount is held by the payment gateway and yet to be credited to the company’s account. Do not worry; once the funds are credited to the company’s  account, your account will be created and you will be notified via email. Otherwise, the payment gateway will refund your funds in accordance with their policies.</p>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">Even after so many days, I still have not received my refund. What should I do?</h6>
+                        <h6 class="s-16 w-500">Even after so many days, I have not received my refund. What should I do?</h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    This may occur if your funds are held by the payment gateway/bank. The refund will be processed in accordance with the bank`s payment gateway`s policies and procedures.
+                                    This could happen if your money is held by the bank or payment gateway. It will be refunded as per the bank/payment gateway’s rules and regulations.
                                 </p>
                             </div>
                         </div>
@@ -163,13 +161,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I misunderstood the company`s service and/or paid by mistake. Is there a way to get a refund?</h6>
+                        <h6 class="s-16 w-500">I misunderstood the company’s service/made payment by mistake. Can I get a refund?</h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Subscription plan fees are only refundable if you adhere to the company`s Return & Refund Policy. <a href="' . route('front.refund.policy') . '">Click here</a> to know more.
+                                    The subscription plan payment is only refundable under the company’s cancellation and refund policy. <a href="' . route('front.refund.policy') . '">Click here</a> to know more.
                                 </p>
                             </div>
                         </div>
@@ -177,13 +175,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">Who qualifies for a GST refund?</h6>
+                        <h6 class="s-16 w-500">I was shown pre-approved loan offers based on my eligibility, but I did not receive an actual loan. Why?</h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Customers who have updated their GST information through their portal are eligible to file GST returns.
+                                    Please read the terms and conditions to get a clear understanding of what a pre-approval loan offer is.<a href="' . route('self.apply.main') . '">Click here.</a>
                                 </p>
                             </div>
                         </div>
@@ -191,13 +189,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I have changed my mind and no longer want to use the company`s services. Is it possible to get a refund?</h6>
+                        <h6 class="s-16 w-500">Who can get a GST return? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Subscription Plan fees are only refundable in accordance with the cancellation and refund policy: Click here for more information.
+                                    Anyone who has updated their GST information in the portal will receive a GST return.
                                 </p>
                             </div>
                         </div>
@@ -205,13 +203,55 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I accidentally made multiple payments. Can I get a refund?</h6>
+                        <h6 class="s-16 w-500">I have changed my mind and do not want to use the company’s services. Can I get the refund? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    If a customer accidentally makes multiple payments, they are entitled to a refund. The customer must request a refund within 48 hours of making the payment, either by using the website`s Raising A Request section or by calling the company`s registered phone number.
+                                   The subscription plan payment is only refundable under the company’s cancellation and refund policy. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">I am not happy with the company’s service. What should I do?</h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   We request you to kindly call the company on +91-{#VAR#} between 10 AM to 5 PM- Monday to Saturday (only business days). Allow us to discuss your concerns, and we will ensure that you receive the best solutions possible. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">What happens if I make more than one payment by mistake? Am I eligible for a refund? </h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   If a customer makes more than one payment, they are eligible for a refund. You can request a refund within 48 hours of making the payment via the website’s Raising A Request section or by calling the company’s registered contact number.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">Can I get a refund if I purchase subscriptions/memberships from multiple companies in your group of companies?</h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   If a customer purchased Subscriptions/Memberships from multiple companies in our group of companies, the customer is eligible for a refund. You can request a refund within 48 hours of payment through the Raising A Request section of the website or by calling the company’s registered contact number.
                                 </p>
                             </div>
                         </div>
@@ -524,7 +564,7 @@ if(!function_exists('sendBrevoHtmlMail')){
                 CURLOPT_HTTPHEADER => [
                     "Accept: application/json",
                     "Content-Type: application/json",
-                    "api-key: ".env('BREVO_API_KEY')
+                    "api-key: ".config('constant.BREVO_API_KEY')
                 ],
             )
         );
@@ -581,7 +621,7 @@ if(!function_exists('sendBrevoHtmlMail2')){
                 CURLOPT_HTTPHEADER => [
                     "Accept: application/json",
                     "Content-Type: application/json",
-                    "api-key: ".env('BREVO_API_KEY')
+                    "api-key: ".config('constant.BREVO_API_KEY')
                 ],
             )
         );

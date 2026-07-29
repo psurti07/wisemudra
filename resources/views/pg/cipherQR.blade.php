@@ -49,7 +49,7 @@
                 </div>
                 <!-- Content on the right -->
                 <div class="header-content">
-                    <h5 class="mb-0">{{ env('COMPANY_NAME') }}</h5>
+                    <h5 class="mb-0">{{ config('constant.COMPANY_NAME') }}</h5>
                     <p class="mb-0">#{{ $response['data']['txnid'] }}</p>
                     <p class="mb-0 fw-bold">&#8377;{{ $response['data']['amount'] }}</p>    
                 </div>

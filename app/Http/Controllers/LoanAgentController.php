@@ -852,9 +852,9 @@ class LoanAgentController extends Controller
 
                     if ($response2 > 0) {
                         $remote_data = array(
-                            'company_code' => 'KRDTP9702',
+                            'company_code' => config('constant.COMPANY_CODE'),
                             'company_local_ip' => '190.92.174.183',
-                            'product_code' => 'HIRE AGENT',
+                            'product_code' => 'HIRELOAN',
                             'customer_name' => $userData->first_name . ' ' . $userData->last_name,
                             'customer_email' => $userData->email,
                             'customer_mobile' => $userData->mobile,
@@ -1160,7 +1160,7 @@ class LoanAgentController extends Controller
                     sendBrevoHtmlMail2($mailData, 'Congratulations! Payment for Wisemudra’s Hire Agent plan has been successful.', $sendGreetings, 3, $attachments);
 
                     $remote_data = array(
-                        'company_code' => 'KRDTP9702',
+                        'company_code' => config('constant.COMPANY_CODE'),
                         'company_local_ip' => '190.92.174.183',
                         'product_code' => 'HIRE AGENT',
                         'customer_name' => $userData->first_name . ' ' . $userData->last_name,
@@ -1409,7 +1409,7 @@ class LoanAgentController extends Controller
     public function offer1()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_1'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_1'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1452,7 +1452,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_1'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_1'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1682,7 +1682,7 @@ class LoanAgentController extends Controller
     public function offer2()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_2'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_2'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1724,7 +1724,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_2'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_2'))->first();
             // Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1922,7 +1922,7 @@ class LoanAgentController extends Controller
                 $buyerCountry = 'India';
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_4'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
             // Log::info('products - '.json_encode($products));
 
             /* set amount of offer */
@@ -2064,7 +2064,7 @@ class LoanAgentController extends Controller
     public function offer3_cipherpay()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_3'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_3'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -2107,7 +2107,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_3'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_3'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -2249,7 +2249,7 @@ class LoanAgentController extends Controller
     public function offer3()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_3'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_3'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -2291,7 +2291,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_3'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_3'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -2520,7 +2520,7 @@ class LoanAgentController extends Controller
     public function offer4()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_4'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -2563,7 +2563,7 @@ class LoanAgentController extends Controller
                 $buyerCountry = 'India';
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_4'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
             // Log::info('products - '.json_encode($products));
 
             /* set amount of offer */
@@ -2722,7 +2722,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_4'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
             // Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -3011,7 +3011,7 @@ class LoanAgentController extends Controller
     public function offer5()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_5'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
 
         if ($products->inOffer == 1) {
             $productData = array(
@@ -3054,7 +3054,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_5'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -3283,7 +3283,7 @@ class LoanAgentController extends Controller
     public function offer6()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_6'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_6'))->first();
 
         if ($products->inOffer == 1) {
             $productData = array(
@@ -3326,7 +3326,7 @@ class LoanAgentController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_6'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_6'))->first();
             // Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;

@@ -1164,7 +1164,7 @@ dwIDAQAB
     public function offer1()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('LA_OFFER_1'))->first();
+        $products = Product::where('productslug',config('constant.LA_OFFER_1'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1207,7 +1207,7 @@ dwIDAQAB
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug',env('LA_OFFER_1'))->first();
+            $products = Product::where('productslug',config('constant.LA_OFFER_1'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1364,7 +1364,7 @@ dwIDAQAB
     public function offer2()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('LA_OFFER_2'))->first();
+        $products = Product::where('productslug',config('constant.LA_OFFER_2'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1407,7 +1407,7 @@ dwIDAQAB
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug',env('LA_OFFER_2'))->first();
+            $products = Product::where('productslug',config('constant.LA_OFFER_2'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1645,7 +1645,7 @@ dwIDAQAB
     public function offer3()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('LA_OFFER_3'))->first();
+        $products = Product::where('productslug',config('constant.LA_OFFER_3'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1688,7 +1688,7 @@ dwIDAQAB
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug',env('LA_OFFER_3'))->first();
+            $products = Product::where('productslug',config('constant.LA_OFFER_3'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1827,7 +1827,7 @@ dwIDAQAB
     /* offer4 - phonepe */
     public function offer4(){
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('LA_OFFER_4'))->first();
+        $products = Product::where('productslug',config('constant.LA_OFFER_4'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1869,7 +1869,7 @@ dwIDAQAB
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_4'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
             // Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -2053,7 +2053,7 @@ dwIDAQAB
     public function offer5()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_5'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
 
         if ($products->inOffer == 1) {
             $productData = array(
@@ -2098,7 +2098,7 @@ dwIDAQAB
             }
             $alldata = $buyerAddress = $buyerCity = $buyerState = $amount = $buyerPinCode = $orderid = '';
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_5'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_4'))->first();
 
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -2248,7 +2248,7 @@ dwIDAQAB
     /* Offer 6 - cashfree */
     public function offer6(){
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('LA_OFFER_6'))->first();
+        $products = Product::where('productslug', config('constant.LA_OFFER_6'))->first();
 
         if ($products->inOffer == 1) {
             $productData = array(
@@ -2292,7 +2292,7 @@ dwIDAQAB
             }
 
             /* product Data */
-            $products = Product::where('productslug', env('LA_OFFER_6'))->first();
+            $products = Product::where('productslug', config('constant.LA_OFFER_6'))->first();
             Log::info('Products - '. json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;

@@ -52,7 +52,7 @@
                     <div class="card h-md-100">
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold text-dark">{{ env('COMPANY_NAME') }}</span>
+                                <span class="card-label fw-bold text-dark">{{ config('constant.COMPANY_NAME') }}</span>
                             </h3>
                         </div>
                         <div class="card-body pt-7 px-0">
@@ -62,7 +62,7 @@
                                         <span data-kt-element="bullet" class="bullet bullet-vertical d-flex align-items-center min-h-20px mh-100 me-4 bg-gray"></span>
                                         <div class="flex-grow-1 me-5">
                                             <div class="text-gray-700 fw-semibold fs-6">
-                                                {{ env('COMPANY_MOBILE') }}
+                                                {{ config('constant.COMPANY_MOBILE') }}
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@
                                         <span data-kt-element="bullet" class="bullet bullet-vertical d-flex align-items-center min-h-20px mh-100 me-4 bg-gray"></span>
                                         <div class="flex-grow-1 me-5">
                                             <div class="text-gray-700 fw-semibold fs-6">
-                                                {{ env('INFO_EMAIL') }}
+                                                {{ config('constant.INFO_EMAIL') }}
                                             </div>
                                         </div>
                                     </div>

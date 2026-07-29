@@ -2,13 +2,13 @@
 <div class="owl-carousel owl-theme testimonials-carousel">
     <div class="review-1 border r-08">
         <div class="review-txt pt-30">
-            <p class="p-md"><i>"I was so surprised with the service quickness! Self apply is really the best feature here"</i></p>
+            <p class="p-md"><i>"Fast, reliable, and easy to use. I had a very positive experience with the entire process."</i></p>
             <div class="author-data clearfix">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div>
                 <div class="review-author">
-                    <h4 class="s-16 w-600">Kanishka Tiwari</h4>
+                    <h4 class="s-16 w-600">Karan Malhotra</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
                         <span class="flaticon-star"></span>
@@ -22,13 +22,13 @@
     </div>
     <div class="review-1 border r-08">
         <div class="review-txt pt-30">
-            <p class="p-md"><i>“Impressed with the loan consultation service! They truly give the best solutions...”</i></p>
+            <p class="p-md"><i>“Wise Mudra made the loan process simple and easy to understand. The team guided me at every step.”</i></p>
             <div class="author-data clearfix">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div>
                 <div class="review-author">
-                    <h4 class="s-16 w-600">Kaushik Shah</h4>
+                    <h4 class="s-16 w-600">Amit Verma</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
                         <span class="flaticon-star"></span>
@@ -42,13 +42,13 @@
     </div>
     <div class="review-1 border r-08">
         <div class="review-txt pt-30">
-            <p class="p-md"><i>"Just extraordinary…it’s so good to receive the loan applying link within few minutes only"</i></p>
+            <p class="p-md"><i>"I had a smooth experience with Wise Mudra. Their guidance and support made the loan process stress-free."</i></p>
             <div class="author-data clearfix">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div>
                 <div class="review-author">
-                    <h4 class="s-16 w-600">Shrijita Deb</h4>
+                    <h4 class="s-16 w-600">Kunal Desai</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
                         <span class="flaticon-star"></span>
@@ -62,13 +62,13 @@
     </div>
     <div class="review-1 border r-08">
         <div class="review-txt pt-30">
-            <p class="p-md"><i>"Well done Wisemudra team, your guidance really makes a big difference. Also services are superb"</i></p>
+            <p class="p-md"><i>"A trustworthy loan assistance platform with a professional team. Highly satisfied with the service."</i></p>
             <div class="author-data clearfix">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div>
                 <div class="review-author">
-                    <h4 class="s-16 w-600">Mukesh Sharma</h4>
+                    <h4 class="s-16 w-600">Anjali Nair</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
                         <span class="flaticon-star"></span>
@@ -82,33 +82,13 @@
     </div>
     <div class="review-1 border r-08">
         <div class="review-txt pt-30">
-            <p class="p-md"><i>“Quick. Professional. Humble – that’s how I define this team. Thanks guys, you’re the best”</i></p>
+            <p class="p-md"><i>“I had a great experience with Wise Mudra. Their guidance helped me complete my loan application without any hassle.”</i></p>
             <div class="author-data clearfix">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div>
                 <div class="review-author">
-                    <h4 class="s-16 w-600">Naina Kumari</h4>
-                    <div class="star-rating ico-15">
-                        <span class="flaticon-star"></span>
-                        <span class="flaticon-star"></span>
-                        <span class="flaticon-star"></span>
-                        <span class="flaticon-star"></span>
-                        <span class="flaticon-star-half-empty mr-5"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="review-1 border r-08">
-        <div class="review-txt pt-30">
-            <p class="p-md"><i>“It just went beyond my expectations. It’s so easy to get effective loan consultation with Wisemudra”</i></p>
-            <div class="author-data clearfix">
-                <div class="review-avatar">
-                    <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
-                </div>
-                <div class="review-author">
-                    <h4 class="s-16 w-600">Shirish Shah</h4>
+                    <h4 class="s-16 w-600">Meera Joshi</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
                         <span class="flaticon-star"></span>

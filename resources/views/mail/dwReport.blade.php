@@ -90,7 +90,7 @@
                                                                             <a target="_blank"
                                                                                 href="https://wisemudra.com/"
                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: underline; color: #000f26; font-size: 14px;">
-                                                                            <img src="https://wisemudra.com/front/images/logo/logo.png"
+                                                                            <img src="https://wisemudra.com/public/front/images/logo/logo.png"
                                                                                 alt="Wisemudra"
                                                                                 style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
                                                                                 width="190"
@@ -430,7 +430,7 @@
                                                                                                 color: #000f26;
                                                                                                 font-size: 12px;
                                                                                                 "> 
-                                                                                                {{ date('Y')}} &copy; {{ env('COMPANY_NAME') }}
+                                                                                                {{ date('Y')}} &copy; {{ config('constant.COMPANY_NAME') }}
                                                                                             </p>
                                                                                         </td>
                                                                                     </tr>

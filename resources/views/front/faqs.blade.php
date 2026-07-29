@@ -14,7 +14,7 @@
                             <span class="section-id"></span>
                             <h2 class="w-700">Frequently Asked <span class="color--green-500">Questions</span></h2>
                             <p class="p-md w-400">
-                                It's our fundamental trait to be transparent with our customers!
+                                Find answers to all your personal loan questions, from eligibility and documentation to approvals and more.
                             </p>
                         </div>
                     </div>
@@ -32,163 +32,125 @@
                             <ul class="accordion">
                                 <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">What is Loan Self-Apply?</h6>
+                                        <h6 class="w-600">1. What can you do with a personal loan?</h6>
                                     </div>
                                     <div class="accordion-panel">
                                         <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
                                                 <p>
-                                                    With this feature, you will get the login link through which you can easily start your loan process in our partnered NBFC.
+                                                    A personal loan can be used to meet almost any personal financial need, including medical expenses, education, home improvements, and debt consolidation.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
+
                                 <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">What is Expert Login?</h6>
+                                        <h6 class="w-600">2. What are the eligibility criteria for a personal loan?</h6>
                                     </div>
                                     <div class="accordion-panel">
                                         <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
-                                                <p>If you need expert assistance for the loan application process in our partnered NBFCs, our team of experienced professionals will conduct on the process seamlessly.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item mb-10">
-                                    <div class="accordion-thumb">
-                                        <h6 class="w-600">What are NBFC Partners?</h6>
-                                    </div>
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel-item">
-                                            <div class="faqs-2-answer">
-                                                <p>
-                                                    NBFCs stands for Non-Banking Financial Companies providing financial and lending services. Wisemudra is a direct selling agent with multiple NBFCs.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item mb-10">
-                                    <div class="accordion-thumb">
-                                        <h6 class="w-600">How to start your loan process?</h6>
-                                    </div>
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel-item">
-                                            <div class="faqs-2-answer">
-                                                <p>
-                                                    Click on Apply Now and start your loan process with utmost ease! Make the most of our Loan Self-Apply/Expert Apply features.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item mb-10">
-                                    <div class="accordion-thumb">
-                                        <h6 class="w-600">How can I reach out to the Wisemudra team?</h6>
-                                    </div>
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel-item">
-                                            <div class="faqs-2-answer">
-                                                <p>
-                                                    You can simply write to us at <a href="mailto:info@wisemudra.com" class="text-decoration-none">info@wisemudra.com</a> – our cheered up team is always eager to help you out.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                
-                                <li class="accordion-item mb-10">
-                                    <div class="accordion-thumb">
-                                        <h6 class="w-600">What is a Personal Loan?</h6>
-                                    </div>
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel-item">
-                                            <div class="faqs-2-answer">
-                                                <p>
-                                                    A personal loan is an unsecured loan, for which you need not pledge collateral to receive funds. A personal loan can be a very handy option while dealing a financial urgency.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion-item mb-10">
-                                    <div class="accordion-thumb">
-                                        <h6 class="w-600">Personal Loan be used for what purposes?</h6>
-                                    </div>
-                                    <div class="accordion-panel">
-                                        <div class="accordion-panel-item">
-                                            <div class="faqs-2-answer">
-                                                <p>
-                                                    Personal Loans can be leveraged for any personal monetary pursuits, like:
-                                                </p>
+                                                <p>The eligibility criteria for a personal loan are:</p>
+                                                <p><strong>For Salaried Professionals:</strong></p>
                                                 <ul class="ml-30">
-                                                    <li> - Wedding Expenses</li>
-                                                    <li> - Home Renovation Expenses</li>
-                                                    <li> - Higher Education Expenses</li>
-                                                    <li> - High-Interest Debt Consolidation</li>
-                                                    <li> - Tour &amp; Travel Expenses</li>
-                                                    <li> - Shopping Expenses</li>
-                                                    <li> - Medical emergency, etc.</li>
+                                                    <li> - Minimum Age: 21 years</li>
+                                                    <li> - Minimum Salary: Rs.15,000 Per Month (Should reflect in bank statement)</li>
+                                                    <li> - Minimum Job Duration: 1 Year</li>
+                                                </ul>
+                                                <p><strong>For Self-Employed Individuals:</strong></p>
+                                                <ul class="ml-30">
+                                                    <li> - Minimum Age: 21 Years</li>
+                                                    <li> - Income Tax Return Of Minimum 1 Year</li>
+                                                    <li> - Minimum Business Duration: 1 Year</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="accordion-item">
+                                <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">What is the eligibility for a Personal Loan?</h6>
+                                        <h6 class="w-600">3. What documents do I need to apply for a personal loan?</h6>
                                     </div>
                                     <div class="accordion-panel">
                                         <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
-                                                <ul class="ml-30" style="list-style-type: inside">
-                                                    <li>Age: 21 to 60 years</li>
-                                                    <li>At least 1-year job stability.</li>
-                                                    <li>Min. Salary: Rs.15,000/- monthly – received in the bank account</li>
+                                                <p>The following are the general documents needed to apply for a personal loan</p>
+                                                <p><strong>For Salaried:</strong></p>
+                                                <ul class="ml-30">
+                                                    <li> - Aadhaar Card</li>
+                                                    <li> - PAN Card</li>
+                                                    <li> - Residence Proof: Rent agreement or Utility bills</li>
+                                                    <li> - Bank Statement</li>
+                                                    <li> - Income Proof: Salary Slips or Form 16</li>
                                                 </ul>
+                                                <p><strong>For Self-Employed:</strong></p>
+                                                <ul class="ml-30">
+                                                    <li> - Aadhaar Card</li>
+                                                    <li> - PAN Card</li>
+                                                    <li> - Residence Proof: Rent agreement or Utility bills</li>
+                                                    <li> - Bank Statement</li>
+                                                    <li> - Balance Sheet</li>
+                                                    <li> - Income Computation</li>
+                                                    <li> - Service Tax Registration, License, Registration Certificate</li>
+                                                    <li> - Income Tax Returns</li>
+                                                </ul>
+                                                <p>Based on your profile and the guidelines, the lender may request additional documents.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="accordion-item">
+
+                                <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">How to apply for a Personal Loan instantly?</h6>
+                                        <h6 class="w-600">4. Does credit score affect personal loan approval?</h6>
                                     </div>
                                     <div class="accordion-panel">
-                                        <div class="accordion-panel-item mb-35">
+                                        <div class="accordion-panel-item">
+                                            <div class="faqs-2-answer">
+                                                <p>Yes, your credit score is a critical factor in the loan application process. It is one of the most important factors that lenders use to assess your creditworthiness.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion-item mb-10">
+                                    <div class="accordion-thumb">
+                                        <h6 class="w-600">5. How can I increase my chances of getting a personal loan?</h6>
+                                    </div>
+                                    <div class="accordion-panel">
+                                        <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
                                                 <p>
-                                                    Simply visit <a href="{{ route('self.apply.main') }}" class="text-decoration-none">Apply Now</a> and start your personal loan process in just a few clicks!
+                                                    To increase your chances, keep a good credit score, have consistent income, and provide accurate documentation during the application process.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="accordion-item">
+                                <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">What’s the ideal CIBIL score/credit score required for a Personal Loan?</h6>
+                                        <h6 class="w-600">6. Do personal loans have any tax advantages?</h6>
                                     </div>
                                     <div class="accordion-panel">
-                                        <div class="accordion-panel-item mb-35">
+                                        <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
                                                 <p>
-                                                    650 or more stands as a good credit score!
+                                                    Personal loans do not provide any direct tax advantages. However, if you use a personal loan to invest in your business, renovate your home, or fund your education, you may be able to deduct the interest you pay. For more information, please contact your CA or tax advisor.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="accordion-item">
+                                <li class="accordion-item mb-10">
                                     <div class="accordion-thumb">
-                                        <h6 class="w-600">What is Wisemudra’s Loan Self-Apply facility?</h6>
+                                        <h6 class="w-600">7. Aside from credit scores, what other factors do lenders consider when approving personal loans?</h6>
                                     </div>
                                     <div class="accordion-panel">
-                                        <div class="accordion-panel-item mb-35">
+                                        <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
                                                 <p>
-                                                    With this feature, you will get the login link through which you can easily start your loan process in our partnered NBFC.
+                                                    In addition to the credit score, lenders take into account the applicant's age, income, and job stability.
                                                 </p>
                                             </div>
                                         </div>

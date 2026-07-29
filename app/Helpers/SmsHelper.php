@@ -13,17 +13,17 @@ if(!function_exists('sendSingleSMS')){
 
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
-    		$username = env('SMS_OBB_LA_USERNAME');
+    		$username = config('constant.SMS_OBB_LA_USERNAME');
             $password = env('SMS_OBB_LA_PASSWORD');
             $sender_id = DB::table('info_pages')->where('slug','la-senderid-otp')->first()->content;
     	} else if ($panel == 'self') {
-    		$username = env('SMS_OBB_USERNAME');
-            $password = env('SMS_OBB_PASSWORD');
+    		$username = config('constant.SMS_OBB_USERNAME');
+            $password = config('constant.SMS_OBB_PASSWORD');
             $sender_id = DB::table('info_pages')->where('slug','sa-senderid-otp')->first()->content;
     	} else {
-    		$username = env('SMS_OBB_USERNAME');
-            $password = env('SMS_OBB_PASSWORD');
-            $sender_id = env('SMS_OBB_SENDER_ID');
+    		$username = config('constant.SMS_OBB_USERNAME');
+            $password = config('constant.SMS_OBB_PASSWORD');
+            $sender_id = config('constant.SMS_OBB_SENDER_ID');
     	}
 	    // Construct the API URL
         $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$sender_id}&mobiles={$mobile}&sms={$sms_text}";
@@ -47,16 +47,16 @@ if(!function_exists('sendDynamicSMS')){
 
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
-    		$username = env('SMS_OBB_LA_USERNAME');
+    		$username = config('constant.SMS_OBB_LA_USERNAME');
             $password = env('SMS_OBB_LA_PASSWORD');
     	} else if ($panel == 'self') {
-    		$username = env('SMS_OBB_USERNAME');
-            $password = env('SMS_OBB_PASSWORD');
+    		$username = config('constant.SMS_OBB_USERNAME');
+            $password = config('constant.SMS_OBB_PASSWORD');
     	} else {
     		$username = env('SMS_OBB_LAT_USERNAME');
             $password = env('SMS_OBB_LAT_PASSWORD');
     	}
-    	/*$sender_id = env('SMS_OBB_SENDER_ID');*/
+    	/*$sender_id = config('constant.SMS_OBB_SENDER_ID');*/
 
         // Construct the API URL
         if($type == 'forget-password'){

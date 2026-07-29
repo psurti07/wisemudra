@@ -135,7 +135,7 @@
                                                 <span data-kt-element="bullet" class="bullet bullet-vertical d-flex align-items-center min-h-20px mh-100 me-4 bg-info"></span>
                                                 <div class="flex-grow-1 me-5">
                                                     <div class="text-gray-700 fw-semibold fs-6">
-                                                        {{ env('COMPANY_ADDRESS') }}
+                                                        {{ config('constant.COMPANY_ADDRESS') }}
                                                     </div>
                                                 </div>
                                             </div>

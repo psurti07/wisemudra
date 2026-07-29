@@ -16,15 +16,15 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6 col-lg-6 col-12">
                         <div class="hero-7-txt mb-30">
-                            <h1 class="s-40 w-700">We Build a Path that Leads <span class="color--green-500">You to Success!</span></h1>
-                            <p class="mb-20">Set out to achieve your financial goals with professional advice from some of the most intelligent minds in the industry.</p>
+                            <h1 class="s-40 w-700">Helping You Move Closer to<span class="color--green-500"> Success</span></h1>
+                            <p class="mb-20">Let experienced professionals help you reach your financial goals.</p>
                             <a href="{{ route('self.apply.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Self Apply</a>
                             <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Hire an Agent</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-12">
                         <div class="hero-7-img home-img d-flex justify-content-center align-items-start">
-                            <img src="{{ asset('front/images/home-section.webp') }}" alt="wisemudra" width="auto" height="auto">
+                            <img src="{{ asset('front/images/hero-1-img.png') }}" alt="wisemudra" width="auto" height="auto">
                         </div>
                     </div>
                 </div>
@@ -39,24 +39,24 @@
                 <div class="col-md-10 col-lg-9">
                     <div class="section-title mb-40">
                         <h2 class="s-28">About <span class="color--green-500">Us!</span></h2>
-                        <p class="s-16 color--grey">Helping You Make Smarter Decisions with Personalized Solutions</p>
+                        <p class="s-16 color--grey">Helping You Choose the Right Financial Path</p>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="txt-block left-column">
-                        <p class="">Partnering with industry-leading NBFCs, Wisemudra is India’s growing financial consultation and service provider. Our mission is to simplify the loan journey and remove the stress and confusion often faced by individuals while seeking financial support. With the perfect combination of smart technology and the strategic approach, we offer a streamlined digital portal where anyone can get expert-led financial consultation, access services, and apply for the loan from the comfort of their homes – all through our smartly designed plans.</p>
+                        <p class="">Wisemudra is a trusted financial consultation platform that connects customers with leading NBFC partners across India. Our goal is to simplify the borrowing process by offering expert guidance, transparent solutions, and a seamless digital experience. Through our technology-driven platform, users can explore loan options, receive personalized assistance, and apply for loans quickly and conveniently, all in one place.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="txt-block right-column">
-                        <p class="w-700">Your Financial Success Is Our Purpose!</p>
+                        <p class="w-700">Helping You Achieve Financial Freedom !</p>
                         <ul class="simple-list">
                             <li class="list-item">
-                                <p>We do not believe in a one-size-fits-all solution. Instead, we take the time to understand each person’s needs so they feel supported at every step.</p>
+                                <p>We believe every financial journey is unique, which is why we offer customized support and solutions designed around individual needs.</p>
                             </li>
                             <li class="list-item">
-                                <p class="mb-0">We keep the whole process very transparent and easy to understand, helping people move forward with clarity and confidence.</p>
+                                <p class="mb-0">We make the loan process easy to understand, so you can move forward with confidence.</p>
                             </li>
                         </ul>
                     </div>
@@ -74,14 +74,14 @@
                 <div class="col-md-10 col-lg-9">
                     <div class="section-title mb-50">
                         <h2 class="s-28">Why <span class="color--green-500">Wisemudra</span></h2>
-                        <p class="s-16 color--grey">Here's what sets us apart.</p>
+                        <p class="s-16 color--grey">The Difference We Bring</p>
                     </div>
                 </div>
             </div>
             <div class="fbox-wrapper text-center">
                 <div class="row gx-3 gy-2 row-cols-1 row-cols-md-2 row-cols-lg-4">
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-layers-1"></span>
@@ -89,12 +89,12 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">Enriching Collaboration</h4>
-                                <p>Access a wide range of financial services empowered by our industry-leading NBFC partners.</p>
+                                <p>Explore multiple financial services backed by our leading NBFC network.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-2 r-12">
+                        <div class="fbox-8 fbox--hover fb-2 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-computer-1"></span>
@@ -102,12 +102,12 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">100% Online Process</h4>
-                                <p>Experience the convenience and power of digital provisions from the comfort of your own home.</p>
+                                <p>Enjoy a smooth and hassle-free loan experience without stepping out of your home.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-2 r-12">
+                        <div class="fbox-8 fbox--hover fb-2 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-click-1"></span>
@@ -115,12 +115,12 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">Self-Apply Feature</h4>
-                                <p>Take charge of your own finances while reaping the benefits of impeccable provisions.</p>
+                                <p>Enjoy the freedom to make smarter financial decisions with expert support.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-3 r-12">
+                        <div class="fbox-8 fbox--hover fb-3 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-tech-support"></span>
@@ -128,7 +128,7 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">Hire Loan Agent</h4>
-                                <p>Benefit from our experts' insights and strategies to increase your chances of loan approval.</p>
+                                <p>Get expert guidance to improve your chances of loan approval.</p>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                                     </h2>
                                 </div>
                                 <div class="statistic-txt">
-                                    <h5 class="s-16 w-500">Customers Served</h5>
+                                    <h5 class="s-16 w-500">Happy Customer</h5>
                                 </div>
                             </div>
                         </div>
@@ -162,11 +162,11 @@
                             <div class="statistic-block">
                                 <div class="statistic-digit">
                                     <h2 class="s-30 w-700 mb-10">
-                                        <span class="count-element">10</span>+
+                                        <span class="count-element">1</span>.<span class="count-element">5</span>Cr+
                                     </h2>
                                 </div>
                                 <div class="statistic-txt">
-                                    <h5 class="s-16 w-500">NBFC Partners</h5>
+                                    <h5 class="s-16 w-500">Disbursal</h5>
                                 </div>
                             </div>
                         </div>
@@ -176,11 +176,11 @@
                             <div class="statistic-block">
                                 <div class="statistic-digit">
                                     <h2 class="s-30 w-700 mb-10">
-                                        <span class="count-element">12</span>+
+                                        <span class="count-element">8</span>+
                                     </h2>
                                 </div>
                                 <div class="statistic-txt">
-                                    <h5 class="s-16 w-500">Workforce</h5>
+                                    <h5 class="s-16 w-500">NBFC Partners</h5>
                                 </div>
                             </div>
                         </div>
@@ -211,8 +211,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-10">
                     <div class="section-title mb-40">
-                        <h2 class="s-28">Boost Your Finances With the <span class="color--green-500">Strategic Approach</span></h2>
-                        <p class="s-16 color--grey">Choose the plan that best fits your needs and preferences.</p>
+                        <h2 class="s-28">Grow Your Finances <span class="color--green-500">the Smart Way</span></h2>
+                        <p class="s-16 color--grey">Choose a plan that matches your requirements.</p>
                     </div>
                 </div>
             </div>
@@ -221,11 +221,11 @@
                     <div class="col-md-6">
                         <div class="fbox-5 fbox--hover fb-2 border r-16">
                             <div class="fbox-5-img mb-2">
-                                <img class="img-fluid light-theme-img" src="{{ asset('front/images/Easy-Self-Apply-ai.png') }}" alt="feature-image">
+                                <img class="img-fluid light-theme-img" src="{{ asset('front/images/Img-22.png') }}" alt="feature-image">
                             </div>
                             <div class="fbox-txt">
                                 <h3 class="s-22 w-700">Quick Self-Apply</h3>
-                                <p class="mb-20">Sit back and relax! Allow our dedicated expert loan agent to handle the entire loan process on your behalf and increase your chances of approval.</p>
+                                <p class="mb-20">Relax and let our experienced loan specialist manage the entire process for you, helping improve your chances of approval.</p>
                                 <a href="{{ route('self.apply.main') }}" class="btn r-04 btn--theme hover--tra-black">Apply Now</a>
                             </div>
                         </div>
@@ -233,11 +233,11 @@
                     <div class="col-md-6">
                         <div class="fbox-5 fbox--hover fb-2 border r-16">
                             <div class="fbox-5-img mb-2">
-                                <img class="img-fluid light-theme-img" src="{{ asset('front/images/Hire-Loan-Agent-ai.png') }}" alt="feature-image">
+                                <img class="img-fluid light-theme-img" src="{{ asset('front/images/Img-23.png') }}" alt="feature-image">
                             </div>
                             <div class="fbox-txt">
                                 <h3 class="s-22 w-700">Hire Loan Agent</h3>
-                                <p class="mb-20">Get instant access to the top-quality digital loan consultation, login links, and exclusive personalized loan offer from our trusted NBFC partners.</p>
+                                <p class="mb-20">Get expert digital loan guidance, quick login access, and personalized loan offers from trusted NBFC partners.</p>
                                 <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black">Apply Now</a>
                             </div>
                         </div>
@@ -263,79 +263,79 @@
             <div class="fbox-wrapper text-center">
                 <div class="row g-4 row-cols-1 row-cols-md-3 row-cols-lg-3">
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-mobile-search"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>Begin the process by entering your mobile number and bank-registered name.</p>
+                                <p>Start by entering your mobile number and bank-registered name.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-computer"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>Fill in the remaining information, and our automated system will determine your eligibility and display pre-approved loan offer(s). This is not a final offer.</p>
+                                <p>Fill in the required information to let our automated system assess your eligibility and show your pre-approved loan offer(s). This is not the final offer.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-credit-card"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>Buy our subscription plan to gain access to the displayed pre-approved loan offer(s).</p>
+                                <p>Subscribe to unlock access to your displayed pre-approved loan offer(s).</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-time"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>Our login department will contact you within 24-48 hours for verification, and you will need to submit your documents to proceed.</p>
+                                <p>Within 24–48 hours, our login team will reach out for verification and guide you through the document submission process. </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-check-1"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>Your documents and profile will be verified by the NBFC as per their terms and conditions.</p>
+                                <p>Your documents and profile will be verified by the NBFC in accordance with its terms and conditions.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12">
+                        <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100">
                             <div class="fbox-ico ico-50">
                                 <div class="shape-ico color--theme">
                                     <span class="flaticon-profits"></span>
                                 </div>
                             </div>
                             <div class="fbox-txt">
-                                <p>The NBFC will make the final decision on loan sanction, approval, and disbursement based on their rules and regulations.</p>
+                                <p>The NBFC will determine loan sanction, approval, and disbursement in accordance with its rules and regulations.</p>
                             </div>
                         </div>
                     </div>
@@ -352,8 +352,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-10">
                     <div class="section-title mb-40">
-                        <h2 class="s-28">Calculate Your <span class="color--green-500">EMI in Seconds</span></h2>
-                        <p class="s-16 color--grey">Plan your finances more confidently!</p>
+                        <h2 class="s-28">Know Your <span class="color--green-500">EMI in Seconds</span></h2>
+                        <p class="s-16 color--grey">Simplify Your Financial Planning </p>
                     </div>
                 </div>
             </div>
@@ -594,8 +594,8 @@
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-10">
                         <div class="section-title mb-50">
-                            <h2 class="s-28">Trusted by the <span class="color--green-500">Best in the Industry</span></h2>
-                            <p class="s-16 color--grey">Partnering with the best NBFCs to provide the best for our customers.</p>
+                            <h2 class="s-28">Trusted<span class="color--green-500"> NBFC Partners</span></h2>
+                            <p class="s-16 color--grey">Partnering with leading NBFCs to bring you reliable loan options.</p>
                         </div>
                     </div>
                 </div>
@@ -623,8 +623,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-12">
                     <div class="section-title mb-40">
-                        <h2 class="s-28">What Our <span class="color--green-500">Customer Says</span></h2>
-                        <p class="s-16 color--grey">Hear directly from our customers about their experiences with us.</p>
+                        <h2 class="s-28">Hear from <span class="color--green-500">Our Customers</span></h2>
+                        <p class="s-16 color--grey">Discover what our customers have to say about their experience with us.</p>
                     </div>
                 </div>
             </div>
@@ -645,15 +645,15 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-6 md-mb-50">
                     <div class="sec-title2 mb-40">
-                        <h2 class="s-28">We Are Here to <span class="color--green-500">Help You</span></h2>
-                        <p class="description">Drop us a message with your basic information, and our team will get back to you shortly.</p>
+                        <h2 class="s-28">Get in <span class="color--green-500">Touch</span></h2>
+                        <p class="description">Fill in your basic information, and our experts will contact you as soon as possible.</p>
                     </div>
                     <div class="row gy-3 gx-3">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="address-item">
                                 <div class="address-text">
                                     <h6> Customer Support </h6>
-                                    <p class="address-txt"><a href="tel:{{ str_ireplace(" ","",env('COMPANY_MOBILE')) }}">{{ env('COMPANY_MOBILE') }}</a></p>
+                                    <p class="address-txt"><a href="tel:{{ str_ireplace(" ","",config('constant.COMPANY_MOBILE')) }}">{{ config('constant.COMPANY_MOBILE') }}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -662,7 +662,7 @@
                             <div class="address-item">
                                 <div class="address-text">
                                     <h6> Mail Us </h6>
-                                    <p class="address-txt"><a href="mailto:{{ str_ireplace(" ","",env('COMPANY_SUPPORT_MAIL')) }}">{{ env('COMPANY_SUPPORT_MAIL') }}</a></p>
+                                    <p class="address-txt"><a href="mailto:{{ str_ireplace(" ","",config('constant.COMPANY_SUPPORT_MAIL')) }}">{{ config('constant.COMPANY_SUPPORT_MAIL') }}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -671,7 +671,7 @@
                             <div class="address-item">
                                 <div class="address-text">
                                     <h6> Address </h6>
-                                    <p class="address-txt">{{ env('COMPANY_ADDRESS') }}</p>
+                                    <p class="address-txt">{{ config('constant.COMPANY_ADDRESS') }}</p>
                                 </div>
                             </div>
                         </div>

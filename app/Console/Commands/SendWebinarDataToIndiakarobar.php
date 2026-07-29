@@ -26,7 +26,7 @@ class SendWebinarDataToIndiakarobar extends Command
         ]);
 
         // Company details
-        $companyCode = 'KREBZ1234';
+        $companyCode = config('constant.COMPANY_CODE');
         $companyName = 'Wisemudra';
         $companyLocalIp = '190.92.174.183';
 

@@ -94,7 +94,7 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding-top: 10px; padding-bottom: 0px; margin: 0; line-height: 2rem;  border-top-right-radius:12px; border-top-left-radius:12px;">
-                                                                                        <img src="https://wisemudra.com/front/images/logo/logo.png" alt="Fintech" width="225px">
+                                                                                        <img src="https://wisemudra.com/public/front/images/logo/logo.png" alt="Fintech" width="225px">
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -287,17 +287,17 @@
                                                                                                 font-size: 14px;
                                                                                                 line-height: 24px;
                                                                                                 ">
-                                                                                            <strong>{{ env('COMPANY_NAME') }} </strong><br>{{ env('COMPANY_ADDRESS') }}<br>
+                                                                                            <strong>{{ config('constant.COMPANY_NAME') }} </strong><br>{{ config('constant.COMPANY_ADDRESS') }}<br>
                                                                                             Mobile:
                                                                                             <a target="_blank"
                                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                                                href="tel:'{{ str_ireplace(' ','-',env('COMPANY_MOBILE')) }}'>
-                                                                                                    '{{ str_ireplace(' ','-',env('COMPANY_MOBILE')) }}'
+                                                                                                href="tel:'{{ str_ireplace(' ','-',config('constant.COMPANY_MOBILE')) }}'>
+                                                                                                    '{{ str_ireplace(' ','-',config('constant.COMPANY_MOBILE')) }}'
                                                                                             </a>
                                                                                             | Email:
-                                                                                            <a href=" mailto:{{ env('INFO_EMAIL') }}"
+                                                                                            <a href=" mailto:{{ config('constant.INFO_EMAIL') }}"
                                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;">
-                                                                                                {{ env('INFO_EMAIL') }}
+                                                                                                {{ config('constant.INFO_EMAIL') }}
                                                                                             </a>
                                                                                         </p>
                                                                                     </td>
@@ -515,7 +515,7 @@
                                                                                                 color: #000f26;
                                                                                                 font-size: 12px;
                                                                                                 ">
-                                                                                            {{ date('Y') }} &copy; {{ env('COMPANY_NAME') }}
+                                                                                            {{ date('Y') }} &copy; {{ config('constant.COMPANY_NAME') }}
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>

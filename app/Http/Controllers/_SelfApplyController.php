@@ -771,7 +771,7 @@ dwIDAQAB
     public function offer1()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('SA_OFFER_1'))->first();
+        $products = Product::where('productslug',config('constant.SA_OFFER_1'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -806,7 +806,7 @@ dwIDAQAB
         Log::info(json_encode($inputs));
         try{
             /* product Data */
-            $products = Product::where('productslug',env('SA_OFFER_1'))->first();
+            $products = Product::where('productslug',config('constant.SA_OFFER_1'))->first();
             Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -962,7 +962,7 @@ dwIDAQAB
     public function offer2()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('SA_OFFER_2'))->first();
+        $products = Product::where('productslug',config('constant.SA_OFFER_2'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -997,7 +997,7 @@ dwIDAQAB
         Log::info(json_encode($inputs));
         try{
             /* product Data */
-            $products = Product::where('productslug',env('SA_OFFER_2'))->first();
+            $products = Product::where('productslug',config('constant.SA_OFFER_2'))->first();
             Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1230,7 +1230,7 @@ dwIDAQAB
     public function offer3()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug',env('SA_OFFER_3'))->first();
+        $products = Product::where('productslug',config('constant.SA_OFFER_3'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -1265,7 +1265,7 @@ dwIDAQAB
         //Log::info(json_encode($inputs));
         try{
             /* product Data */
-            $products = Product::where('productslug',env('SA_OFFER_3'))->first();
+            $products = Product::where('productslug',config('constant.SA_OFFER_3'))->first();
             //Log::info('products - '.json_encode($products));
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;

@@ -72,7 +72,7 @@
                     <!-- Form Input -->
                     <div class="col-md-12">
                       <p class="p-sm input-header">Mobile Number</p>
-                      <input class="form-control" type="text" name="mobile" placeholder="Mobile Number" id="mobile" maxlength="10" minlength="10" autocomplete="off" inputmode="numeric">
+                      <input class="form-control numeric-input" type="text" name="mobile" placeholder="Mobile Number" id="mobile" maxlength="10" minlength="10" autocomplete="off" inputmode="numeric">
                       @component('components.ajax-error',['field'=>'mobile'])@endcomponent
                     </div>
 

@@ -255,7 +255,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
         
                     DB::commit();
                     $remote_data = array(
-						'company_code' => 'KRDTP9702',
+						'company_code' => config('constant.COMPANY_CODE'),
 						'company_local_ip' => '190.92.174.183',
 						'product_code' => (($accType == 1) ? 'SELF APPLY' : (($accType == 2) ? 'HIRE AGENT' : 'SELF APPLY' )),
 						'customer_name' => $cardData->first_name.' '.$userData->last_name,

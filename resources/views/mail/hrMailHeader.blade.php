@@ -414,7 +414,7 @@
                                                                                             <a target="_blank"
                                                                                                 href="https://wisemudra.com/"
                                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: underline; color: #000f26; font-size: 14px;">
-                                                                                            <img src="https://wisemudra.com/front/images/logo/logo.png"
+                                                                                            <img src="https://wisemudra.com/public/front/images/logo/logo.png"
                                                                                                 alt="Wisemudra"
                                                                                                 style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
                                                                                                 width="190"
@@ -579,7 +579,7 @@
                                                                                                 font-size: 14px;
                                                                                                 line-height: 24px;
                                                                                                 ">
-                                                                                                <strong>{{ env('COMPANY_NAME') }}</strong><br>{{ env('COMPANY_ADDRESS') }}<br>
+                                                                                                <strong>{{ config('constant.COMPANY_NAME') }}</strong><br>{{ config('constant.COMPANY_ADDRESS') }}<br>
                                                                                                 Mobile:
                                                                                                 <a target="_blank"
                                                                                                     style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
@@ -808,7 +808,7 @@
                                                                                                 font-size: 12px;
                                                                                                 "> 
                                                                                                 {{ date('Y') }} © <strong>
-                                                                                                {{ env('COMPANY_NAME') }}.
+                                                                                                {{ config('constant.COMPANY_NAME') }}.
                                                                                                 </strong>
                                                                                             </p>
                                                                                         </td>

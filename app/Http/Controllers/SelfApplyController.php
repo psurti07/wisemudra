@@ -1199,7 +1199,7 @@ class SelfApplyController extends Controller
     					$fbdata['fbclid'] = '';
     				}
 
-    				$fbresponse = fbconversioncurl($fbdata, 21);
+    				$fbresponse = fbconversioncurl($fbdata, 16);
                 	$dataleads = array(
     					'rec_date' => date('Y-m-d H:i:s'),
     					'send_data' => json_encode($fbdata),

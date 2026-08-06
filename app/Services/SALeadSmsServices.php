@@ -31,7 +31,7 @@ class SALeadSmsServices
                 ->content ?? '';
 
             $dataset = ''; // collect all SMS XMLs
-            if($msgTemplate != '#'){
+            if ($msgTemplate != '#') {
                 foreach ($schedules as $daysAgo => $times) {
                     //Log::info('days ago - '. $daysAgo);
                     $arrnumbers = 0;
@@ -41,7 +41,7 @@ class SALeadSmsServices
                         //Log::info('schedule time - '. $scheduledTime);
                         if ($now->diffInMinutes($scheduledTime) === 0) {
                             $targetDate = $now->copy()->subDays($daysAgo)->toDateString();
-    
+
                             $users = DB::table('user_registrations as r')
                                 ->join('loan_applications as a', 'a.userid', '=', 'r.id')
                                 ->select(
@@ -66,22 +66,22 @@ class SALeadSmsServices
                                 ->where('a.isDelete', 0)
                                 ->orderBy('r.id', 'asc')
                                 ->get();
-                            
+
                             if ($users->isNotEmpty()) {
                                 foreach ($users as $user) {
                                     /*$loan = LoanApplications::where('userid', $user->id)->first();
     
                                     if ($loan) {*/
-                                        $eligibilityAmt = calEligiblity(
-                                            $user->monthly_income,
-                                            $user->currentemi,
-                                            ($user->loan_type == 2) ? 11.5 : 12.5,
-                                            $user->loan_amount
-                                        );
-    
-                                        $personalizedMsg = str_ireplace('{#varamount#}', $eligibilityAmt, $msgTemplate);
-    
-                                        $dataset .= "<sms>
+                                    $eligibilityAmt = calEligiblity(
+                                        $user->monthly_income,
+                                        $user->currentemi,
+                                        ($user->loan_type == 2) ? 11.5 : 12.5,
+                                        $user->loan_amount
+                                    );
+
+                                    $personalizedMsg = str_ireplace('{#varamount#}', $eligibilityAmt, $msgTemplate);
+
+                                    $dataset .= "<sms>
                                             <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
                                             <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
                                             <mobiles>{$user->mobile}</mobiles>
@@ -92,32 +92,22 @@ class SALeadSmsServices
                                     /*}*/
                                     $arrnumbers++;
                                 }
-    
-    
+
+
                                 // Send tracking SMS for job run confirmation
                                 $trackingMsg = str_ireplace('{#varamount#}', '500000', $msgTemplate);
-                                $dataset .= "<sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>7016318366</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9998807547</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9408881214</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms>";
+                                $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
+                                foreach ($adminUsers as $mobile) {
+                                    $dataset .= "
+                                        <sms>
+                                            <user>" . config('constant.SMS_OBB_LA_USERNAME') . "</user>
+                                            <password>" . config('constant.SMS_OBB_LA_PASSWORD') . "</password>
+                                            <mobiles>{$mobile}</mobiles>
+                                            <message>{$trackingMsg}</message>
+                                            <accusage>1</accusage>
+                                            <senderid>{$senderId}</senderid>
+                                        </sms>";
+                                }
                                 // Send SMS only if dataset has value
                                 if (!empty($dataset)) {
                                     SendSALeadSmsJob::dispatchSync($dataset, $daysAgo, $arrnumbers);
@@ -126,13 +116,12 @@ class SALeadSmsServices
                             break; // match found, break the inner loop
                         }
                     }
-                }    
+                }
             } else {
-                return;    
+                return;
             }
         } catch (\Exception $e) {
             Log::error('Error in Self Apply Lead SMS Service: ' . $e->getMessage());
         }
     }
-
 }

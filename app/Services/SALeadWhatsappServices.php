@@ -54,7 +54,7 @@ class SALeadWhatsappServices
                             ->orderBy('r.id', 'asc')
                             ->get();
                         
-                        $adminUsers = ['7016318366','9408881214','9998807547'];
+                        $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
                         if($users->isNotEmpty()){
                             $data1 = array(
                 				'rec_date' => date('Y-m-d H:i:s'),

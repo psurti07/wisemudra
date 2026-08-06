@@ -75,43 +75,23 @@ class SACustomerServiceClosed {
                                         <accusage>1</accusage>
                                         <senderid>{$senderId}</senderid>
                                     </sms>";
-                                    /*DB::table('user_registrations')->where('mobile',$user->mobile)->update(['update_date'=>now(), 'process_step'=>6]);
-                                    DB::table('application_remarks')->insert([
-                                        'rec_date' => now(),
-                                        'entry_at' => now(),
-                                        'service' => 11,
-                                        'subject' => 29,
-                                        'notes' => '',
-                                        'application_id' => $user->appId,
-                                        'staff_id' => 5
-                                    ]);*/
                                     $arrnumbers++;   
                                 }
                             
                                 // Send tracking SMS for job run confirmation
                                 $trackingMsg = $msgTemplate;
-                                $dataset .= "<sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>7016318366</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9998807547</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9408881214</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms>";
+                                $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
+                                foreach ($adminUsers as $mobile) {
+                                    $dataset .= "
+                                        <sms>
+                                            <user>" . config('constant.SMS_OBB_LA_USERNAME') . "</user>
+                                            <password>" . config('constant.SMS_OBB_LA_PASSWORD') . "</password>
+                                            <mobiles>{$mobile}</mobiles>
+                                            <message>{$trackingMsg}</message>
+                                            <accusage>1</accusage>
+                                            <senderid>{$senderId}</senderid>
+                                        </sms>";
+                                }
                                 // Send SMS only if dataset has value
                                 if (!empty($dataset)) {
                                     SendSACustomerServiceClosedJob::dispatchSync($dataset, $daysAgo, $arrnumbers);

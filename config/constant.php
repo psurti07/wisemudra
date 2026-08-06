@@ -59,4 +59,5 @@ return [
     'SELF_INTERAKT_KEY'     => env('SELF_INTERAKT_KEY'),
     'HIRE_INTERAKT_KEY'     => env('HIRE_INTERAKT_KEY'),
 
+    'REMARKETING_MOBILE_NUMBERS' => array_map('trim',explode(',', env('REMARKETING_MOBILE_NUMBERS', ''))),
 ];

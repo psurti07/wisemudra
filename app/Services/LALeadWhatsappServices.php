@@ -52,10 +52,9 @@ class LALeadWhatsappServices
                             ->where('r.isDelete', 0)
                             ->where('a.isDelete', 0)
                             ->orderBy('r.id', 'asc');
-                        // Log::info('SQL Query: ' . $users->toSql());
-                        //Log::info('Bindings: ', $users->getBindings());
+                     
                         $users = $users->get();
-                        $adminUsers = ['7016318366','9408881214','9998807547'];
+                        $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
                         
                         if($users->isNotEmpty()){
                             Log::info('user found in interakt');

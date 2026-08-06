@@ -33,7 +33,7 @@ class BlogWhatsappServices
                             ->orderBy('r.id', 'asc')
                             ->get();
 
-                        $adminUsers = ['7016318366','9998807547','9408881214'];
+                        $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
                         if($users->isNotEmpty()){
                             /* admin no. foreach */
                             foreach ($adminUsers as $admin) {

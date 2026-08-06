@@ -79,28 +79,18 @@ class SACustomerSmsServices
                             
                                 // Send tracking SMS for job run confirmation
                                 $trackingMsg = $msgTemplate;
-                                $dataset .= "<sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>7016318366</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9998807547</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms><sms>
-                                    <user>" . config('constant.SMS_OBB_USERNAME') . "</user>
-                                    <password>" . config('constant.SMS_OBB_PASSWORD') . "</password>
-                                    <mobiles>9408881214</mobiles>
-                                    <message>{$trackingMsg}</message>
-                                    <accusage>1</accusage>
-                                    <senderid>{$senderId}</senderid>
-                                </sms>";
+                                $adminUsers = config('constant.REMARKETING_MOBILE_NUMBERS');
+                                foreach ($adminUsers as $mobile) {
+                                    $dataset .= "
+                                        <sms>
+                                            <user>" . config('constant.SMS_OBB_LA_USERNAME') . "</user>
+                                            <password>" . config('constant.SMS_OBB_LA_PASSWORD') . "</password>
+                                            <mobiles>{$mobile}</mobiles>
+                                            <message>{$trackingMsg}</message>
+                                            <accusage>1</accusage>
+                                            <senderid>{$senderId}</senderid>
+                                        </sms>";
+                                }
                                 // Send SMS only if dataset has value
                                 if (!empty($dataset)) {
                                     SendSACustomerSmsJob::dispatchSync($dataset, $daysAgo, $arrnumbers);

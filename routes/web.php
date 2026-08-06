@@ -10,14 +10,12 @@ use App\Http\Controllers\pg\PhonePayController;
 use App\Http\Controllers\pg\RazorpayController;
 use App\Http\Controllers\pg\SabpaisaController;
 use App\Http\Controllers\pg\SubpaisaResponse;
-use App\Http\Controllers\pg\AirpayController;
 use App\Http\Controllers\CalculatorsController;
 use App\Http\Controllers\pg\PayuController;
 use App\Http\Controllers\pg\LyraPgController;
 use App\Http\Controllers\pg\HdfcPgController;
 use App\Http\Controllers\pg\BilldeskController;
 use App\Http\Controllers\pg\ZwitchController;
-use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\pg\PaytmController;
 use App\Http\Controllers\ScheduleSlotController;
 use App\Http\Controllers\WebinarStepsController;
@@ -26,7 +24,6 @@ Route::group([
     'prefix' => '/',
     'as' => 'front.',
 ], function () {
-    /* Home Controller functions */
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/company', [HomeController::class, 'company'])->name('company');
     Route::get('/self-apply', [HomeController::class, 'selfApply'])->name('self.apply');
@@ -43,7 +40,7 @@ Route::group([
     Route::get('/sitemap', [HomeController::class, 'sitemap'])->name('sitemap');
     Route::get('/generate-sitemap', [HomeController::class, 'generateSitemap']);
     Route::get('/testdata', [HomeController::class, 'testdata']);
-    /* Legal controller functions */
+
     Route::get('/raise-request', [LegalController::class, 'raiseRequest'])->name('raise.request');
     Route::post('/request-raised', [LegalController::class, 'requestRaisedPost'])->name('request.raised.post');
     Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('privacy.policy');
@@ -56,7 +53,7 @@ Route::group([
     'prefix' => '/self-apply',
     'as' => 'self.apply.'
 ], function () {
-    /* SelfApply controller functions */
+
     Route::get('/', [SelfApplyController::class, 'main'])->name('main');
     Route::post('/send-otp', [SelfApplyController::class, 'sendOtp'])->name('send.otp');
     Route::post('/verify-otp', [SelfApplyController::class, 'verifyOtp'])->name('verify.otp');
@@ -72,36 +69,36 @@ Route::group([
     Route::get('/paymentSuccess', [SelfApplyController::class, 'paymentSuccess'])/*->middleware('verifyApplied')*/->name('payment.success');
     Route::post('/checkout', [SelfApplyController::class, 'checkout'])->name('checkout');
 
-    Route::get('prime-offer', [SelfApplyController::class, 'offer1'])->name('offer1');
-    Route::post('prime-offer-request',[SelfApplyController::class, 'getOffer1'])->name('get.offer1');
+    Route::get('prime-offer', [SelfApplyController::class, 'PrimeOffer'])->name('prime.offer');
+    Route::post('prime-offer', [SelfApplyController::class, 'submitPrimeOffer'])->name('prime-offer.submit');
+    Route::post('prime-offer-response', [SelfApplyController::class, 'PrimeOfferResponse'])->name('prime-offer.response');
 
-    Route::get('mega-offer', [SelfApplyController::class, 'offer2'])->name('offer2');
-    Route::post('mega-offer-request',[SelfApplyController::class, 'getOffer2'])->name('get.offer2');
+    Route::get('mega-offer', [SelfApplyController::class, 'MegaOffer'])->name('mega.offer');
+    Route::post('mega-offer', [SelfApplyController::class, 'submitMegaOffer'])->name('mega-offer.submit');
+    Route::post('mega-offer-response', [SelfApplyController::class, 'MegaOfferResponse'])->name('mega-offer.response');
 
-    Route::get('premium-offer', [SelfApplyController::class, 'offer3'])->name('offer3');
-    Route::post('premium-offer-request',[SelfApplyController::class, 'getOffer3'])->name('get.offer3');
-    Route::get('/premium-offer-response', [SelfApplyController::class, 'offer3Response'])->name('offer3.response');
+    Route::get('premium-offer', [SelfApplyController::class, 'PremiumOffer'])->name('premium.offer');
+    Route::post('premium-offer', [SelfApplyController::class, 'submitPremiumOffer'])->name('premium-offer.submit');
+    Route::post('premium-offer-response', [SelfApplyController::class, 'PremiumOfferResponse'])->name('premium-offer.response');
 
-    Route::get('star-offer', [SelfApplyController::class, 'offer4'])->name('offer4');
-    Route::post('star-offer-request',[SelfApplyController::class, 'getOffer4'])->name('get.offer4');
-    Route::get('/star-offer-response', [SelfApplyController::class, 'offer4Response'])->name('offer4.response');
+    Route::get('star-offer', [SelfApplyController::class, 'StarOffer'])->name('star.offer');
+    Route::post('star-offer', [SelfApplyController::class, 'submitStarOffer'])->name('star-offer.submit');
+    Route::post('/star-offer-response', [SelfApplyController::class, 'StarOfferResponse'])->name('star-offer.response');
 
-    Route::get('great-offer', [SelfApplyController::class, 'offer5'])->name('offer5');
-    Route::post('great-offer-request',[SelfApplyController::class, 'getOffer5'])->name('get.offer5');
-    Route::get('/great-offer-response', [SelfApplyController::class, 'offer5Response'])->name('offer5.response');
+    Route::get('great-offer', [SelfApplyController::class, 'GreatOffer'])->name('great.offer');
+    Route::post('great-offer', [SelfApplyController::class, 'submitGreatOffer'])->name('great-offer.submit');
+    Route::post('/great-offer-response', [SelfApplyController::class, 'GreatOfferResponse'])->name('great-offer.response');
 
-    Route::get('standard-offer', [SelfApplyController::class, 'offer6'])->name('offer6');
-    Route::post('standard-offer-request',[SelfApplyController::class, 'getOffer6'])->name('get.offer6');
-
-    Route::get('offer-7',[SelfApplyController::class, 'offer7'])->name('offer7');
-    Route::post('offer-7',[SelfApplyController::class, 'getOffer7'])->name('get.offer7');
+    Route::get('standard-offer', [SelfApplyController::class, 'StandardOffer'])->name('standard.offer');
+    Route::post('standard-offer', [SelfApplyController::class, 'submitStandardOffer'])->name('standard-offer.submit');
+    Route::post('/standard-offer-response', [SelfApplyController::class, 'StandardOfferResponse'])->name('standard-offer.response');
 });
 
 Route::group([
     'prefix' => '/loan-agent',
     'as' => 'loan.agent.'
 ], function () {
-    /* Hire Loan Agent controller functions */
+
     Route::get('/', [LoanAgentController::class, 'main'])->name('main');
     Route::post('/send-otp', [LoanAgentController::class, 'sendOtp'])->name('send.otp');
     Route::post('/verify-otp', [LoanAgentController::class, 'verifyOtp'])->name('verify.otp');
@@ -117,37 +114,30 @@ Route::group([
     Route::get('/paymentSuccess', [LoanAgentController::class, 'paymentSuccess'])/*->middleware('verifyApplied')*/->name('payment.success');
     Route::post('/checkout', [LoanAgentController::class, 'checkout'])->name('checkout');
 
-    Route::get('great-deal-offer', [LoanAgentController::class, 'offer1'])->name('offer1');
-    Route::post('great-deal-offer-request',[LoanAgentController::class, 'getOffer1'])->name('get.offer1');
+    Route::get('great-deal-offer', [LoanAgentController::class, 'GreatDealOffer'])->name('great-deal.offer');
+    Route::post('great-deal-offer', [LoanAgentController::class, 'submitGreatDealOffer'])->name('great-deal-offer.submit');
+    Route::post('great-deal-offer-response', [LoanAgentController::class, 'GreatDealOfferResponse'])->name('great-deal-offer.response');
 
-    Route::get('elite-offer', [LoanAgentController::class, 'offer2'])->name('offer2');
-    Route::post('elite-offer-request',[LoanAgentController::class, 'getOffer2'])->name('get.offer2');
-    /* Route::post('/offer-2-response',[LoanAgentController::class, 'offer2Response']); */
+    Route::get('elite-offer', [LoanAgentController::class, 'EliteOffer'])->name('elite.offer');
+    Route::post('elite-offer', [LoanAgentController::class, 'submitEliteOffer'])->name('elite-offer.submit');
+    Route::post('elite-offer-response', [LoanAgentController::class, 'EliteOfferResponse'])->name('elite-offer.response');
 
-    Route::get('ultra-saver-offer', [LoanAgentController::class, 'offer3'])->name('offer3');
-    Route::post('ultra-saver-request',[LoanAgentController::class, 'getOffer3'])->name('get.offer3');
-    Route::get('/ultra-saver-offer-response', [LoanAgentController::class, 'offer3Response'])->name('offer3.response');
+    Route::get('ultra-saver-offer', [LoanAgentController::class, 'UltraSaverOffer'])->name('ultra-saver.offer');
+    Route::post('ultra-saver-offer', [LoanAgentController::class, 'submitUltraSaverOffer'])->name('ultra-saver-offer.submit');
+    Route::post('ultra-saver-offer-response', [LoanAgentController::class, 'UltraSaverOfferResponse'])->name('ultra-saver-offer.response');
 
-    Route::get('big-offer', [LoanAgentController::class, 'offer4'])->name('offer4');
-    Route::post('big-offer-request',[LoanAgentController::class, 'getOffer4'])->name('get.offer4');
-    Route::get('/big-offer-response', [LoanAgentController::class, 'offer4Response'])->name('offer4.response');
+    Route::get('big-offer', [LoanAgentController::class, 'BigOffer'])->name('big.offer');
+    Route::post('big-offer', [LoanAgentController::class, 'submitBigOffer'])->name('big-offer.submit');
+    Route::post('big-offer-response', [LoanAgentController::class, 'BigOfferResponse'])->name('big-offer.response');
 
-    Route::get('big-benefit-offer', [LoanAgentController::class, 'offer5'])->name('offer5');
-    Route::post('big-benefit-offer-request',[LoanAgentController::class, 'getOffer5'])->name('get.offer5');
-    //Route::get('/big-benefit-offer-response', [LoanAgentController::class, 'offer5Response'])->name('offer5.response');
+    Route::get('big-benefit-offer', [LoanAgentController::class, 'BigBenefitOffer'])->name('big-benefit.offer');
+    Route::post('big-benefit-offer', [LoanAgentController::class, 'submitBigBenefitOffer'])->name('big-benefit-offer.submit');
+    Route::post('big-benefit-offer-response', [LoanAgentController::class, 'BigBenefitOfferResponse'])->name('big-benefit-offer.response');
 
-    Route::get('silver-offer', [LoanAgentController::class, 'offer6'])->name('offer6');
-    Route::post('silver-offer-request',[LoanAgentController::class, 'getOffer6'])->name('get.offer6');
+    Route::get('silver-offer', [LoanAgentController::class, 'SilverOffer'])->name('silver.offer');
+    Route::post('silver-offer', [LoanAgentController::class, 'submitSilverOffer'])->name('silver-offer.submit');
+    Route::post('silver-offer-response', [LoanAgentController::class, 'SilverOfferResponse'])->name('silver-offer.response');
 });
-
-Route::group([
-    'prefix' => '/offers',
-    'as' => 'offer.'
-], function () {
-    Route::get('/offer-1', [\App\Http\Controllers\OfferController::class, 'offer1'])->name('offer.one');
-    Route::get('/offer-2', [\App\Http\Controllers\OfferController::class, 'offer2'])->name('offer.two');
-});
-
 
 
 /* calculators routes starts here */
@@ -162,105 +152,32 @@ Route::group([
     Route::get('/business-loan-calculator', [CalculatorsController::class, 'businessLoanCalc'])->name('business.loan.calculator');
 });
 
-/* CipherPay route for Temporary */
-Route::get('/cipher-pay', [CipherPayController::class, 'DynamicQr'])->name('cipher.pay');
-Route::get('/initiate-collect', [CipherPayController::class, 'InitiateCollect'])->name('initiate.collect');
-Route::get('/status-enquiry', [CipherPayController::class, 'StatusEnquiry'])->name('status.enquiry');
-Route::get('/cipher-payment-failed', [CipherPayController::class, 'paymentFailed'])->name('payment.failed');
-Route::get('/cipher-payment-success', [CipherPayController::class, 'paymentSuccess'])->name('payment.success');
-//Route::post('/cipher-response',[CipherPayController::class, 'CipherResponse'])->name('cipher.response');
-
-/* PhonePay PG */
-Route::get('/phonepe-page', [PhonePayController::class, 'index'])->name('phonepe-page');
-Route::post('/phonepe', [PhonePayController::class, 'phonePe'])->name('phonepe');
-Route::any('/phonepe-response', [PhonePayController::class, 'response'])->name('response');
-Route::any('/phonepe-response1', [PhonePayController::class, 'response1'])->name('response1');
-
-
-Route::get('/razorpay', [RazorpayController::class, 'index'])->name('razorpay');
-Route::get('/razorpay-fail/{key}', [RazorpayController::class, 'failUrl'])->name('razorpay-fail');
-
-
-Route::get('/subpaisa', [SabpaisaController::class, 'index'])->name('subpaisa');
-Route::post('/subpaisa-store', [SabpaisaController::class, 'initiatePayment'])->name('subpaisa-send');
-Route::post('/subpaisa-response', [SubpaisaResponse::class, 'Response'])->name('payment-response');
-
-/* Route::get('/airpay-pg', [AirpayController::class, 'index'])->name('airpay');
-Route::post('/airpay-send', [AirpayController::class, 'sendairpay'])->name('airpay.send');*/
-Route::post('/airpay-response', [SelfApplyController::class, 'offer5Response'])->name('airpay.response');
-
-Route::get('/lyra-pg', [LyraPgController::class, 'index'])->name('lyra.pg');
-Route::get('/lyra-process', [LyraPgController::class, 'lyraProcess'])->name('lyra.process');
-Route::post('/lyra-response', [LyraPgController::class, 'lyraResponse'])->name('lyra.response');
-
-Route::get('/payu-pg', [PayuController::class, 'index'])->name('payu.pg');
-Route::post('/payu-checkout', [PayuController::class, 'payuCheckout'])->name('payu.checkout');
-Route::post('/payu-callback', [PayuController::class, 'callbackURL'])->name('payu.callbackUrl');
-
-Route::get('zaakpay-pg',[\App\Http\Controllers\pg\ZaakpayController::class,'index'])->name('zaakpay-pg');
-
-
 Route::get('/application-pdf/{userid}', [HomeController::class, 'showPdf']);
 
-
-
-/* hdfc payment gateway */
-Route::get('/hdfc-offer', [HdfcPgController::class, 'index'])->name('hdfc.offer');
-Route::post('/hdfc-initiatepayment', [HdfcPgController::class, 'initiatePayment'])->name('hdfc.initiatePayment');
-Route::post('/hdfc-handlePaymentResponse', [HdfcPgController::class, 'handlePaymentResponse'])->name('hdfc.handlePaymentResponse');
-
-
-/* Billdesk pg */
-Route::get('sandbox-billdesk',[BilldeskController::class, 'index']);
-
-// veegah routes start here
 Route::group([
-    'prefix' => '/veegah/',
-    'as' => 'veegah.'
-], function() {
-    Route::get('test-payment',[\App\Http\Controllers\pg\VeegahController::class, 'index'])->name('index');
-    Route::post('veegah-process', [\App\Http\Controllers\pg\VeegahController::class, 'process'])->name('process');
+    'prefix' => '/webinar',
+], function () {
+
+    Route::get('/', [WebinarStepsController::class, 'webinar'])->name('webinar.index');
+    Route::get('/user-registration', [WebinarStepsController::class, 'webinarStep1'])->name('webinar.step1');
+    Route::get('/otp-verification', [WebinarStepsController::class, 'webinarStep2'])->name('webinar.step2');
+    Route::get('/personal-details', [WebinarStepsController::class, 'webinarStep3'])->name('webinar.step3');
+    Route::get('/enroll-now', [WebinarStepsController::class, 'webinarStep4'])->name('webinar.step4');
+
+    Route::post('/store-step1', [WebinarStepsController::class, 'storewebinarStep1'])->name('webinar.storeStep1');
+    Route::post('/verify-otp-step', [WebinarStepsController::class, 'verifywebinarOtpStep'])->name('webinar.verifyOtpStep');
+    Route::post('/resend-otp', [WebinarStepsController::class, 'resendwebinarOtp'])->name('webinar.resendOtp');
+    Route::post('postal-details', [WebinarStepsController::class, 'postalDetails'])->name('webinar.postal.details');
+    Route::post('/store-step3', [WebinarStepsController::class, 'storewebinarStep3'])->name('webinar.storeStep3');
+    Route::post('/pay', [WebinarStepsController::class, 'initiatewebinarPayment'])->name('webinar.pay');
+    Route::get('/thankyou', [WebinarStepsController::class, 'webinarThankyou'])->name('webinar.thankyou');
+    Route::get('/payment-response/true', [WebinarStepsController::class, 'paymentSuccess'])->name('webinar.payment.success');
+    Route::get('/payment-response/false', [WebinarStepsController::class, 'paymentFailed'])->name('webinar.payment.failed');
+    Route::get('/process', [WebinarStepsController::class, 'userProcess'])->name('webinar.process');
 });
-
-// zwitch routes start here
-Route::group([
-    'prefix' => '/zwitch/',
-    'as' => 'zwitch.'
-], function() {
-    Route::get('/test-payment', [ZwitchController::class, 'index'])->name('index');
-    Route::post('/pay/create-token', [ZwitchController::class, 'createToken'])->name('pay.createToken');
-    Route::post('/payment-response', [ZwitchController::class, 'paymentResponse'])->name('payment.response');
-});
-
-Route::get('/paytm/checkout', [PaytmController::class, 'checkout'])->name('paytm.checkout');
-Route::post('/paytm/initiate', [PaytmController::class, 'initiate'])->name('paytm.initiate');
-//Route::post('/paytm/callback', [PaytmController::class, 'callback'])->name('paytm.callback');
-
-
-// Webinar Routes
-Route::get('/webinar', [WebinarStepsController::class, 'webinar'])->name('webinar.index');
-Route::get('/webinar/user-registration', [WebinarStepsController::class, 'webinarStep1'])->name('webinar.step1');
-Route::get('/webinar/otp-verification', [WebinarStepsController::class, 'webinarStep2'])->name('webinar.step2');
-Route::get('/webinar/personal-details', [WebinarStepsController::class, 'webinarStep3'])->name('webinar.step3');
-Route::get('/webinar/enroll-now', [WebinarStepsController::class, 'webinarStep4'])->name('webinar.step4');
-
-Route::post('/webinar/store-step1', [WebinarStepsController::class, 'storewebinarStep1'])->name('webinar.storeStep1');
-Route::post('/webinar/verify-otp-step', [WebinarStepsController::class, 'verifywebinarOtpStep'])->name('webinar.verifyOtpStep');
-Route::post('/webinar/resend-otp', [WebinarStepsController::class, 'resendwebinarOtp'])->name('webinar.resendOtp');
-Route::post('webinar/postal-details', [WebinarStepsController::class, 'postalDetails'])->name('webinar.postal.details');
-Route::post('/webinar/store-step3', [WebinarStepsController::class, 'storewebinarStep3'])->name('webinar.storeStep3');
-Route::post('/webinar/pay', [WebinarStepsController::class, 'initiatewebinarPayment'])->name('webinar.pay');
-Route::get('/webinar/thankyou', [WebinarStepsController::class, 'webinarThankyou'])->name('webinar.thankyou');
-Route::get('/webinar/payment-response/true', [WebinarStepsController::class, 'paymentSuccess'])->name('webinar.payment.success');
-Route::get('/webinar/payment-response/false', [WebinarStepsController::class, 'paymentFailed'])->name('webinar.payment.failed');
-
-Route::get('/webinar/process', [WebinarStepsController::class, 'userProcess'])->name('webinar.process');
-
 
 //Schedule Slot
 Route::get('schedule-slot', [ScheduleSlotController::class, 'getScheduleSlotPage'])->name('schedule-slot');
 Route::post('schedule-slot', [ScheduleSlotController::class, 'scheduleSlot'])->name('schedule-slot');
 Route::get('schedule-success', [ScheduleSlotController::class, 'scheduleSuccess'])->name('schedule-success');
 Route::get('schedule-cancel', [ScheduleSlotController::class, 'scheduleCancel'])->name('schedule-cancel');
-
-Route::get('/testdata', [WebinarStepsController::class, 'testdata']);

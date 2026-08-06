@@ -111,7 +111,7 @@
                                                 <span data-kt-element="bullet" class="bullet bullet-vertical d-flex align-items-center min-h-20px mh-100 me-4 bg-primary"></span>
                                                 <div class="flex-grow-1 me-5">
                                                     <div class="text-gray-700 fw-semibold fs-6">
-                                                        Agent Mobile. : {{ isset($agent->mobile) ? '+91 '.substr($agent->mobile, 0, 5) . ' ' . substr($agent->mobile, 5) : '+91-94292-14352' }}
+                                                        Agent Mobile. : {{ isset($agent->mobile) ? '+91 '.substr($agent->mobile, 0, 5) . ' ' . substr($agent->mobile, 5) : 'config("constant.COMPANY_MOBILE")' }}
                                                     </div>
                                                 </div>
                                             </div>

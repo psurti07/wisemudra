@@ -9,7 +9,7 @@
 </style>
 @endpush
 @section('content')
-    <section id="hero-202" class="bg--fixed hero-section">
+    <section id="hero-201" class="bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-md-6 col-lg-6 order-2 order-md-1 order-lg-1">
@@ -25,7 +25,7 @@
                         <h4 class="s-22 text-dark mb-1"> Get Loan up to <span class="color--green-500">&#8377;10 LAKHS</span> from Affiliate NBFCs!</h4>
                         <p class="s-14">Unlock Your Personalized Pre-Approved Loan Offers</p>
 
-                        <form method="post" class="request-form save-form-1" action="{{ route('self.apply.get.offer6') }}">
+                        <form method="post" class="request-form save-form-1" action="{{ route('loan.agent.great-deal-offer.submit') }}">
                             <div class="row g-2">
                                 <div class="col-md-12">
                                     <div class="form-check ps-0">
@@ -171,6 +171,8 @@
         </div>
     </section>
 
+    <div id="result-container"></div>
+
 @endsection
 @push('scripts')
 <!-- write or link your script file and script tag here -->
@@ -199,44 +201,16 @@
                         $(this).attr("disabled", false);
                         if (result.type === 'SUCCESS') {
                             toastr.success(result.message);
-                            if (result.method && result.method === 'POST') {
-                                // Create a form dynamically
-                                let form = document.createElement('form');
-                                form.method = 'POST';
-                                form.action = result.url; // Laravel POST route
-
-                                // Add CSRF token (assumed to be available in a meta tag)
-                                let csrfToken = document.createElement('input');
-                                csrfToken.type = 'hidden';
-                                csrfToken.name = '_token';
-                                csrfToken.value = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                                form.appendChild(csrfToken);
-
-                                // Append input fields dynamically from the response
-                                Object.keys(result.inputs).forEach(key => {
-                                    let input = document.createElement('input');
-                                    input.type = 'hidden';
-                                    input.name = key; // Key from the array
-                                    input.value = result.inputs[key]; // Corresponding value
-                                    form.appendChild(input);
-                                });
-
-                                // Append the form to the body
-                                document.body.appendChild(form);
-
-                                // Wait for 5 seconds before submitting the form
-                                setTimeout(function () {
-                                    form.submit();
-                                }, 3000);
-                            } else {
-                                setTimeout(function() {
-                                    window.location.reload();
-                                }, 5000);
-                            }
-                        } else {
-                            toastr.error(result.message);
-                            $('#submit-btn').html('Apply Now');
-                            $('#submit-btn').attr('disabled', false);
+                            $('#result-container').html(result.html);
+                            
+                            setTimeout(function() {
+                                document.frm1.submit();
+                            }, 1000);
+                        }
+                        else {
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 5000);
                         }
                     },
                     error: function (error) {

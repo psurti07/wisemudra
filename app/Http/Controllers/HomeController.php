@@ -213,12 +213,10 @@ class HomeController extends Controller
     }
 
     public function testdata(){
-         dd('hi');
-         
        $mailData = array(
             'fullname' => 'Parth S',
-            'mobile' => '9904466599',
-            'email' => 'psurti07@gmail.com',
+            'mobile' => '9408881214',
+            'email' => 'verloop.dev4@gmail.com',
             'password' => '121212',
             'order_number' => '123',
             'order_date' => now()->format('d-m-Y'),
@@ -248,8 +246,8 @@ class HomeController extends Controller
             [
                 'fullname' => 'Parth S',
                 'city' => 'Surat',
-                'mobile' => '9904466599',
-                'email' => 'psurti07@gmail.com',
+                'mobile' => '9408881214',
+                'email' => 'verloop.dev4@gmail.com',
                 'acc_type' => '1',
                 'state' => 'Gujarat',
                 'isCustomer' => 0

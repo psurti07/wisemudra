@@ -873,11 +873,11 @@
             background-color: rgba(0, 122, 255, 0.15);
         }
 
-        .tm_green_bg {
+        .tm_#02a6fc_bg {
             background-color: #34c759;
         }
 
-        .tm_green_bg_15 {
+        .tm_#02a6fc_bg_15 {
             background-color: rgba(52, 199, 89, 0.1);
         }
 

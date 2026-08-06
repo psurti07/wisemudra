@@ -125,7 +125,7 @@
                                                                                                                                             <tbody>
                                                                                                                                                 <tr>
                                                                                                                                                     <td align="center"
-                                                                                                                                                        style="padding: 20px;   margin: 0; line-height: 2rem;background-color:#e6f7f3;border-top-right-radius:12px;border-top-left-radius:12px;">
+                                                                                                                                                        style="padding: 20px;   margin: 0; line-height: 2rem;background-color:#e5faff;border-top-right-radius:12px;border-top-left-radius:12px;">
                                                                                                                                                         <p
                                                                                                                                                             style="font-size:2.2rem;color:#00a168;font-weight:600">
                                                                                                                                                             Congratulations !

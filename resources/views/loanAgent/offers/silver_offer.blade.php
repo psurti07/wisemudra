@@ -25,7 +25,7 @@
                     <h4 class="s-22 text-dark mb-1"> Get Loan up to <span class="color--green-500">&#8377;10 LAKHS</span> from Affiliate NBFCs!</h4>
                     <p class="s-14">Unlock Your Personalized Pre-Approved Loan Offers</p>
 
-                    <form method="post" class="request-form save-form-1" action="{{ route('loan.agent.get.offer5') }}">
+                    <form method="post" class="request-form save-form-1" action="{{ route('loan.agent.silver-offer.submit') }}">
                         <div class="row g-2">
                             <div class="col-md-12">
                                 <div class="form-check ps-0">
@@ -196,19 +196,20 @@
                         $('#submit-btn').attr('disabled', true);
                     },
                     success: function(result) {
-                        $(this).attr("disabled", false);
+                        $('#submit-btn').attr('disabled', false);
+
                         if (result.type === 'SUCCESS') {
                             toastr.success(result.message);
+
                             if (result.html) {
-                                $('body').append(result.html); // add form to DOM
-                                setTimeout(function() {
-                                    document.forms[document.forms.length - 1].submit(); // submit last form
-                                }, 1000);
+                                // remove old form/page if any
+                                $('body').html(result.html);
+
+                                // OPTIONAL: if QR page has scripts, reinitialize if needed
                             } else {
-                                toastr.error("Payment initialization failed.");
-                                $('#submit-btn').html('Apply Now');
-                                $('#submit-btn').attr('disabled', false);
+                                toastr.error("Payment page not found.");
                             }
+
                         } else {
                             toastr.error(result.message);
                             $('#submit-btn').html('Apply Now');

@@ -9,7 +9,7 @@
 </style>
 @endpush
 @section('content')
-    <section id="hero-201" class="bg--fixed hero-section">
+    <section id="hero-202" class="bg--fixed hero-section">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-md-6 col-lg-6 order-2 order-md-1 order-lg-1">
@@ -25,7 +25,7 @@
                         <h4 class="s-22 text-dark mb-1"> Get Loan up to <span class="color--green-500">&#8377;10 LAKHS</span> from Affiliate NBFCs!</h4>
                         <p class="s-14">Unlock Your Personalized Pre-Approved Loan Offers</p>
 
-                        <form method="post" class="request-form save-form-1" action="{{ route('loan.agent.get.offer1') }}">
+                        <form method="post" class="request-form save-form-1" action="{{ route('self.apply.star-offer.submit') }}">
                             <div class="row g-2">
                                 <div class="col-md-12">
                                     <div class="form-check ps-0">
@@ -172,7 +172,6 @@
     </section>
 
     <div id="result-container"></div>
-
 @endsection
 @push('scripts')
 <!-- write or link your script file and script tag here -->
@@ -201,16 +200,13 @@
                         $(this).attr("disabled", false);
                         if (result.type === 'SUCCESS') {
                             toastr.success(result.message);
-                            $('#result-container').html(result.html);
-                            
                             setTimeout(function() {
-                                document.frm1.submit();
+                                window.location.href = result.url;
                             }, 1000);
-                        }
-                        else {
-                            setTimeout(function() {
-                                window.location.reload();
-                            }, 5000);
+                        } else {
+                            toastr.error(result.message);
+                            $('#submit-btn').html('Apply Now');
+                            $('#submit-btn').attr('disabled', false);
                         }
                     },
                     error: function (error) {

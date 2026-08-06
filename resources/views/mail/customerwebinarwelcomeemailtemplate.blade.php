@@ -9,7 +9,8 @@
 
 <body style="margin: 0;">
     <div class="es-wrapper-color" style="background-color: #f9f9f9;">
-        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="
+        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0"
+            style="
                 mso-table-lspace: 0;
                 mso-table-rspace: 0;
                 border-collapse: collapse;
@@ -24,7 +25,8 @@
             <tbody>
                 <tr>
                     <td class="es-m-margin" valign="top" style="padding: 0; margin: 0;">
-                        <table class="es-header" cellspacing="0" cellpadding="0" align="center" style="
+                        <table class="es-header" cellspacing="0" cellpadding="0" align="center"
+                            style="
                                 mso-table-lspace: 0;
                                 mso-table-rspace: 0;
                                 border-collapse: collapse;
@@ -94,32 +96,49 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding-top: 10px; padding-bottom: 0px; margin: 0; line-height: 2rem;  border-top-right-radius:12px; border-top-left-radius:12px;">
-                                                                                        <img src="https://wisemudra.com/front/webinar/images/logo/logo.png" alt="Wisemudra Webinar" width="225px">
+                                                                                        <img src="https://wisemudra.com/front/webinar/images/logo/logo.png"
+                                                                                            alt="Wisemudra Webinar"
+                                                                                            width="225px">
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="left"
                                                                                         style="padding: 0px; margin: 0; line-height: 2rem;">
-                                                                                        <table class="es-content" cellspacing="0" cellpadding="0" align="center"
+                                                                                        <table class="es-content"
+                                                                                            cellspacing="0"
+                                                                                            cellpadding="0"
+                                                                                            align="center"
                                                                                             style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; table-layout: fixed !important; width: 100%;">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <td align="center" style="padding: 0; margin: 0;">
-                                                                                                        <table class="es-content-body" cellspacing="0" cellpadding="0" align="center"
+                                                                                                    <td align="center"
+                                                                                                        style="padding: 0; margin: 0;">
+                                                                                                        <table
+                                                                                                            class="es-content-body"
+                                                                                                            cellspacing="0"
+                                                                                                            cellpadding="0"
+                                                                                                            align="center"
                                                                                                             style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; background-color: transparent; width: 600px;">
                                                                                                             <tbody>
                                                                                                                 <tr>
                                                                                                                     <td align="left"
                                                                                                                         style="  margin: 0; padding-top: 10px; padding-bottom: 0px;border-radius: 15px;">
-                                                                                                                        <table cellpadding="0" cellspacing="0" class="es-left"
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            class="es-left"
                                                                                                                             align="left"
                                                                                                                             style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; float: left;">
                                                                                                                             <tbody>
                                                                                                                                 <tr>
-                                                                                                                                    <td class="es-m-p20b" align="left"
+                                                                                                                                    <td class="es-m-p20b"
+                                                                                                                                        align="left"
                                                                                                                                         style="padding: 0; margin: 0; width: 600px;">
-                                                                                                                                        <table cellpadding="0" cellspacing="0"
-                                                                                                                                            width="100%" bgcolor="#ffffff"
+                                                                                                                                        <table
+                                                                                                                                            cellpadding="0"
+                                                                                                                                            cellspacing="0"
+                                                                                                                                            width="100%"
+                                                                                                                                            bgcolor="#ffffff"
                                                                                                                                             style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: separate; border-spacing: 0; background-color: #fff; border-radius: 15px;"
                                                                                                                                             role="presentation">
                                                                                                                                             <tbody>
@@ -128,43 +147,156 @@
                                                                                                                                                         style="padding: 20px;   margin: 0; line-height: 2rem;background-color:#e6f7f3;border-top-right-radius:12px;border-top-left-radius:12px;">
                                                                                                                                                         <p
                                                                                                                                                             style="font-size:2.2rem;color:#00a168;font-weight:600">
-                                                                                                                                                            Congratulations !
+                                                                                                                                                            Congratulations
+                                                                                                                                                            !
                                                                                                                                                         </p>
                                                                                                                                                     </td>
                                                                                                                                                 </tr>
                                                                                                                                                 <tr>
                                                                                                                                                     <td align="left"
                                                                                                                                                         style="font-family: Poppins,sans-serif,Montserrat, Google Sans, Segoe UI, Roboto, Arial;padding: 20px; margin: 0; line-height: 2rem;">
-                                                                                                                                                        <p>👋 Hi {{ $fullname }},</p>
-                                                                                                                                                        <p>
-                                                                                                                                                            🎉 Thank you for registering for our upcoming webinar.
-                                                                                                                                                        </p>
-                                                                                                                                                        <p><strong>{{ $fullname }} Your Registered Webinar</strong></p>
-                                                                                                                                                        <p>
-                                                                                                                                                            Your seat is confirmed! 🎉
+                                                                                                                                                        <p>👋
+                                                                                                                                                            Hi
+                                                                                                                                                            {{ $fullname }},
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            This webinar will show you how to shift from a traditional loan agent model to a high-earning, fully digital loan agent business with PAN-India clients.
+                                                                                                                                                            🎉
+                                                                                                                                                            Thank
+                                                                                                                                                            you
+                                                                                                                                                            for
+                                                                                                                                                            registering
+                                                                                                                                                            for
+                                                                                                                                                            our
+                                                                                                                                                            upcoming
+                                                                                                                                                            webinar.
+                                                                                                                                                        </p>
+                                                                                                                                                        <p><strong>{{ $fullname }}
+                                                                                                                                                                Your
+                                                                                                                                                                Registered
+                                                                                                                                                                Webinar</strong>
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            📌 Important: Join Our WhatsApp Community
+                                                                                                                                                            Your
+                                                                                                                                                            seat
+                                                                                                                                                            is
+                                                                                                                                                            confirmed!
+                                                                                                                                                            🎉
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            All important updates, reminders and the webinar access link will be shared exclusively in our WhatsApp Community.
+                                                                                                                                                            This
+                                                                                                                                                            webinar
+                                                                                                                                                            will
+                                                                                                                                                            show
+                                                                                                                                                            you
+                                                                                                                                                            how
+                                                                                                                                                            to
+                                                                                                                                                            shift
+                                                                                                                                                            from
+                                                                                                                                                            a
+                                                                                                                                                            traditional
+                                                                                                                                                            loan
+                                                                                                                                                            agent
+                                                                                                                                                            model
+                                                                                                                                                            to
+                                                                                                                                                            a
+                                                                                                                                                            high-earning,
+                                                                                                                                                            fully
+                                                                                                                                                            digital
+                                                                                                                                                            loan
+                                                                                                                                                            agent
+                                                                                                                                                            business
+                                                                                                                                                            with
+                                                                                                                                                            PAN-India
+                                                                                                                                                            clients.
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            👉 Please join now to avoid missing any critical information: <a href="https://kbzp.in/KRDTBZ/srrju"> https://kbzp.in/KRDTBZ/srrju</a>
+                                                                                                                                                            📌
+                                                                                                                                                            Important:
+                                                                                                                                                            Join
+                                                                                                                                                            Our
+                                                                                                                                                            WhatsApp
+                                                                                                                                                            Community
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            If you have any questions or need help at any stage, please feel free to call our customer care
-                                                                                                                                                            <a href="tel:'{{ config('constant.COMPANY_MOBILE') }}'">{{ config('constant.COMPANY_MOBILE') }}</a>.
+                                                                                                                                                            All
+                                                                                                                                                            important
+                                                                                                                                                            updates,
+                                                                                                                                                            reminders
+                                                                                                                                                            and
+                                                                                                                                                            the
+                                                                                                                                                            webinar
+                                                                                                                                                            access
+                                                                                                                                                            link
+                                                                                                                                                            will
+                                                                                                                                                            be
+                                                                                                                                                            shared
+                                                                                                                                                            exclusively
+                                                                                                                                                            in
+                                                                                                                                                            our
+                                                                                                                                                            WhatsApp
+                                                                                                                                                            Community.
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            We’re excited to help you start your journey as a high-earning online loan agent! 🚀
+                                                                                                                                                            👉
+                                                                                                                                                            Please
+                                                                                                                                                            join
+                                                                                                                                                            now
+                                                                                                                                                            to
+                                                                                                                                                            avoid
+                                                                                                                                                            missing
+                                                                                                                                                            any
+                                                                                                                                                            critical
+                                                                                                                                                            information:
+                                                                                                                                                            <a
+                                                                                                                                                                href="https://kbzp.in/KRDTBZ/srrju">
+                                                                                                                                                                https://kbzp.in/KRDTBZ/srrju</a>
                                                                                                                                                         </p>
                                                                                                                                                         <p>
-                                                                                                                                                            Warm regards, <br>
-                                                                                                                                                            Team Nowofloan
+                                                                                                                                                            If
+                                                                                                                                                            you
+                                                                                                                                                            have
+                                                                                                                                                            any
+                                                                                                                                                            questions
+                                                                                                                                                            or
+                                                                                                                                                            need
+                                                                                                                                                            help
+                                                                                                                                                            at
+                                                                                                                                                            any
+                                                                                                                                                            stage,
+                                                                                                                                                            please
+                                                                                                                                                            feel
+                                                                                                                                                            free
+                                                                                                                                                            to
+                                                                                                                                                            call
+                                                                                                                                                            our
+                                                                                                                                                            customer
+                                                                                                                                                            care
+                                                                                                                                                            <a
+                                                                                                                                                                href="tel:'{{ config('constant.COMPANY_MOBILE') }}'">{{ config('constant.COMPANY_MOBILE') }}</a>.
+                                                                                                                                                        </p>
+                                                                                                                                                        <p>
+                                                                                                                                                            We’re
+                                                                                                                                                            excited
+                                                                                                                                                            to
+                                                                                                                                                            help
+                                                                                                                                                            you
+                                                                                                                                                            start
+                                                                                                                                                            your
+                                                                                                                                                            journey
+                                                                                                                                                            as
+                                                                                                                                                            a
+                                                                                                                                                            high-earning
+                                                                                                                                                            online
+                                                                                                                                                            loan
+                                                                                                                                                            agent!
+                                                                                                                                                            🚀
+                                                                                                                                                        </p>
+                                                                                                                                                        <p>
+                                                                                                                                                            Warm
+                                                                                                                                                            regards,
+                                                                                                                                                            <br>
+                                                                                                                                                            Team
+                                                                                                                                                            Nowofloan
                                                                                                                                                         </p>
                                                                                                                                                     </td>
                                                                                                                                                 </tr>
@@ -201,7 +333,8 @@
                         </table>
                         <!-- congratulation section ends -->
                         <!-- Footer Section Starts -->
-                        <table class="es-footer" cellspacing="0" cellpadding="0" align="center" style="
+                        <table class="es-footer" cellspacing="0" cellpadding="0" align="center"
+                            style="
                                 mso-table-lspace: 0;
                                 mso-table-rspace: 0;
                                 border-collapse: collapse;
@@ -226,7 +359,8 @@
                                                             style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0;">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="es-m-p0r" valign="top" align="center"
+                                                                    <td class="es-m-p0r" valign="top"
+                                                                        align="center"
                                                                         style="padding: 0; margin: 0; width: 560px;">
                                                                         <table width="100%" cellspacing="0"
                                                                             cellpadding="0" role="presentation"
@@ -235,7 +369,8 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding: 0; margin: 0;">
-                                                                                        <p style="
+                                                                                        <p
+                                                                                            style="
                                                                                                 margin: 0;
                                                                                                 -webkit-text-size-adjust: none;
                                                                                                 -ms-text-size-adjust: none;
@@ -274,7 +409,8 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding: 10px; margin: 0; font-size: 0;">
-                                                                                        <table border="0" width="80%"
+                                                                                        <table border="0"
+                                                                                            width="80%"
                                                                                             height="100%"
                                                                                             cellpadding="0"
                                                                                             cellspacing="0"
@@ -293,7 +429,8 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding: 0; margin: 0; padding-top: 10px;">
-                                                                                        <p style="
+                                                                                        <p
+                                                                                            style="
                                                                                                 margin: 0;
                                                                                                 -webkit-text-size-adjust: none;
                                                                                                 -ms-text-size-adjust: none;
@@ -304,15 +441,17 @@
                                                                                                 font-size: 14px;
                                                                                                 line-height: 24px;
                                                                                                 ">
-                                                                                            <strong>{{ config('constant.COMPANY_NAME') }} </strong><br>{{ config('constant.COMPANY_ADDRESS') }}<br>
+                                                                                            <strong>{{ config('constant.COMPANY_NAME') }}
+                                                                                            </strong><br>{{ config('constant.COMPANY_ADDRESS') }}<br>
                                                                                             Mobile:
                                                                                             <a target="_blank"
                                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                                                href="tel:'{{ str_ireplace(' ','-',config('constant.COMPANY_MOBILE')) }}'>
-                                                                                                    '{{ str_ireplace(' ','-',config('constant.COMPANY_MOBILE')) }}'
+                                                                                                href="tel:'{{ str_ireplace(' ', '-', config('constant.COMPANY_MOBILE')) }}'>
+                                                                                                    '{{ str_ireplace(' ', '-', config('constant.COMPANY_MOBILE')) }}'
                                                                                             </a>
                                                                                             | Email:
-                                                                                            <a href=" mailto:{{ config('constant.INFO_EMAIL') }}"
+                                                                                            <a href="
+                                                                                                mailto:{{ config('constant.INFO_EMAIL') }}"
                                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;">
                                                                                                 {{ config('constant.INFO_EMAIL') }}
                                                                                             </a>
@@ -333,7 +472,7 @@
                                                                                                         valign="top"
                                                                                                         style="padding: 0; margin: 0; padding-right: 10px;">
                                                                                                         <a target="_blank"
-                                                                                                            href="https://twitter.com/Wisemudra"
+                                                                                                            href="{{ config('constant.SM_TWITTER') }}"
                                                                                                             style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -361,7 +500,7 @@
                                                                                                         valign="top"
                                                                                                         style="padding: 0; margin: 0; padding-right: 10px;">
                                                                                                         <a target="_blank"
-                                                                                                            href="https://in.pinterest.com/wisemudra/"
+                                                                                                            href="{{ config('constant.SM_PINTEREST') }}"
                                                                                                             style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -393,7 +532,7 @@
                                                                                                         valign="top"
                                                                                                         style="padding: 0; margin: 0; padding-right:10px">
                                                                                                         <a target="_blank"
-                                                                                                            href="http://www.youtube.com/@Wisemudra"
+                                                                                                            href="{{ config('constant.SM_YOUTUBE') }}"
                                                                                                             style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -426,7 +565,7 @@
                                                                                                         valign="top"
                                                                                                         style="padding: 0; margin: 0;padding-right:10px">
                                                                                                         <a target="_blank"
-                                                                                                            href="https://www.facebook.com/@Wisemudra.in"
+                                                                                                            href="{{ config('constant.SM_FACEBOOK') }}"
                                                                                                             style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -458,7 +597,7 @@
                                                                                                         valign="top"
                                                                                                         style="padding: 0; margin: 0;">
                                                                                                         <a target="_blank"
-                                                                                                            href="https://www.instagram.com/wisemudra/"
+                                                                                                            href="{{ config('constant.SM_INSTAGRAM') }}"
                                                                                                             style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -522,7 +661,8 @@
                                                                                 <tr>
                                                                                     <td align="center"
                                                                                         style="padding: 0; margin: 0;">
-                                                                                        <p style="
+                                                                                        <p
+                                                                                            style="
                                                                                                 margin: 0;
                                                                                                 -webkit-text-size-adjust: none;
                                                                                                 -ms-text-size-adjust: none;
@@ -532,7 +672,8 @@
                                                                                                 color: #000f26;
                                                                                                 font-size: 12px;
                                                                                                 ">
-                                                                                            {{ date('Y') }} &copy; {{ config('constant.COMPANY_NAME') }}
+                                                                                            {{ date('Y') }} &copy;
+                                                                                            {{ config('constant.COMPANY_NAME') }}
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>

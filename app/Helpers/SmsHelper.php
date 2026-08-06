@@ -14,7 +14,7 @@ if(!function_exists('sendSingleSMS')){
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
     		$username = config('constant.SMS_OBB_LA_USERNAME');
-            $password = env('SMS_OBB_LA_PASSWORD');
+            $password = config('constant.SMS_OBB_LA_PASSWORD');
             $sender_id = DB::table('info_pages')->where('slug','la-senderid-otp')->first()->content;
     	} else if ($panel == 'self') {
     		$username = config('constant.SMS_OBB_USERNAME');
@@ -48,7 +48,7 @@ if(!function_exists('sendDynamicSMS')){
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
     		$username = config('constant.SMS_OBB_LA_USERNAME');
-            $password = env('SMS_OBB_LA_PASSWORD');
+            $password = config('constant.SMS_OBB_LA_PASSWORD');
     	} else if ($panel == 'self') {
     		$username = config('constant.SMS_OBB_USERNAME');
             $password = config('constant.SMS_OBB_PASSWORD');

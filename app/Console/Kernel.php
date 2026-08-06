@@ -19,22 +19,22 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         /*$schedule->command('app:customers-plan-expire')->dailyAt('01:00');*/
-        $schedule->command('sms:sa-lead-cycle')->everyFifteenMinutes();
-        $schedule->command('sms:la-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('sms:sa-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('sms:la-lead-cycle')->everyFifteenMinutes();
         // $schedule->command('sms:sa-customer-cycle')->everyFifteenMinutes();
        
-        $schedule->command('whatsapp:la-lead-cycle')->everyFifteenMinutes();
-        $schedule->command('whatsapp:sa-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('whatsapp:la-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('whatsapp:sa-lead-cycle')->everyFifteenMinutes();
         // $schedule->command('whatsapp:blog-remarketing-cycle')->everyFifteenMinutes();
         
-        $schedule->command('sms:sa-customer-service-closed-cycle')->everyFifteenMinutes();
-        $schedule->command('app:customers-plan-expire')->dailyAt('11:00');
+        // $schedule->command('sms:sa-customer-service-closed-cycle')->everyFifteenMinutes();
+        // $schedule->command('app:customers-plan-expire')->dailyAt('11:00');
 
-        $schedule->command('whatsapp:webinar-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('whatsapp:webinar-lead-cycle')->everyFifteenMinutes();
 
-        $schedule->command('sms:webinar-lead-cycle')->everyFifteenMinutes();
+        // $schedule->command('sms:webinar-lead-cycle')->everyFifteenMinutes();
 
-        $schedule->command('send:webinar-data-hourly')->hourly();
+        // $schedule->command('send:webinar-data-hourly')->hourly();
     }
 
     /**

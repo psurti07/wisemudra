@@ -25,7 +25,7 @@
                         <h4 class="s-22 text-dark mb-1"> Get Loan up to <span class="color--green-500">&#8377;10 LAKHS</span> from Affiliate NBFCs!</h4>
                         <p class="s-14">Unlock Your Personalized Pre-Approved Loan Offers</p>
 
-                        <form method="post" class="request-form save-form-1" action="{{ route('self.apply.get.offer4') }}">
+                        <form method="post" class="request-form save-form-1" action="{{ route('self.apply.prime-offer.submit') }}">
                             <div class="row g-2">
                                 <div class="col-md-12">
                                     <div class="form-check ps-0">
@@ -171,7 +171,6 @@
         </div>
     </section>
 
-    <div id="result-container"></div>
 @endsection
 @push('scripts')
 <!-- write or link your script file and script tag here -->
@@ -202,7 +201,7 @@
                             toastr.success(result.message);
                             setTimeout(function() {
                                 window.location.href = result.url;
-                            }, 1000);
+                            }, 5000);
                         } else {
                             toastr.error(result.message);
                             $('#submit-btn').html('Apply Now');

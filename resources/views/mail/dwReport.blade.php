@@ -77,14 +77,14 @@
                                                 style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; background-color: transparent; width: 600px;">
                                                 <tbody>
                                                     <tr>
-                                                        <td align="left"
+                                                        <td align="center"
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table class="es-left" cellspacing="0" cellpadding="0"
-                                                                align="left"
+                                                                align="center"
                                                                 style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; float: center;">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td align="left"
+                                                                        <td align="center"
                                                                             class="es-m-txt-c"
                                                                             style="padding: 0; margin: 0; padding-top: 5px; font-size: 0;">
                                                                             <a target="_blank"
@@ -128,7 +128,7 @@
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #1e7a35;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #02a6fc;font-family: Poppins, sans-serif;">
                                                                                 Personal Details / Subscription Details
                                                                             </h3>
                                                                             <hr>
@@ -200,7 +200,7 @@
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #1e7a35;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #02a6fc;font-family: Poppins, sans-serif;">
                                                                                 Agent Details
                                                                             </h3>
                                                                             <hr>
@@ -215,7 +215,7 @@
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td><h5 style="margin:0">{{ $agent->fullname ?? 'wisemudra Support' }}</h5></td>
-                                                                                                <td><h5 style="margin:0">+91 {{ $agent->mobile ?? '97242 06519' }}</h5></td>
+                                                                                                <td><h5 style="margin:0">+91 {{ $agent->mobile ?? 'config("constant.COMPANY_MOBILE")' }}</h5></td>
                                                                                                 <td><h5 style="margin:0">{{ $agent->emailid ?? 'info@wisemudra.com' }}</h5></td>
                                                                                             </tr>
                                                                                         </table>
@@ -257,10 +257,10 @@
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #1e7a35;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #02a6fc;font-family: Poppins, sans-serif;">
                                                                                 Pre-Approved Offers
                                                                             </h3>
-                                                                            <span style="display:flex; justify-content:center; color: #1e7a35;font-family: Poppins, sans-serif;">Loan Amount - ₹&nbsp;<strong>{{ formatePriceIndia($offers[0]->loanAmount) }}</strong></span>
+                                                                            <span style="display:flex; justify-content:center; color: #02a6fc;font-family: Poppins, sans-serif;">Loan Amount - ₹&nbsp;<strong>{{ formatePriceIndia($offers[0]->loanAmount) }}</strong></span>
                                                                             <hr>
                                                                             <table class="offers-table">
                                                                                 <thead>
@@ -321,7 +321,7 @@
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #1e7a35; font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #02a6fc; font-family: Poppins, sans-serif;">
                                                                                 Service Timeline
                                                                             </h3>
                                                                             <hr>

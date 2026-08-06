@@ -52,7 +52,7 @@
                                         <hr class="divider my-3"/>
 
                                         <div class="text-center">
-                                            <a href="{{ route('self.apply.offer4') }}" class="btn btn-xs r-04 btn--theme hover--tra-black">Try another payment method</a>
+                                            <a href="{{ route('self.apply.star.offer') }}" class="btn btn-xs r-04 btn--theme hover--tra-black">Try another payment method</a>
                                         
                                             <p class="text-center s-12 mt-20">If you've any queries/ issues, kindly raise a request here: <a href="{{ route('front.raise.request') }}" class="text-success">Click Here</a></p>
                                         </div>

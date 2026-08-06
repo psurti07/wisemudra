@@ -111,7 +111,7 @@
                             <div class="d-flex flex-stack">
                                 <div class="text-gray-700 fw-semibold fs-6 me-2">Agent Mobile</div>
                                 <div class="d-flex align-items-senter">
-                                    <span class="text-gray-900 fw-bolder fs-6">+91&nbsp;{{ $agentDetails->mobile ?? '+91-94292-14352' }}</span>
+                                    <span class="text-gray-900 fw-bolder fs-6">+91&nbsp;{{ $agentDetails->mobile ?? 'config("constant.COMPANY_MOBILE")' }}</span>
                                 </div>
                             </div>
                             <div class="separator separator-dashed my-3"></div>

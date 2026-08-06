@@ -460,7 +460,7 @@
                                                                     role="presentation"
                                                                     >
                                                                     <tr>
-                                                                        <td align="left" style="padding: 20px; margin: 0; line-height: 2rem;border: 1px solid green;
+                                                                        <td align="left" style="padding: 20px; margin: 0; line-height: 2rem;border: 1px solid #02a6fc;
                                                                             border-radius: 12px;
                                                                             background-color: #E9F2FB;">
                                                                             @yield('content')
@@ -583,13 +583,13 @@
                                                                                                 Mobile:
                                                                                                 <a target="_blank"
                                                                                                     style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                                                    href="tel:09724206519">
-                                                                                                +91-97242-06519
+                                                                                                    href="tel:{{ config('constant.COMPANY_MOBILE') }}">
+                                                                                                {{ config('constant.COMPANY_MOBILE') }}
                                                                                                 </a>
                                                                                                 | Email:
-                                                                                                <a href="mailto:info@wisemudra.com"
+                                                                                                <a href="mailto:{{ config('constant.COMPANY_INFO_MAIL') }}"
                                                                                                     style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;">
-                                                                                                info@wisemudra.com
+                                                                                                {{ config('constant.COMPANY_INFO_MAIL') }}
                                                                                                 </a>
                                                                                             </p>
                                                                                         </td>
@@ -608,7 +608,7 @@
                                                                                                             valign="top"
                                                                                                             style="padding: 0; margin: 0; padding-right: 10px;">
                                                                                                             <a target="_blank"
-                                                                                                                href="https://twitter.com/Wisemudra"
+                                                                                                                href="{{ config('constant.SM_TWITTER') }}"
                                                                                                                 style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -636,7 +636,7 @@
                                                                                                             valign="top"
                                                                                                             style="padding: 0; margin: 0; padding-right: 10px;">
                                                                                                             <a target="_blank"
-                                                                                                                href="https://in.pinterest.com/wisemudra/"
+                                                                                                                href="{{ config('constant.SM_PINTEREST') }}"
                                                                                                                 style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -668,7 +668,7 @@
                                                                                                             valign="top"
                                                                                                             style="padding: 0; margin: 0; padding-right:10px">
                                                                                                             <a target="_blank"
-                                                                                                                href="http://www.youtube.com/@Wisemudra"
+                                                                                                                href="{{ config('constant.SM_YOUTUBE') }}"
                                                                                                                 style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -701,7 +701,7 @@
                                                                                                             valign="top"
                                                                                                             style="padding: 0; margin: 0;padding-right:10px">
                                                                                                             <a target="_blank"
-                                                                                                                href="https://www.facebook.com/@Wisemudra.in"
+                                                                                                                href="{{ config('constant.SM_FACEBOOK') }}"
                                                                                                                 style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;
@@ -733,7 +733,7 @@
                                                                                                             valign="top"
                                                                                                             style="padding: 0; margin: 0;">
                                                                                                             <a target="_blank"
-                                                                                                                href="https://www.instagram.com/wisemudra/"
+                                                                                                                href="{{ config('constant.SM_INSTAGRAM') }}"
                                                                                                                 style="
                                                                                                                 -webkit-text-size-adjust: none;
                                                                                                                 -ms-text-size-adjust: none;

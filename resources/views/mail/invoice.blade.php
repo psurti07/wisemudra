@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="" />
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ config('constant.APP_NAME') }}</title>
     <style>
         /*--------------------------------------------------------------
 >> TABLE OF CONTENTS:

@@ -39,7 +39,7 @@
                 <div id="hero-8-form" class="r-06">
                     <h4 class="s-14"><span class="color--purple-500 s-28">Let’s Begin!</span><br />Fill in the details below to get started.</h4>
 
-                    <form method="post" action="{{ route('webinar.storeStep1') }}" class="request-form signup-form needs-validation " novalidate>
+                    <form method="post" action="{{ route('webinar.user.registration.submit') }}" class="request-form signup-form needs-validation " novalidate>
                         <div class="row g-2">
                             <div class="col-md-12">
                                 <label for="">First Name <span class="text-danger">*</span></label>
@@ -70,7 +70,7 @@
                             </div>
                             <p class="mb-0 s-14 text-start text-dark">
                                 <input type="checkbox" checked="checked" id="termsCheck" name="accept_tnc" />
-                                &nbsp;<small>By submitting this form, you accept our <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Service</a> and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none">Privacy Policy</a> and receive communication from {{ env('APP_NAME') }} via SMS, E-Mail and WhatsApp.</small>
+                                &nbsp;<small>By submitting this form, you accept our <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Service</a> and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none">Privacy Policy</a> and receive communication from {{ config('constant.APP_NAME') }} via SMS, E-Mail and WhatsApp.</small>
                             </p>
                             @component('components.ajax-error', ['field' => 'terms']) @endcomponent
                         </div>

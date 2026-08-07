@@ -116,7 +116,7 @@ class LoanAgentController extends Controller
                     'utm_campaign' => Cookie::get('utm_campaign'),
                     'utm_medium' => Cookie::get('utm_medium'),
                     'utm_referral' => Cookie::get('utm_referral'),
-                    'source_id' => Cookie::get('sourceId'),
+                    'source_id' => session('sourceId'),
                     'client_ip' => $request->ip()
                 ]);
 
@@ -125,7 +125,7 @@ class LoanAgentController extends Controller
                     DB::table('fb_ads_entry')->insertGetId([
                         'rec_date' => now(),
                         'userid' => $user->id,
-                        'fbclid' => Cookie::get('sourceId')
+                        'fbclid' => session('sourceId')
                     ]);
                 }
 
@@ -273,7 +273,7 @@ class LoanAgentController extends Controller
                     'utm_campaign' => Cookie::get('utm_campaign'),
                     'utm_medium' => Cookie::get('utm_medium'),
                     'utm_referral' => Cookie::get('utm_referral'),
-                    'source_id' => Cookie::get('sourceId'),
+                    'source_id' => session('sourceId'),
                     'client_ip' => $request->ip()
                 ]);
 
@@ -281,7 +281,7 @@ class LoanAgentController extends Controller
                 $fbid = DB::table('fb_ads_entry')->insertGetId([
                     'rec_date' => now(),
                     'userid' => $userid,
-                    'fbclid' => Cookie::get('sourceId')
+                    'fbclid' => session('sourceId')
                 ]);
                 /* fb ends code */
                 //Cookie::queue('loan_type',$request->input('loan_amount') > 500000 ? 1 : 1,$this->lifetime,'/',null,false,true,false,'lax');
@@ -516,7 +516,7 @@ class LoanAgentController extends Controller
             $returnUrl = route('api.loan.agent.buy.digital.agent.plan');
             $callbackUrl = route('loan.agent.callbackUrl');
 
-            if (env('ZAAKPAY_ENV') == "PRODUCTION") {
+            if (config('constant.ZAAKPAY_ENV') == "PRODUCTION") {
                 $curlurl = "https://api.zaakpay.com/api/paymentTransact/V8";
             } else {
                 $curlurl = "https://zaakstaging.zaakpay.com/api/paymentTransact/V8";
@@ -524,7 +524,7 @@ class LoanAgentController extends Controller
 
             $firstname = (Cookie::get('fullname') != "") ? Cookie::get('fullname') : Cookie::get('email');
             $zaakpayPostData = array(
-                "merchantIdentifier" => env('ZAAKPAY_MERCHANT_IDENTIFIER'),
+                "merchantIdentifier" => config('constant.ZAAKPAY_MERCHANT_IDENTIFIER'),
                 "orderId" => $orderid,
                 "returnUrl" => $returnUrl,
                 "currency" => 'INR',
@@ -541,7 +541,7 @@ class LoanAgentController extends Controller
                 $checksumData .= $key . '=' . $value . '&';
             }
 
-            $checksum = hash_hmac('sha256', $checksumData, env('ZAAKPAY_SECRET_KEY'));
+            $checksum = hash_hmac('sha256', $checksumData, config('constant.ZAAKPAY_SECRET_KEY'));
 
             $zaakPayData = array(
                 'rec_date' => now(),
@@ -620,7 +620,7 @@ class LoanAgentController extends Controller
                 }
             }
 
-            $checksum = hash_hmac('sha256', $checksumData, env('ZAAKPAY_SECRET_KEY'));
+            $checksum = hash_hmac('sha256', $checksumData, config('constant.ZAAKPAY_SECRET_KEY'));
 
             /*if ($checksum == $recd_checksum) {*/
             $paymentData = ZaakpayEntry::where('orderid', $orderId)->first();
@@ -1081,18 +1081,18 @@ class LoanAgentController extends Controller
             $orderId = number_format(microtime(true) * 1000, 0, '.', '');
             $returnUrl = 'https://wisemudra.com/loan-agent/great-deal-offer-response';
 
-            if (env('SABPAISA_MODE') == "PROD") {
+            if (config('constant.SABPAISA_MODE') == "PROD") {
                 $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
             } else {
                 $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
             }
             $fullname = trim($first_name) . " " . trim($last_name);
             /* subpaisa encrypt data */
-            $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
+            $encData = "?clientCode=" . config('constant.SABPAISA_CLIENT_CODE') . "&transUserName=" . config('constant.SABPAISA_USERNAME') . "&transUserPassword=" . config('constant.SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
 
             /* generate subpaisa paymenturl */
             $AesCipher = new Authuntication();
-            $encryptData = $AesCipher->encrypt(env('SABPAISA_AUTH_KEY'), env('SABPAISA_AUTH_IV'), $encData);
+            $encryptData = $AesCipher->encrypt(config('constant.SABPAISA_AUTH_KEY'), config('constant.SABPAISA_AUTH_IV'), $encData);
 
             $subpaisaData = array(
                 'rec_date' => date('Y-m-d H:i:s'),
@@ -1106,7 +1106,7 @@ class LoanAgentController extends Controller
             $response = SubpaisaEntry::insert($subpaisaData);
             $html = view('pg.pay', [
                 'data' => $encryptData,
-                'clientCode' => env('SABPAISA_CLIENT_CODE'),
+                'clientCode' => config('constant.SABPAISA_CLIENT_CODE'),
                 'action' => $curlurl
             ])->render();
 
@@ -1124,8 +1124,8 @@ class LoanAgentController extends Controller
         try {
             $meta = selfApplyMeta();
             $query = $request->input('encResponse');
-            $authKey = env('SABPAISA_AUTH_KEY');
-            $authIV = env('SABPAISA_AUTH_IV');
+            $authKey = config('constant.SABPAISA_AUTH_KEY');
+            $authIV = config('constant.SABPAISA_AUTH_IV');
 
             $AesCipher = new Authuntication();
             $decText = $AesCipher->decrypt($authKey, $authIV, $query);
@@ -1334,7 +1334,7 @@ class LoanAgentController extends Controller
             Session::save();
             Cache::put('user_password', $password, $this->lifetime);
 
-            if (env('LYRA_MODE') == "PROD") {
+            if (config('constant.LYRA_MODE') == "PROD") {
                 $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
             } else {
                 $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
@@ -1808,7 +1808,7 @@ class LoanAgentController extends Controller
             Session::save();
             Cache::put('user_password', $password, $this->lifetime);
 
-            if (env('LYRA_MODE') == "PROD") {
+            if (config('constant.LYRA_MODE') == "PROD") {
                 $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
             } else {
                 $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
@@ -2019,18 +2019,18 @@ class LoanAgentController extends Controller
             $orderId = number_format(microtime(true) * 1000, 0, '.', '');
             $returnUrl = 'https://wisemudra.com/loan-agent/big-benefit-response';
 
-            if (env('SABPAISA_MODE') == "PROD") {
+            if (config('constant.SABPAISA_MODE') == "PROD") {
                 $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
             } else {
                 $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
             }
             $fullname = trim($first_name) . " " . trim($last_name);
             /* subpaisa encrypt data */
-            $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
+            $encData = "?clientCode=" . config('constant.SABPAISA_CLIENT_CODE') . "&transUserName=" . config('constant.SABPAISA_USERNAME') . "&transUserPassword=" . config('constant.SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
 
             /* generate subpaisa paymenturl */
             $AesCipher = new Authuntication();
-            $encryptData = $AesCipher->encrypt(env('SABPAISA_AUTH_KEY'), env('SABPAISA_AUTH_IV'), $encData);
+            $encryptData = $AesCipher->encrypt(config('constant.SABPAISA_AUTH_KEY'), config('constant.SABPAISA_AUTH_IV'), $encData);
 
 
             $subpaisaData = array(
@@ -2045,7 +2045,7 @@ class LoanAgentController extends Controller
             $response = SubpaisaEntry::insert($subpaisaData);
             $html = view('pg.pay', [
                 'data' => $encryptData,
-                'clientCode' => env('SABPAISA_CLIENT_CODE'),
+                'clientCode' => config('constant.SABPAISA_CLIENT_CODE'),
                 'action' => $curlurl
             ])->render();
 
@@ -2063,8 +2063,8 @@ class LoanAgentController extends Controller
         try {
             $meta = selfApplyMeta();
             $query = $request->input('encResponse');
-            $authKey = env('SABPAISA_AUTH_KEY');
-            $authIV = env('SABPAISA_AUTH_IV');
+            $authKey = config('constant.SABPAISA_AUTH_KEY');
+            $authIV = config('constant.SABPAISA_AUTH_IV');
 
             $AesCipher = new Authuntication();
             $decText = $AesCipher->decrypt($authKey, $authIV, $query);

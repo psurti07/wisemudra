@@ -70,7 +70,7 @@
                             </div>
                             <p class="mb-0 s-14 text-start text-dark">
                                 <input type="checkbox" checked="checked" id="termsCheck" name="accept_tnc" />
-                                &nbsp;<small>By submitting this form, you accept our <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Service</a> and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none">Privacy Policy</a> and receive communication from {{ env('APP_NAME') }} via SMS, E-Mail and WhatsApp.</small>
+                                &nbsp;<small>By submitting this form, you accept our <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Service</a> and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none">Privacy Policy</a> and receive communication from {{ config('constant.APP_NAME') }} via SMS, E-Mail and WhatsApp.</small>
                             </p>
                             @component('components.ajax-error', ['field' => 'terms']) @endcomponent
                         </div>

@@ -216,7 +216,7 @@
                                                                                             <tr>
                                                                                                 <td><h5 style="margin:0">{{ $agent->fullname ?? 'wisemudra Support' }}</h5></td>
                                                                                                 <td><h5 style="margin:0">+91 {{ $agent->mobile ?? 'config("constant.COMPANY_MOBILE")' }}</h5></td>
-                                                                                                <td><h5 style="margin:0">{{ $agent->emailid ?? 'info@wisemudra.com' }}</h5></td>
+                                                                                                <td><h5 style="margin:0">{{ $agent->emailid ?? config('constant.COMPANY_INFO_MAIL') }}</h5></td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>

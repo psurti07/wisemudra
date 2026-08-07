@@ -5,7 +5,7 @@
             <!-- FOOTER LOGO -->
             <div class="col-xl-4 mb-sm-20 mb-md-20">
                 <div class="footer-info">
-                    <img class="footer-logo" src="{{ asset('front/images/logo/logo-w.png') }}" alt="{{ env('APP_NAME') }}" />
+                    <img class="footer-logo" src="{{ asset('front/images/logo/logo-w.png') }}" alt="{{ config('constant.APP_NAME') }}" />
                     <div class="fs-6 mt-3 mb-5 text-light">
                         <p>Wisemudra is India's thriving financial consultation and service provider that streamlines the loan process through its NBFC partners, giving you the option to apply on your own using the self-apply feature or hire a loan agent to make better borrowing decisions.</p>
                     </div>

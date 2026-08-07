@@ -379,6 +379,8 @@ if (!function_exists('cookieHelper')) {
         Cookie::queue('utm_campaign', $utm_campaign, $lifetime, '/', null, false, true, false, 'lax');
         Cookie::queue('utm_referral', $utm_referral, $lifetime, '/', null, false, true, false, 'lax');
         Cookie::queue('sourceId', $sourceId, $lifetime, '/', null, false, true, false, 'lax');
+
+        session(['sourceId' => $sourceId]);
     }
 }
 
@@ -525,8 +527,8 @@ if (!function_exists('handleFileUpload')) {
 
 if(!function_exists('sendBrevoHtmlMail')){
     function sendBrevoHtmlMail($maildata, $subject = '', $message = '', $sendmail = '', $attachmentPath = ''){
-        $data['sender']['name'] = env('APP_NAME');
-        $data["sender"]["email"] = 'info@wisemudra.com';
+        $data['sender']['name'] = config('constant.APP_NAME');
+        $data["sender"]["email"] = config('constant.COMPANY_INFO_MAIL');
 
         $user_res["name"] = $maildata["fullname"];
         $user_res["email"] = $maildata["email"];
@@ -580,8 +582,8 @@ if(!function_exists('sendBrevoHtmlMail')){
 
 if(!function_exists('sendBrevoHtmlMail2')){
     function sendBrevoHtmlMail2($maildata, $subject = '', $message = '', $sendmail = '', $attachments = []){
-        $data['sender']['name'] = env('APP_NAME');
-        $data["sender"]["email"] = 'info@wisemudra.com';
+        $data['sender']['name'] = config('constant.APP_NAME');
+        $data["sender"]["email"] = config('constant.COMPANY_INFO_MAIL');
 
         $user_res["name"] = $maildata["fullname"];
         $user_res["email"] = $maildata["email"];

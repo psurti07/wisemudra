@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'APP_NAME'          => env('APP_NAME'),
+
     'COMPANY_CODE'          => 'WSMDRA123',
     'PRODUCT_CODE_SELFAPPLY'  => 'SELFAPPLY',
     'PRODUCT_CODE_LOANAGENT'  => 'HIRELOAN',
@@ -56,8 +58,55 @@ return [
     'RAZOR_KEY_ID'          => env('RAZOR_KEY_ID'),
     'RAZOR_KEY_SECRET'      => env('RAZOR_KEY_SECRET'),
 
+    'PHONEPE_MERCHANT_ID'      => env('PHONEPE_MERCHANT_ID'),
+    'PHONEPE_MERCHANT_USER_ID' => env('PHONEPE_MERCHANT_USER_ID'),
+    'PHONEPE_ENV'              => env('PHONEPE_ENV'),
+    'PHONEPE_SALT_KEY'         => env('PHONEPE_SALT_KEY'),
+    'PHONEPE_SALT_INDEX'       => env('PHONEPE_SALT_INDEX'),
+
+    // Airpay
+    'AIRPAY_MERCHENT_ID' => env('AIRPAY_MERCHENT_ID'),
+    'AIRPAY_USERNAME'    => env('AIRPAY_USERNAME'),
+    'AIRPAY_PASSWORD'    => env('AIRPAY_PASSWORD'),
+    'AIRPAY_API_KEY'     => env('AIRPAY_API_KEY'),
+
+    // Lyra
+    'LYRA_MODE'    => env('LYRA_MODE'),
+    'LYRA_SHOP_ID' => env('LYRA_SHOP_ID'),
+    'LYRA_LCID'    => env('LYRA_LCID'),
+    'LYRA_MCC'     => env('LYRA_MCC'),
+    'LYRA_API_KEY' => env('LYRA_API_KEY'),
+
+    // SabPaisa
+    'SABPAISA_MODE'      => env('SABPAISA_MODE'),
+    'SABPAISA_CLIENT_CODE' => env('SABPAISA_CLIENT_CODE'),
+    'SABPAISA_USERNAME'  => env('SABPAISA_USERNAME'),
+    'SABPAISA_PASSWORD'  => env('SABPAISA_PASSWORD'),
+    'SABPAISA_AUTH_KEY'  => env('SABPAISA_AUTH_KEY'),
+    'SABPAISA_AUTH_IV'   => env('SABPAISA_AUTH_IV'),
+
+    // Zaakpay
+    'ZAAKPAY_ENV'                 => env('ZAAKPAY_ENV'),
+    'ZAAKPAY_MERCHANT_IDENTIFIER' => env('ZAAKPAY_MERCHANT_IDENTIFIER'),
+    'ZAAKPAY_SECRET_KEY'          => env('ZAAKPAY_SECRET_KEY'),
+    'ZAAKPAY_API_KEY'             => env('ZAAKPAY_API_KEY'),
+
+    // Cashfree
+    'CASHFREE_APP_ID'     => env('CASHFREE_APP_ID'),
+    'CASHFREE_SECRET_KEY' => env('CASHFREE_SECRET_KEY'),
+    'CASHFREE_MODE'       => env('CASHFREE_MODE'),
+
+    // Paygic
+    'PAYGIC_PAYMENT_MODE' => env('PAYGIC_PAYMENT_MODE'),
+    'PAYGIC_MERCHANT_ID'  => env('PAYGIC_MERCHANT_ID'),
+    'PAYGIC_PASSWORD'     => env('PAYGIC_PASSWORD'),
+
     'SELF_INTERAKT_KEY'     => env('SELF_INTERAKT_KEY'),
     'HIRE_INTERAKT_KEY'     => env('HIRE_INTERAKT_KEY'),
+
+    'WEBINAR_INTERAKT_KEY'     => env('WEBINAR_INTERAKT_KEY'),
+
+    'UAT_MOBILE_NUMBERS' => array_map('trim',explode(',', env('UAT_MOBILE_NUMBERS', ''))),
 
     'REMARKETING_MOBILE_NUMBERS' => array_map('trim',explode(',', env('REMARKETING_MOBILE_NUMBERS', ''))),
 ];

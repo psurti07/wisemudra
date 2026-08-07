@@ -4,19 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\SelfApplyController;
-use App\Http\Controllers\LoanAgentController;
-use App\Http\Controllers\CipherPayController;
-use App\Http\Controllers\pg\PhonePayController;
-use App\Http\Controllers\pg\RazorpayController;
-use App\Http\Controllers\pg\SabpaisaController;
-use App\Http\Controllers\pg\SubpaisaResponse;
 use App\Http\Controllers\CalculatorsController;
-use App\Http\Controllers\pg\PayuController;
-use App\Http\Controllers\pg\LyraPgController;
-use App\Http\Controllers\pg\HdfcPgController;
-use App\Http\Controllers\pg\BilldeskController;
-use App\Http\Controllers\pg\ZwitchController;
-use App\Http\Controllers\pg\PaytmController;
 use App\Http\Controllers\ScheduleSlotController;
 use App\Http\Controllers\WebinarStepsController;
 
@@ -140,40 +128,29 @@ Route::group([
 // });
 
 
-/* calculators routes starts here */
-Route::group([
-    'prefix' => '/calculators',
-    'as' => 'calculators.'
-], function () {
-    Route::get('/personal-loan-emi-calculator', [CalculatorsController::class, 'personalLoanEmiCalc'])->name('personal.loan.emi.calculator');
-    Route::get('/personal-loan-eligibility-calculator', [CalculatorsController::class, 'personalLoanEligibilityCalc'])->name('personal.loan.eligibility.calculator');
-    Route::get('/interest-rate-calculator', [CalculatorsController::class, 'interestRateCalc'])->name('interest.rate.calculator');
-    Route::get('/topup-loan-calculator', [CalculatorsController::class, 'topUpLoanCalc'])->name('topup.loan.calculator');
-    Route::get('/business-loan-calculator', [CalculatorsController::class, 'businessLoanCalc'])->name('business.loan.calculator');
-});
-
 Route::get('/application-pdf/{userid}', [HomeController::class, 'showPdf']);
 
 Route::group([
     'prefix' => '/webinar',
+    'as' => 'webinar.'
 ], function () {
 
-    Route::get('/', [WebinarStepsController::class, 'webinar'])->name('webinar.index');
-    Route::get('/user-registration', [WebinarStepsController::class, 'webinarStep1'])->name('webinar.step1');
-    Route::get('/otp-verification', [WebinarStepsController::class, 'webinarStep2'])->name('webinar.step2');
-    Route::get('/personal-details', [WebinarStepsController::class, 'webinarStep3'])->name('webinar.step3');
-    Route::get('/enroll-now', [WebinarStepsController::class, 'webinarStep4'])->name('webinar.step4');
+    Route::get('/', [WebinarStepsController::class, 'webinar'])->name('index');
+    Route::get('/user-registration', [WebinarStepsController::class, 'userRegistration'])->name('user.registration');
+    Route::get('/otp-verification', [WebinarStepsController::class, 'otpVerification'])->name('otp.verification');
+    Route::get('/personal-details', [WebinarStepsController::class, 'personalDetails'])->name('personal.details');
+    Route::get('/enroll-now', [WebinarStepsController::class, 'enrollNow'])->name('enroll-now');
 
-    Route::post('/store-step1', [WebinarStepsController::class, 'storewebinarStep1'])->name('webinar.storeStep1');
-    Route::post('/verify-otp-step', [WebinarStepsController::class, 'verifywebinarOtpStep'])->name('webinar.verifyOtpStep');
-    Route::post('/resend-otp', [WebinarStepsController::class, 'resendwebinarOtp'])->name('webinar.resendOtp');
-    Route::post('postal-details', [WebinarStepsController::class, 'postalDetails'])->name('webinar.postal.details');
-    Route::post('/store-step3', [WebinarStepsController::class, 'storewebinarStep3'])->name('webinar.storeStep3');
-    Route::post('/pay', [WebinarStepsController::class, 'initiatewebinarPayment'])->name('webinar.pay');
-    Route::get('/thankyou', [WebinarStepsController::class, 'webinarThankyou'])->name('webinar.thankyou');
-    Route::get('/payment-response/true', [WebinarStepsController::class, 'paymentSuccess'])->name('webinar.payment.success');
-    Route::get('/payment-response/false', [WebinarStepsController::class, 'paymentFailed'])->name('webinar.payment.failed');
-    Route::get('/process', [WebinarStepsController::class, 'userProcess'])->name('webinar.process');
+    Route::post('/user-registration-submit', [WebinarStepsController::class, 'userRegistrationSubmit'])->name('user.registration.submit');
+    Route::post('/verify-otp-step', [WebinarStepsController::class, 'verifywebinarOtpStep'])->name('verifyOtpStep');
+    Route::post('/resend-otp', [WebinarStepsController::class, 'resendwebinarOtp'])->name('resendOtp');
+    Route::post('postal-details', [WebinarStepsController::class, 'postalDetails'])->name('postal.details');
+    Route::post('/personal.details-submit', [WebinarStepsController::class, 'personalDetailsSubmit'])->name('storeStep3');
+    Route::post('/pay', [WebinarStepsController::class, 'initiatewebinarPayment'])->name('pay');
+    Route::get('/thankyou', [WebinarStepsController::class, 'webinarThankyou'])->name('thankyou');
+    Route::get('/payment-response/true', [WebinarStepsController::class, 'paymentSuccess'])->name('payment.success');
+    Route::get('/payment-response/false', [WebinarStepsController::class, 'paymentFailed'])->name('payment.failed');
+    Route::get('/process', [WebinarStepsController::class, 'userProcess'])->name('process');
 });
 
 //Schedule Slot

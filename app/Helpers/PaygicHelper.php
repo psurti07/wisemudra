@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Log;
         function createMerchantToken()
         {
             $auth = array(
-                'mid' => env('PAYGIC_MERCHANT_ID'),
-                'password' => env('PAYGIC_PASSWORD')
+                'mid' => config('constant.PAYGIC_MERCHANT_ID'),
+                'password' => config('constant.PAYGIC_PASSWORD')
             );
 
             $url = curl_init();
@@ -72,7 +72,7 @@ use Illuminate\Support\Facades\Log;
         function checkPaymentStatus($orderid, $token){
 
             $data = array(
-                'mid' => env('PAYGIC_MERCHANT_ID'),
+                'mid' => config('constant.PAYGIC_MERCHANT_ID'),
                 'merchantReferenceId' =>$orderid
             );
             $url = curl_init();

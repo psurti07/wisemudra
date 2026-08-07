@@ -7,8 +7,6 @@ use App\Models\Careers;
 use App\Models\InfoPages;
 use Illuminate\Http\Request;
 use App\Models\ContactEnquiry;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Spatie\Sitemap\SitemapGenerator;

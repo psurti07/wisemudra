@@ -13,10 +13,10 @@
                 'Hire Payment Successful' => config('constant.HIRE_INTERAKT_KEY'),
 
                  // Webinar product tags → Webinar  key
-                'Lead Gen'     => env('WEBINAR_INTERAKT_KEY'),
-                'Payment Successful' => env('WEBINAR_INTERAKT_KEY'),
+                'Lead Gen'     => config('constant.WEBINAR_INTERAKT_KEY'),
+                'Payment Successful' => config('constant.WEBINAR_INTERAKT_KEY'),
             ];
-            //$key = in_array($postData['tags'][0], $arr) ? env('SELF_INTERAKT_KEY_OLD') : env('HIRE_INTERAKT_KEY_OLD');
+
             $tag = $postData['tags'][0] ?? null; // safely get first tag
             $key = $map[$tag] ?? null;
             curl_setopt_array($curl, [
@@ -55,16 +55,14 @@
                 'Hire Payment Successful'    => config('constant.HIRE_INTERAKT_KEY'),
                 'Hire Payment Failed'        => config('constant.HIRE_INTERAKT_KEY'),
 
-                'Lead Gen'                  => env('WEBINAR_INTERAKT_KEY'),
-                'Payment Successful'        => env('WEBINAR_INTERAKT_KEY'),
-                'Payment Failed'            => env('WEBINAR_INTERAKT_KEY'),
+                'Lead Gen'                  => config('constant.WEBINAR_INTERAKT_KEY'),
+                'Payment Successful'        => config('constant.WEBINAR_INTERAKT_KEY'),
+                'Payment Failed'            => config('constant.WEBINAR_INTERAKT_KEY'),
             ];
             
             $event = $postData['event'] ?? null; // safely get first tag
             $key = $map[$event] ?? null;
-            
-            //$key = in_array($postData['event'], $arr) ? env('SELF_INTERAKT_KEY_OLD') : env('HIRE_INTERAKT_KEY_OLD');
-            
+                        
             curl_setopt_array($curl, [
                 CURLOPT_URL => "https://api.interakt.ai/v1/public/track/events/",
                 CURLOPT_RETURNTRANSFER => true,

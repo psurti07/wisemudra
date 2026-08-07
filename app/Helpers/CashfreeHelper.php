@@ -38,8 +38,8 @@
                     "accept: application/json",
                     "content-type: application/json",
                     "x-api-version: 2022-09-01",
-                    "x-client-id: " . env('CASHFREE_APP_ID'),
-                    "x-client-secret: " . env('CASHFREE_SECRET_KEY')
+                    "x-client-id: " . config('constant.CASHFREE_APP_ID'),
+                    "x-client-secret: " . config('constant.CASHFREE_SECRET_KEY')
                 ]
             ]);
 
@@ -69,8 +69,8 @@
                 CURLOPT_HTTPHEADER => [
                     "accept: application/json",
                     "x-api-version: 2022-09-01",
-                    "x-client-id: " . env('CASHFREE_APP_ID'),
-                    "x-client-secret: " . env('CASHFREE_SECRET_KEY')
+                    "x-client-id: " . config('constant.CASHFREE_APP_ID'),
+                    "x-client-secret: " . config('constant.CASHFREE_SECRET_KEY')
                 ]
             ]);
 

@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customers;
 use App\Models\FbAdsEntry;
 use App\Models\FreeLogModel;
 use App\Models\InfoPages;
 use App\Models\Invoice;
 use App\Models\OtpVerification;
 use App\Models\SiteOption;
-use App\Models\UserRegistration;
-use App\Models\WebinarCustomers;
 use App\Models\WebinarEvent;
 use App\Models\WebinarOrder;
 use App\Models\WebinarRegistration;
@@ -18,7 +15,6 @@ use App\Models\ZaakpayEntry;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -32,37 +28,36 @@ class WebinarStepsController extends Controller
         return view('front.Webinar.index', compact('meta'));
     }
 
-    public function webinarStep1(Request $request)
+    public function userRegistration(Request $request)
     {
         $meta = fintechRegisterMeta();
-        //session()->forget('email', 'mobile_no', 'city', 'state', 'pincode', 'current_occupation', 'earning_goal', 'fbclid', 'step3_completed', 'payment_attempted', 'firstname', 'lastname', 'mobile_no', 'otp_verified');
         $fbclid = $request->query('fbclid', null);
         session(['fbclid' => $fbclid]);
-        return view('front.Webinar.step1', compact('meta'));
+        return view('front.Webinar.user_registration', compact('meta'));
     }
 
-    public function webinarStep2()
+    public function otpVerification()
     {
         $meta = fintechRegisterMeta();
         if (!session()->has('firstname') || !session()->has('lastname') || !session()->has('mobile_no')) {
-            return redirect()->route('webinar.step1');
+            return redirect()->route('webinar.user.registration');
         }
-        return view('front.Webinar.step2', compact('meta'));
+        return view('front.Webinar.otp_verification', compact('meta'));
     }
 
-    public function webinarStep3()
+    public function personalDetails()
     {
         $meta = fintechRegisterMeta();
         if (!session()->has('firstname') || !session()->has('lastname') ||  !session()->has('mobile_no')) {
-            return redirect()->route('webinar.step1');
+            return redirect()->route('webinar.user.registration');
         }
         if (!session('otp_verified')) {
-            return redirect()->route('webinar.step2');
+            return redirect()->route('webinar.otp.verification');
         }
-        return view('front.Webinar.step3', compact('meta'));
+        return view('front.webinar.personal_details', compact('meta'));
     }
 
-    public function storewebinarStep1(Request $request)
+    public function userRegistrationSubmit(Request $request)
     {
         $request->validate([
             'firstname' => 'required|string|max:255',
@@ -87,7 +82,7 @@ class WebinarStepsController extends Controller
                 return response()->json([
                     'status' => false,
                     'message' => 'No upcoming webinar found.',
-                    'redirect_url' => route('webinar.step1')
+                    'redirect_url' => route('webinar.user.registration')
                 ]);
             }
 
@@ -102,7 +97,7 @@ class WebinarStepsController extends Controller
                         return response()->json([
                             'type' => 'ALREADY_REGISTERED',
                             'message' => 'You’re already registered with us. Please join the community to get further important updates.',
-                            'redirect_url' => route('webinar.step1')
+                            'redirect_url' => route('webinar.user.registration')
                         ]);
                     }
                 } else {
@@ -117,7 +112,7 @@ class WebinarStepsController extends Controller
                 if ($user->process_step == 1) {
                     return response()->json([
                         'message' => 'User account already verified.',
-                        'redirect_url' => route('webinar.step3')
+                        'redirect_url' => route('webinar.personal.details')
                     ]);
                 }
 
@@ -126,15 +121,15 @@ class WebinarStepsController extends Controller
                     
                     return response()->json([
                         'message' => 'User account already verified.',
-                        'redirect_url' => route('webinar.step4')
+                        'redirect_url' => route('webinar.enroll-now')
                     ]);
                 }
             }
             $generatedOtp = generateOtp($request->mobile_no, 9);
 
-            return response()->json(['message' => 'OTP has been sent successfully.', 'redirect_url' => route('webinar.step2')]);
+            return response()->json(['message' => 'OTP has been sent successfully.', 'redirect_url' => route('webinar.otp.verification')]);
         } catch (\Exception $e) {
-            Log::error('storeWebinarStep1 failed: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+            Log::error('userRegistrationSubmit failed: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
             return response()->json([
                 'type' => 'ERROR',
                 'message' => 'Something went wrong while processing your request. Please try again.',
@@ -176,7 +171,7 @@ class WebinarStepsController extends Controller
                     return response()->json([
                         'status' => false,
                         'message' => 'No upcoming webinar found.',
-                        'redirect' => route('webinar.step1')
+                        'redirect' => route('webinar.user.registration')
                     ]);
                 }
                 // Create or update user WITHOUT password
@@ -209,7 +204,7 @@ class WebinarStepsController extends Controller
                 return response()->json([
                     'status' => 'success',
                     'message' => 'OTP is correct',
-                    'redirect' => route('webinar.step3')
+                    'redirect' => route('webinar.personal.details')
                 ]);
             }
 
@@ -300,7 +295,7 @@ class WebinarStepsController extends Controller
         }
     }
 
-    public function storewebinarStep3(Request $request)
+    public function personalDetailsSubmit(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
@@ -376,10 +371,10 @@ class WebinarStepsController extends Controller
             return response()->json([
                 'type' => 'SUCCESS',
                 'message' => 'User registered successfully!',
-                'redirect' => route('webinar.step4')
+                'redirect' => route('webinar.enroll-now')
             ]);
         } catch (\Exception $e) {
-            Log::error('storeWebinarStep3 failed: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+            Log::error('personalDetailsSubmit failed: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
             return response()->json([
                 'type' => 'ERROR',
                 'message' => 'Something went wrong during registration. Please try again later.',
@@ -387,19 +382,19 @@ class WebinarStepsController extends Controller
         }
     }
 
-    public function webinarStep4()
+    public function enrollNow()
     {
         $meta = fintechRegisterMeta();
         if (!session()->has('firstname') || !session()->has('lastname') || !session()->has('mobile_no')) {
-            return redirect()->route('webinar.step1');
+            return redirect()->route('webinar.user.registration');
         }
 
         if (!session()->has('otp_verified')) {
-            return redirect()->route('webinar.step2');
+            return redirect()->route('webinar.otp.verification');
         }
 
         if (!session()->has('step3_completed')) {
-            return redirect()->route('webinar.step3');
+            return redirect()->route('webinar.personal.details');
         }
         $webinar = WebinarEvent::where('program_type', 0)
             ->where('isActive', 1)
@@ -407,7 +402,7 @@ class WebinarStepsController extends Controller
             ->whereDate('event_datetime', '>', Carbon::today())
             ->orderBy('event_datetime', 'asc')
             ->first();
-        return view('front.Webinar.step4', compact('webinar', 'meta'));
+        return view('front.Webinar.enroll_now', compact('webinar', 'meta'));
     }
 
     public function initiateWebinarPayment(Request $request)
@@ -476,7 +471,7 @@ class WebinarStepsController extends Controller
 
             $firstname = $user->first_name . ' ' . $user->last_name;
             $zaakpayPostData = array(
-                "merchantIdentifier" => env('ZAAKPAY_MERCHANT_IDENTIFIER'),
+                "merchantIdentifier" => config('constant.ZAAKPAY_MERCHANT_IDENTIFIER'),
                 "orderId" => $orderid,
                 "returnUrl" => $returnUrl,
                 "currency" => 'INR',
@@ -495,7 +490,7 @@ class WebinarStepsController extends Controller
                 $checksumData .= $key . '=' . $value . '&';
             }
 
-            $checksum = hash_hmac('sha256', $checksumData, env('ZAAKPAY_SECRET_KEY'));
+            $checksum = hash_hmac('sha256', $checksumData, config('constant.ZAAKPAY_SECRET_KEY'));
 
             $zaakPayData = array(
                 'rec_date' => now(),
@@ -570,7 +565,7 @@ class WebinarStepsController extends Controller
                 }
             }
 
-            $checksum = hash_hmac('sha256', $checksumData, env('ZAAKPAY_SECRET_KEY'));
+            $checksum = hash_hmac('sha256', $checksumData, config('constant.ZAAKPAY_SECRET_KEY'));
 
             $paymentdata = ZaakpayEntry::where('orderid', $orderId)->first();
 
@@ -1089,7 +1084,7 @@ class WebinarStepsController extends Controller
         $referenceId = session('last_payment_reference');
 
         if (!session()->has('firstname') || !session()->has('lastname') || !session()->has('mobile_no')) {
-            return redirect()->route('webinar.step1');
+            return redirect()->route('webinar.user.registration');
         }
 
         if ($referenceId) {
@@ -1168,7 +1163,7 @@ class WebinarStepsController extends Controller
             // Step 1: Get user ID from URL
             $userId = $request->id ?? null;
             if (!$userId) {
-                return redirect()->route('webinar.step1');
+                return redirect()->route('webinar.user.registration');
             }
 
             // Step 2: Decrypt the user ID
@@ -1180,7 +1175,7 @@ class WebinarStepsController extends Controller
                 ->first();
 
             if (!$userDetail) {
-                return redirect()->route('webinar.step1');
+                return redirect()->route('webinar.user.registration');
             }
 
             // Step 4: Store encrypted user id in session
@@ -1203,7 +1198,7 @@ class WebinarStepsController extends Controller
                 case 1:
                     // Name/mobile saved, OTP verified → go to profile step
                     Session::put('otp_verified', true);
-                    $nextRoute = 'webinar.step3';
+                    $nextRoute = 'webinar.personal.details';
                     break;
 
                 case 2:
@@ -1211,7 +1206,7 @@ class WebinarStepsController extends Controller
                     // Profile saved / payment attempted → go to payment step
                     Session::put('otp_verified',    true);
                     Session::put('step3_completed', true);
-                    $nextRoute = 'webinar.step4';
+                    $nextRoute = 'webinar.enroll-now';
                     break;
 
                 case 4:
@@ -1228,7 +1223,7 @@ class WebinarStepsController extends Controller
 
                 default:
                     // Unknown state → start from beginning
-                    $nextRoute = 'webinar.step1';
+                    $nextRoute = 'webinar.user.registration';
                     break;
             }
 
@@ -1238,7 +1233,7 @@ class WebinarStepsController extends Controller
                 'message' => $e->getMessage(),
                 'trace'   => $e->getTraceAsString(),
             ]);
-            return redirect()->route('webinar.step1');
+            return redirect()->route('webinar.user.registration');
         }
     }
 }

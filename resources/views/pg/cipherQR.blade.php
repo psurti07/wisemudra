@@ -74,7 +74,7 @@
                         <!--<button id="reload-btn" style="display: none;">Reload QR</button>-->
                         <!-- Powered by UPI -->
                         <div class="powered-upi">
-                            <p>Powered by <strong>{{ env('APP_NAME') }}</strong></p>
+                            <p>Powered by <strong>{{ config('constant.APP_NAME') }}</strong></p>
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 <head>
-    <title>{{ env('APP_NAME') }} :: @yield('title')</title>
+    <title>{{ config('constant.APP_NAME') }} :: @yield('title')</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ env('APP_NAME') }}">
-    <meta name="keywords" content="{{ env('APP_NAME') }}">
-    <meta name="author" content="{{ env('APP_NAME') }}">
+    <meta name="description" content="{{ config('constant.APP_NAME') }}">
+    <meta name="keywords" content="{{ config('constant.APP_NAME') }}">
+    <meta name="author" content="{{ config('constant.APP_NAME') }}">
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="" />

@@ -18,7 +18,7 @@ if(!function_exists('getlyrapaymenturl')){
           CURLOPT_POSTFIELDS =>  $data_json,
           CURLOPT_HTTPHEADER => [
             "Content-Type: application/json",
-            'Authorization: Basic ' . base64_encode(env('LYRA_SHOP_ID').":".env('LYRA_API_KEY')),
+            'Authorization: Basic ' . base64_encode(config('constant.LYRA_SHOP_ID').":".config('constant.LYRA_API_KEY')),
             "accept: application/json"
           ],
         ]);

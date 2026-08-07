@@ -34,7 +34,7 @@
 			<form action="{{ $url }}" method="post" name="frm1">
 			    @csrf
                 <input type="hidden" name="privatekey" value="{{ $privatekey }}">
-                <input type="hidden" name="mercid" value="{{ env('AIRPAY_MERCHENT_ID') }}">
+                <input type="hidden" name="mercid" value="{{ config('constant.AIRPAY_MERCHENT_ID') }}">
 				<input type="hidden" name="orderid" value="{{ $orderid }}">
  		        <input type="hidden" name="currency" value="{{ $currency }}">
 		        <input type="hidden" name="isocurrency" value="{{ $isocurrency }}">

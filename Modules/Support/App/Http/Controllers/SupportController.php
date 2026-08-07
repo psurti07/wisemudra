@@ -4,9 +4,7 @@ namespace Modules\Support\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\SupportRequests;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 

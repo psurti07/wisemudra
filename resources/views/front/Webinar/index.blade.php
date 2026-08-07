@@ -9,18 +9,18 @@
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="description" content="{{ $meta['description'] }}">
     <meta name="keywords" content="{{ $meta['keywords'] }}">
-    <meta name="author" content="{{ env('APP_NAME') }}">
+    <meta name="author" content="{{ config('constant.APP_NAME') }}">
     <meta property="og:title" content="{{ $meta['title'] }}" />
     <meta property="og:description" content="{{ $meta['description'] }}" />
     <meta property="og:image" content="{{ asset('front/images/favicon-32x32.png') }}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:site_name" content="{{ env('APP_NAME') }}" />
+    <meta property="og:site_name" content="{{ config('constant.APP_NAME') }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $meta['title'] }}" />
     <meta name="twitter:description" content="{{ $meta['description'] }}" />
-    <meta name="twitter:site" content="{{ '@'.env('APP_NAME') }}" />
+    <meta name="twitter:site" content="{{ '@'.config('constant.APP_NAME') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{asset('front/images/logo/favicon.ico')}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset('front/images/logo/favicon.ico')}}" type="image/x-icon">
@@ -77,13 +77,13 @@
                         <!-- HEADER BLACK LOGO -->
                         <div class="desktoplogo">
                             <a href="{{ route('front.home') }}" class="logo-black">
-                                <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ env('APP_NAME') }}" />
+                                <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ config('constant.APP_NAME') }}" />
                             </a>
                         </div>
                         <!-- HEADER WHITE LOGO -->
                         <div class="desktoplogo">
                             <a href="{{ route('front.home') }}" class="logo-white">
-                                <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ env('APP_NAME') }}" />
+                                <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ config('constant.APP_NAME') }}" />
                             </a>
                         </div>
                         <!-- END MAIN MENU -->
@@ -103,7 +103,7 @@
                                 <div class="txt-block text-center">
                                     <h1 class="s-34 w-700 color--black mb-20">Step Into the Future of Fintech Innovation</h1>
                                     <p class="mb-20 color--black">Digitally transform your loan or financial business with advanced technology and expert support.</p>
-                                    <a href="{{ route('webinar.step1') }}" class="btn r-04 btn--theme hover--tra-black last-link">Apply Now</a>
+                                    <a href="{{ route('webinar.user.registration') }}" class="btn r-04 btn--theme hover--tra-black last-link">Apply Now</a>
                                 </div>
                             </div>
                         </div>

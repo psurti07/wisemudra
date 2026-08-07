@@ -6,7 +6,7 @@
         <meta name="x-apple-disable-message-reformatting" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="telephone=no" name="format-detection" />
-        <title>{{ env('APP_NAME') }}</title>
+        <title>{{ config('constant.APP_NAME') }}</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500,800&display=swap&subset=cyrillic-ext" rel="stylesheet" />
         <style type="text/css">
             .rollover div {

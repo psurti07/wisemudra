@@ -19,7 +19,7 @@
                             <h1 class="s-40 w-700">Helping You Move Closer to<span class="color--green-500"> Success</span></h1>
                             <p class="mb-20">Let experienced professionals help you reach your financial goals.</p>
                             <a href="{{ route('self.apply.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Self Apply</a>
-                            <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Hire an Agent</a>
+                            {{-- <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Hire an Agent</a> --}}
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-12">
@@ -217,8 +217,8 @@
                 </div>
             </div>
             <div class="fbox-wrapper text-center">
-                <div class="row d-flex gx-4 gy-4">
-                    <div class="col-md-6">
+                <div class="row d-flex gx-4 gy-4 align-items-center justify-content-center m-auto">
+                    <div class="col-md-8">
                         <div class="fbox-5 fbox--hover fb-2 border r-16">
                             <div class="fbox-5-img mb-2">
                                 <img class="img-fluid light-theme-img" src="{{ asset('front/images/Img-22.png') }}" alt="feature-image">
@@ -230,7 +230,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="fbox-5 fbox--hover fb-2 border r-16">
                             <div class="fbox-5-img mb-2">
                                 <img class="img-fluid light-theme-img" src="{{ asset('front/images/Img-23.png') }}" alt="feature-image">
@@ -241,7 +241,7 @@
                                 <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black">Apply Now</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -576,7 +576,7 @@
                                     <span class="s-16">Total amount</span>
                                     <span id="emitotalamount">₹<span>10,000</span></span>
                                 </div>
-                                <a href="{{ route('loan.agent.main') }}" class="btn btn--green-400 hover--tra-black w-100">Apply for loan</a>
+                                <a href="{{ route('self.apply.main') }}" class="btn btn--green-400 hover--tra-black w-100">Apply for loan</a>
                             </div>
                         </div>
                     </div>
@@ -786,7 +786,6 @@
 <script>
     const routes = {
         'selfapply': "{{ route('self.apply.send.otp') }}",
-        'loan-agent': "{{ route('loan.agent.send.otp') }}"
     };
 
     document.addEventListener('DOMContentLoaded', () => {

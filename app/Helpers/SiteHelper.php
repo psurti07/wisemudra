@@ -109,7 +109,7 @@ if (!function_exists('nbfcsList')) {
             $data['list'] .= '<div class="col company" data-index="' . $loop . '">
                             <a href="javascript:;" class="in_tool it-1 r-10">
                                 <div class="bg--white-100 block-shadow r-10 mb-20">
-                                    <img class="img-fluid" src="https://manage.wisemudra.com/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
+                                    <img class="img-fluid" src="https://manage.wisemudra.com/public/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
                                 </div>
                                 <h6 class="s-14 w-700">' . $bank->bank_name . '</h6>
                             </a>
@@ -117,7 +117,7 @@ if (!function_exists('nbfcsList')) {
 
             $data['carousel'] .= '<div class="bg--white-100 border border-primary r-10 mb-20">
                                     <a href="javascript:;">
-                                        <img class="img-fluid" src="https://manage.wisemudra.com/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
+                                        <img class="img-fluid" src="https://manage.wisemudra.com/public/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
                                     </a>
                                 </div>';
             $loop++;

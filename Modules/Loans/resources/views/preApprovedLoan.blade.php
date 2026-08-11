@@ -100,7 +100,7 @@ body {
                             </div>
                             <div class="card-body pt-7 px-0">
                                 <div class="px-5">
-                                    <img src="{{ 'https://manage.wisemudra.com/upload/banks/'.$offer->bank_image }}" alt="{{ $offer->bank_name }}" width="150">
+                                    <img src="{{ 'https://manage.wisemudra.com/public/upload/banks/'.$offer->bank_image }}" alt="{{ $offer->bank_name }}" width="150">
                                 </div>
                                 <div class="separator separator-dashed my-6"></div>
                                 <div class="px-5">

@@ -176,7 +176,7 @@ class DashboardController extends Controller
                 }
             }
             $orderId = "ZPLAT" . number_format(microtime(true) * 1000, 0, '.', '');
-            $returnUrl = "https://wisemudra.com/api/customer/plan-upgrade";
+            $returnUrl = route('api.customer.plan-upgrade');
             
             /*zaakpay code starts*/
             if (config('constant.ZAAKPAY_ENV') == "PRODUCTION") {

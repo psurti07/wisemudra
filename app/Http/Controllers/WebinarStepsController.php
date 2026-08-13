@@ -125,7 +125,7 @@ class WebinarStepsController extends Controller
                     ]);
                 }
             }
-            $generatedOtp = generateOtp($request->mobile_no, 9);
+            generateOtp($request->mobile_no, 9);
 
             return response()->json(['message' => 'OTP has been sent successfully.', 'redirect_url' => route('webinar.otp.verification')]);
         } catch (\Exception $e) {
@@ -265,7 +265,7 @@ class WebinarStepsController extends Controller
                 ], 429);
             }
 
-            $generatedOtp = generateOtp($mobile_no, 9);
+            generateOtp($mobile_no, 9);
 
             // Update session values
             $resendData['count'] += 1;
@@ -1159,7 +1159,6 @@ class WebinarStepsController extends Controller
     public function userProcess(Request $request)
     {
         try {
-            //dd(route('fintech.process',['id' => encryptData(7848)]));
             // Step 1: Get user ID from URL
             $userId = $request->id ?? null;
             if (!$userId) {

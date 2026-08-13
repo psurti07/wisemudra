@@ -53,7 +53,8 @@
             "app/Helpers/OpenMoneyHelper.php",
             "app/Helpers/SyncDataHelper.php",
             "app/Helpers/PaygicHelper.php",
-            "app/Helpers/PaytmHelper.php"
+            "app/Helpers/PaytmHelper.php",
+            "app/Helpers/CommanCurlCallHelder.php"
         ]
     },
     "autoload-dev": {

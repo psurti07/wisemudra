@@ -22,7 +22,6 @@ use App\Models\MembershipOrder;
 use App\Models\SiteOption;
 use App\Models\Invoice;
 use App\Models\FbAdsEntry;
-use App\Models\VeegahPay as VeegahEntry;
 use App\Utilities\Authuntication;
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
@@ -54,9 +53,7 @@ class SelfApplyController extends Controller
     public function sendOtp(Request $request)
     {
         try {
-            /* store all request in $inputs variable */
             $inputs = $request->all();
-            /* check the entered mobile number is present or not */
             $user = singleUserDetails(['mobile' => $inputs['mobile']]);
             if (!$user || (Cookie::has('user_mobile') && Cookie::get('user_mobile') != $inputs['mobile'])) {
                 $keysToKeep = ['XSRF-TOKEN', 'wisemudra_session', 'utm_campaign', 'utm_medium', 'utm_source'];
@@ -72,13 +69,11 @@ class SelfApplyController extends Controller
             ], [
                 'mobile.regex' => 'Enter valid mobile number'
             ]);
-            /* create cookie/session for entered mobile number */
+
             Cookie::queue('user_mobile', $inputs['mobile'], $this->lifetime, '/', null, false, true, false, 'lax');
             /* count the otp sent in current day */
             $countSMS = countOTPs($inputs['mobile']);
-            /* here, if condition check the user present and else condition check the user are not present */
             if ($user) {
-                /* check what's the user status is customer or not */
                 if ($user && $user->isUser == 2) {
                     return response()->json([
                         'type' => 'ERROR',
@@ -111,7 +106,6 @@ class SelfApplyController extends Controller
                         'client_ip' => $request->ip()
                     ]);
 
-                    // Facebook ads entry if applicable
                     if (Cookie::has('utm_source') && in_array(Cookie::get('utm_source'), ['facebook', 'instagram', 'ig', 'fb', 'meta', 'facebook_instagram', 'facebookads', 'instagramads'])) {
                         DB::table('fb_ads_entry')->insertGetId([
                             'rec_date' => now(),
@@ -128,11 +122,9 @@ class SelfApplyController extends Controller
                     return response()->json(['type' => 'SUCCESS', 'message' => 'User details successfully verified.', 'data' => '', 'redirectUrl' => $redirectUrl]);
                 }
             } else {
-                /* store user type weather its salaried or self-employed */
                 Cookie::queue('loan_type', $inputs['loan_type'], $this->lifetime, '/', null, false, true, false, 'lax');
                 Cookie::queue('acc_type', $inputs['acc_type'], $this->lifetime, '/', null, false, true, false, 'lax');
                 Cookie::queue('user_type', $inputs['user_type'], $this->lifetime, '/', null, false, true, false, 'lax');
-                /* if the otp's already reach the limits */
                 if (!$countSMS) {
                     return response()->json([
                         'type' => 'ERROR',
@@ -157,26 +149,21 @@ class SelfApplyController extends Controller
         }
     }
 
-    /* verify otp function handle */
     public function verifyOtp(Request $request)
     {
         $inputs = $request->all();
-        /* validate the inputs */
         $request->validate([
             'otp' => 'required|min:4|max:4'
         ], [
             'otp.min' => 'OTP must be 4 digits',
             'otp.max' => 'OTP must be 4 digits',
         ]);
-        /* getting otp which is last inserted */
         $getOtp = OtpVerification::whereDate('rec_date', now()->format('Y-m-d'))
             ->where('mobile', Cookie::get('user_mobile'))
             ->orderBy('id', 'desc')
             ->first();
         $otp = $inputs['otp'];
-        /* match the entered otp and inserted otp is same or not */
         if ($otp == $getOtp->otp) {
-            /* store is verified 1 in cookie when otp getting match */
             Cookie::queue('isVerified', 1, $this->lifetime, '/', null, false, true, false, 'lax');
             $redirectUrl = route('self.apply.loan.details');
             return response()->json(['type' => 'SUCCESS', 'message' => 'Success! Your one-time password has been verified.', 'data' => '', 'redirectUrl' => $redirectUrl]);
@@ -201,7 +188,6 @@ class SelfApplyController extends Controller
         }
     }
 
-    /* Submit loan details */
     public function loanDetailStore(Request $request)
     {
         $inputs = $request->all();
@@ -211,7 +197,6 @@ class SelfApplyController extends Controller
 
         if (Cookie::get('process_step') === null) {
 
-            /* loan_type, mobile_number, loan_amount, monthly_income, process_step = 2  */
             DB::beginTransaction();
             try {
                 $userid = DB::table('user_registrations')->insertGetId([
@@ -251,8 +236,6 @@ class SelfApplyController extends Controller
                 ]);
                 // fb ends code
 
-                //Cookie::queue('loan_type', $request->input('loan_amount') > 500000 ? 1 : 1, $this->lifetime, '/', null, false, true, false, 'lax');
-                // Insert record into the loan_applications table using the userID from the user_registrations table
                 $applyid = DB::table('loan_applications')->insertGetId([
                     'rec_date' => now(),
                     'userid' => $userid,
@@ -282,7 +265,6 @@ class SelfApplyController extends Controller
         }
     }
 
-    /* Personal details form step 2 */
     public function personalDetails()
     {
         $meta = selfApplyMeta();
@@ -298,7 +280,6 @@ class SelfApplyController extends Controller
         }
     }
 
-    /* postal details */
     public function postalDetails(Request $request)
     {
         try {
@@ -309,13 +290,10 @@ class SelfApplyController extends Controller
         }
     }
 
-    /* store personal details */
     public function personalDetailStore(Request $request)
     {
         try {
-            /* requested fields store in inputs variable */
             $inputs = $request->all();
-            /* validate the requested fields */
             $request->validate([
                 'firstname' => 'required',
                 'lastname' => 'required',
@@ -324,7 +302,6 @@ class SelfApplyController extends Controller
                 'city' => 'required',
                 'state' => 'required'
             ]);
-            /* create new array which is pass in create function for create the record */
             $newInputs = [
                 'update_date' => now(),
                 'first_name' => ucfirst(trim($request->input('firstname'))),
@@ -335,9 +312,7 @@ class SelfApplyController extends Controller
                 'state' => trim($request->input('state')),
                 'process_step' => 3
             ];
-            /* perform teh insertion in database */
             $result = UserRegistration::where('id', Cookie::get('userid'))->update($newInputs);
-            /* if return teh true */
             if ($result) {
                 Cookie::queue('process_step', 3, $this->lifetime, '/', null, false, true, false, 'lax');
                 Cookie::queue('email', strtolower($request->input('email')), $this->lifetime, '/', null, false, true, false, 'lax');
@@ -408,7 +383,7 @@ class SelfApplyController extends Controller
         /* send get offer message ends */
 
         /* interakt code here starts */
-        $data2 = array(
+        $userTrackData = array(
             'phoneNumber' => Cookie::get('user_mobile'),
             'countryCode' => '+91',
             'traits' => array(
@@ -416,9 +391,9 @@ class SelfApplyController extends Controller
             ),
             'tags' => array('Self Get Offer')
         );
-        $restrack1 = user_track($data2);
+        $responseUserTrack = user_track($userTrackData);
 
-        $data3 = array(
+        $eventTrackData = array(
             'phoneNumber' => Cookie::get('user_mobile'),
             'countryCode' => '+91',
             'event' => 'Self Get Offer',
@@ -426,9 +401,10 @@ class SelfApplyController extends Controller
                 'SelfEligibleAmount' => $eligibilityAmt
             ),
         );
-        $restrack2 = event_track($data3);
+        $responseEventTrack = event_track($eventTrackData);
+        
         $configs = DB::table('interakt_settings')->where('product', 'SA')->where('type', 'getoffer')->first();
-        $data4 = array(
+        $interaktData = array(
             "fullPhoneNumber" => '+91' . Cookie::get('user_mobile'),
             "callbackData" => "some text here",
             "type" => "Template",
@@ -444,7 +420,7 @@ class SelfApplyController extends Controller
                 ),
             )
         );
-        $restrack3 = interakt_message('self', $data4, $configs->api_key);
+        $restrack3 = interakt_message('self', $interaktData, $configs->api_key);
 
         $record = DB::table('user_offers')->where('userid', Cookie::get('userid'))->first();
         $offersData = $record ? $record->offerdata : null;
@@ -496,7 +472,7 @@ class SelfApplyController extends Controller
                 "orderId" => $orderid,
                 "returnUrl" => $returnUrl,
                 "currency" => 'INR',
-                "amount" => $grandAmount * 100,
+                "amount" => round($grandAmount * 100),
                 "buyerEmail" => Cookie::get('email'),
                 "buyerFirstName" => $firstname,
                 "buyerPhoneNumber" => Cookie::get('user_mobile'),
@@ -532,7 +508,7 @@ class SelfApplyController extends Controller
     /* callback url ofd selfapply */
     public function callbackUrl()
     {
-        dd('Callback function call.Go Back and make furthur process');
+        log::info('Callback function call.Go Back and make furthur process');
     }
 
     /* buy digital plan zaakpay function handle */
@@ -661,7 +637,7 @@ class SelfApplyController extends Controller
                     'process_step' => 5,
                     'acc_type' => 1
                 );
-                $response2 = UserRegistration::where('id', $userData->userid)->update($regData);
+                $userRegData = UserRegistration::where('id', $userData->userid)->update($regData);
 
                 $productslug = "self-apply";
                 $invprefix = "SA_";
@@ -684,7 +660,7 @@ class SelfApplyController extends Controller
                     ->where('cardid', $membershipId)
                     ->first();
 
-                $invData3 = array(
+                $invData = array(
                     'rec_date' => now()->setTimezone(config('app.timezone'))->format('Y-m-d H:i:s'),
                     'userid' => $userData->userid,
                     'cardid' => $membershipId,
@@ -701,10 +677,10 @@ class SelfApplyController extends Controller
                 if (!$existingInvoice) {
                     DB::beginTransaction();
                     try {
-                        $responseinvoice = Invoice::create($invData3)->id;
+                        $responseinvoice = Invoice::create($invData)->id;
                         $invNoData = array(
                             'rec_date' => now(),
-                            'option_value' => $invoiceNo->option_value + 1
+                            'option_value' => $invoiceNo->increment('option_value')
                         );
                         $updateInvoiceNo = SiteOption::where('option_key', 'newinvoiceno')->update($invNoData);
                         DB::commit();
@@ -728,7 +704,7 @@ class SelfApplyController extends Controller
                 $sendGreetings = view('mail.welcomeGreetings', $mailData)->render();
 
                 $invAttach = array_merge(
-                    $invData3,
+                    $invData,
                     [
                         'fullname' => $userData->first_name . ' ' . $userData->last_name,
                         'city' => $userData->city,
@@ -780,8 +756,8 @@ class SelfApplyController extends Controller
 
                 UserRegistration::where('id', $userData->userid)->update(['process_step' => 5, 'staff_id' => $staffID->id]);
 
-                if ($response2 > 0) {
-                    $uatNumbers = config('constant.UAT_MOBILE_NUMBERS', []);
+                if ($userRegData > 0) {
+                    $uatNumbers = config('constant.UAT_MOBILE_NUMBERS');
 
                     if (!in_array(trim($userData->mobile), $uatNumbers)) {
 
@@ -867,7 +843,7 @@ class SelfApplyController extends Controller
                     /* application remarks entry ends */
 
                     /* fb conversion code starts here */
-                    $fbleads = FbAdsEntry::where('userid', $userData->userid)->orderByDesc('id')->limit(1)->first();
+                    $fbleads = FbAdsEntry::where('userid', $userData->userid)->orderByDesc('id')->first();
 
                     $fbdata = array(
                         'type' => 'self-apply',
@@ -915,7 +891,7 @@ class SelfApplyController extends Controller
                     /* send payment success message ends */
 
                     /* interakt code starts here */
-                    $data2 = array(
+                    $userTrackData = array(
                         'phoneNumber' => Cookie::get('user_mobile'),
                         'countryCode' => '+91',
                         'traits' => array(
@@ -923,9 +899,9 @@ class SelfApplyController extends Controller
                         ),
                         'tags' => array('Self Payment Successful')
                     );
-                    $restrack1 = user_track($data2);
+                    $responseUserTrack = user_track($userTrackData);
 
-                    $data3 = array(
+                    $eventTrackData = array(
                         'phoneNumber' => Cookie::get('user_mobile'),
                         'countryCode' => '+91',
                         'event' => 'Self Payment Successful',
@@ -934,15 +910,14 @@ class SelfApplyController extends Controller
                             'userpass' => Session::get('user_password')
                         )
                     );
-                    $restrack2 = event_track($data3);
+                    $responseEventTrack = event_track($eventTrackData);
                     /* interakt code ends here */
                 }
             }
             return view('selfApply.paymentSuccess', compact('meta', 'data', 'orderData'));
         } catch (\Exception $e) {
-            Log::info('catch');
             Log::error('An error occurred: ' . $e->getMessage());
-            dd('catch');
+            return redirect('/error')->with('error', 'Oops! Something went wrong.');
         }
     }
 
@@ -950,12 +925,12 @@ class SelfApplyController extends Controller
     public function paymentFailed()
     {
         $meta = selfApplyMeta();
-        $data3 = array(
+        $eventTrackData = array(
             'phoneNumber' => Cookie::get('user_mobile'),
             'countryCode' => '+91',
             'event' => 'Self Payment Failed',
         );
-        $restrack2 = event_track($data3);
+        $responseEventTrack = event_track($eventTrackData);
 
         /* send payment failed message starts */
         $msg = DB::table('sms_list')->where('type', 1)->where('slug', 'payment_unsuccessful')->first()->message;
@@ -997,7 +972,7 @@ class SelfApplyController extends Controller
     }
 
 
-    public function PrimeOffer()
+    public function primeOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_1'))->first();
@@ -1134,7 +1109,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function PrimeOfferResponse(Request $request)
+    public function primeOfferResponse(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -1185,7 +1160,7 @@ class SelfApplyController extends Controller
                             $converted = convertIntoCustomer($cardno, $regUser, $cardOffer, $orderAmountInRupees, $txnId, 1, 'self-apply', 'SA_', 4);
                             if (!$converted) {
                                 Log::error("Conversion to customer failed for user: " . $regUser->id);
-                                dd('check log');
+                                return redirect('/error')->with('error', 'Oops! Something went wrong.');
                             }
                         } else {
                             sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
@@ -1209,7 +1184,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function MegaOffer()
+    public function megaOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_2'))->first();
@@ -1353,7 +1328,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function MegaOfferResponse(Request $request)
+    public function megaOfferResponse(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -1422,7 +1397,7 @@ class SelfApplyController extends Controller
                                 $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $txnId, 1, 'self-apply', 'SA_', 7);
                                 if (!$converted) {
                                     Log::error("Conversion to customer failed for user: " . $regUser->id);
-                                    dd('check log');
+                                    return redirect('/error')->with('error', 'Oops! Something went wrong.');
                                 }
                             } else {
                                 sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
@@ -1443,11 +1418,11 @@ class SelfApplyController extends Controller
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-            dd('Ops! Something went wrong.');
+            return redirect('/error')->with('error', 'Oops! Something went wrong.');
         }
     }
 
-    public function PremiumOffer()
+    public function premiumOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_3'))->first();
@@ -1491,6 +1466,7 @@ class SelfApplyController extends Controller
                 $mobile = $inputs['mobile'];
                 $email = $inputs['email'];
             }
+            /* product Data */
             $products = Product::where('productslug', config('constant.SA_OFFER_3'))->first();
 
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
@@ -1524,87 +1500,62 @@ class SelfApplyController extends Controller
             $record = DB::table('cardoffer')->where('mobile', $mobile)->first();
             $offerId = $record->id;
 
-            $orderId = 'KRBZVGP' . number_format(microtime(true) * 1000, 0, '.', '');
-            $encData = null;
-            $returnUrl = route('self.apply.premium-offer.response');
+            $orderid = number_format(microtime(true) * 1000, 0, '.', '');
+            $password = trim(random_code(6));
+            Session::put('orderid', $orderid);
+            Session::save();
+            Cache::put('user_password', $password, $this->lifetime);
 
-            $terminalId = env('VEEGAH_TERMINAL_ID');
-            $password = env('VEEGAH_TERMINAL_PASSWORD');
-            $mkey = env('VEEGAH_MERCHANT_KEY');
+            $returnUrl = route('self.apply.mega-offer.response');
 
-            $signdata = $orderId . "|" . $terminalId . "|" . $password . "|" . $mkey . "|" . round($grandAmount) . "|INR";
-            $signature = hash('sha256', $signdata);
-
-            $postdata = array(
-                "referenceId" => $orderId,
-                "terminalId" => $terminalId,
-                "password" => $password,
-                "signature" =>  $signature, //Generated signature
-                "paymentType" => "1",
-                "amount" => round($grandAmount),
-                "currency" => "INR",
-                "order" => array(
-                    "orderId" => $orderId,  // Related orderId
-                    "description" => "Premium Offer"
-                ),
-                "customer" => array(
-                    "customerEmail" => $email,
-                    "billingAddressStreet" => '',
-                    "billingAddressCity" => "",
-                    "billingAddressState" => "",
-                    "billingAddressPostalCode" => "",
-                    "billingAddressCountry" => "IN"
-                ),
-                "additionalDetails" => array(
-                    "userData" => "{\"entryone\":\"abc\",\"entrytwo\":\"def\",\"entrythree\":\"xyz\",\"receiptUrl\":\"$returnUrl\"}"
-                ),
-            );
-
-            $veegahData = array(
-                'rec_date' => date('Y-m-d H:i:s'),
-                'entryfor' => 8, //sa offer 3 or premium offer
-                'userid' => $offerId,
-                'orderid' => $orderId,
-                'orderamount' => round($grandAmount),
-                'ordernote' => $products->productname
-            );
-
-            $res = VeegahEntry::insert($veegahData);
-            $prodUrl = "https://test-vegaah.concertosoft.com/vegaahpayments/v2/payments/pay-request";
-            if (env('VEEGAH_PROD')) {
-                $prodUrl = "https://checkout.vegaah.com/vegaahpayments/v2/payments/pay-request";
+            if (config('constant.LYRA_MODE') == "PROD") {
+                $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
+            } else {
+                $curlurl = "https://api.in.lyra.com/pg/rest/v1/charge";
             }
-            $curl = curl_init();
-            curl_setopt_array($curl, [
-                CURLOPT_URL => $prodUrl,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS =>  json_encode($postdata),
-                CURLOPT_HTTPHEADER => [
-                    "Content-Type: application/json",
-                    "accept: application/json"
-                ],
-            ]);
-            $vegaahRes = curl_exec($curl);
-            $err = curl_error($curl);
 
-            curl_close($curl);
+            /* lyra post data */
+            $postData = array(
+                "orderId" => $orderid,
+                "currency" => 'INR',
+                "amount" => floor($grandAmount) * 100,
+                "orderInfo" => $products->productname,
+                "maxAgeInHours" => '240',
+                "customer" => array(
+                    "uid" => $offerId,
+                    "name" => $first_name . ' ' . $last_name,
+                    "emailId" => $email,
+                    "phone" => $mobile
+                ),
+                "webhook" => array(
+                    "url" => $returnUrl
+                ),
+                "return" => array(
+                    "method" => 'POST',
+                    "url" => $returnUrl,
+                    "timeout" => '0'
+                )
+            );
 
-            $post_decode_data =  json_decode($vegaahRes);
-            /* veegah PG ends */
-            if ($post_decode_data) {
-                if ($post_decode_data->paymentLink->linkUrl && $post_decode_data->transactionId) {
-                    $redirect_url = $post_decode_data->paymentLink->linkUrl . $post_decode_data->transactionId;
-                    return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $redirect_url));
+            $payurl = getlyrapaymenturl($curlurl, $postData);
+            $lyraData = array(
+                'rec_date' => now(),
+                'entryfor' => 8,
+                'userid' => $offerId,
+                'orderid' => $orderid,
+                'orderamount' => floor($grandAmount),
+                'ordernote' => $products->productname,
+            );
+            $response = LyraEntry::insert($lyraData);
+
+            if ($payurl) {
+                if ($payurl->paymentLink) {
+                    return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $payurl->paymentLink));
                 } else {
-                    return response()->json(array('type' => 'ERROR', 'url' => route('self.apply.premium.offer')));
+                    return response()->json(array('type' => 'ERROR', 'url' => route('self.apply.mega.offer')));
                 }
             } else {
-                return response()->json(array('type' => 'ERROR', 'url' => route('self.apply.premium.offer')));
+                return response()->json(array('type' => 'ERROR', 'url' => route('self.apply.mega.offer')));
             }
         } catch (ValidationException $e) {
             return response()->json(array('type' => 'ERROR', 'errors' => $e->errors()), 422);
@@ -1614,99 +1565,100 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function PremiumOfferResponse(Request $request)
+    public function premiumOfferResponse(Request $request)
     {
         try {
-            $grandtotal = $netamount = $cgstamount = $sgstamount = $igstamount = 0;
+            $inputs = $request->all();
             $meta = selfApplyMeta();
 
-            $jsonData = file_get_contents("php://input");
-            parse_str($jsonData, $parsedData);
-            unset($parsedData['termId']);
+            $response = FALSE;
 
-            $decodedData = urldecode($parsedData['data']);
-            $decodedData = str_replace(' ', '+', $decodedData);
+            if (isset($inputs["vads_order_id"])) {
+                $orderId = $inputs["vads_order_id"];
+                $orderAmount = $inputs["vads_amount"];
+                $responseCode = $inputs["vads_charge_status"];
+                $txnId = $inputs["vads_trans_uuid"];
 
-            $encryptedResponse = base64_decode($decodedData, true);
+                $paymentData = LyraEntry::where('orderid', $orderId)->first();
 
-            $merKey = env('VEEGAH_MERCHANT_KEY');
-            $binaryKey = hex2bin($merKey);
+                $lyraData = array(
+                    'rec_date' => now(),
+                    'orderamount' => $orderAmount / 100,
+                    'statuscode' => $responseCode,
+                    'transactionid' => $txnId
+                );
 
-            $decryptedData = openssl_decrypt($encryptedResponse, 'AES-256-ECB', $binaryKey, OPENSSL_RAW_DATA);
+                $response1 = LyraEntry::where('id', $paymentData->id)->update($lyraData);
 
-            if ($decryptedData === false) {
-                return view('cardoffer-response', ['meta' => $meta, 'response' => FALSE]);
-            }
+                $userData = Cardoffer::where('id', $paymentData->userid)->first();
 
-            $resultdata = json_decode($decryptedData, true);
-            if ($resultdata === null) {
-                return view('cardoffer-response', ['meta' => $meta, 'response' => FALSE]);
-            }
+                if ($responseCode == "PAID") {
+                    $isEntry = Cardoffer::where('paymentid', $txnId)
+                        ->where('isDelete', 0)
+                        ->count();
 
-            $paymentData = VeegahEntry::where('orderid', $resultdata['orderDetails']['orderId'])->first();
+                    if ($isEntry == 0) {
+                        $cardno = random_code_num(16);
+                        $orderAmountInRupees = $orderAmount / 100;
 
-            $veegahData = array(
-                'rec_date' => now(),
-                'referenceid' => $resultdata['transactionId'],
-                'txstatus' => $resultdata['result'],
-                'paymentmode' => $resultdata['paymentInstrument']['paymentMethod']
-            );
-            $response1 = VeegahEntry::where('id', $paymentData->id)->update($veegahData);
-            $userData = Cardoffer::where('id', $paymentData->userid)->first();
-            if ($resultdata['result'] == 'SUCCESS') {
-                $isEntry = Cardoffer::where('paymentid', $resultdata['transactionId'])->where('isDelete', 0)->count();
-                if ($isEntry == 0) {
-                    $cardno = random_code_num(16);
+                        $data = [
+                            'rec_date' => now(),
+                            'card_number' => $cardno,
+                            'registration_date' => now(),
+                            'expiry_date' => date('Y-m-d', strtotime('+9 months')),
+                            'amount' => $orderAmountInRupees,
+                            'paymentid' => $txnId,
+                            'isActive' => 1
+                        ];
 
-                    $data = array(
-                        'rec_date' => now(),
-                        'card_number' => $cardno,
-                        'registration_date' => Carbon::now()->toDateString(),
-                        'expiry_date' => Carbon::now()->addMonth()->toDateString(),
-                        'paymentid' => $resultdata['transactionId'],
-                        'isActive' => 1
-                    );
-                    $response = Cardoffer::where('id', $paymentData->userid)->update($data);
+                        $response = Cardoffer::where('id', $paymentData->userid)->update($data);
+                        if ($response) {
+                            $regUser = UserRegistration::where('mobile', $userData->mobile)
+                                ->where(['isActive' => 1, 'isDelete' => 0])
+                                ->first();
 
-                    if ($response) {
-                        $regUser = UserRegistration::where('mobile', $userData->mobile)
-                            ->where(['isActive' => 1, 'isDelete' => 0])
-                            ->first();
+                            $data = array(
+                                'rec_date' => date('Y-m-d H:i:s'),
+                                'card_number' => $cardno,
+                                'registration_date' => date('Y-m-d'),
+                                'expiry_date' => date('Y-m-d', strtotime('+3 months')),
+                                'amount' => $paymentData->orderamount,
+                                'paymentid' => $txnId,
+                                'isActive' => 1
+                            );
+                            $response = Cardoffer::where('id', $paymentData->userid)->update($data);
 
-                        if ($regUser) {
-                            $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $resultdata['transactionId'], 1, 'self-apply', 'SA_', 8);
-                            if (!$converted) {
-                                Log::error("Conversion to customer failed for user: " . $regUser->id);
-                                dd('check log');
+                            if ($regUser) {
+                                $cardOffer = Cardoffer::where('id', $paymentData->userid)->first();
+                                $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $txnId, 1, 'self-apply', 'SA_', 8);
+                                if (!$converted) {
+                                    Log::error("Conversion to customer failed for user: " . $regUser->id);
+                                    return redirect('/error')->with('error', 'Oops! Something went wrong.');
+                                }
+                            } else {
+                                sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
                             }
-                        } else {
-                            $sent = sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
                         }
+                        session()->forget(['isMailSend', 'cardno']);
+                        return View('cardoffer-response', compact('meta', 'response'));
                     }
-                    session()->forget(['isMailSend', 'cardno']);
-                    return view('cardoffer-response', [
-                        'meta' => $meta,
-                        'response' => TRUE,
-                    ]);
+
+                    return View('cardoffer-response', compact('meta', 'response'));
                 } else {
-                    return view('cardoffer-response', [
-                        'meta' => $meta,
-                        'response' => TRUE,
-                    ]);
+                    $response = FALSE;
+                    return View('cardoffer-response', compact('meta', 'response'));
                 }
             } else {
-                return view('cardoffer-response', [
-                    'meta' => $meta,
-                    'response' => FALSE,
-                ]);
+                $response = FALSE;
+                return View('cardoffer-response', compact('meta', 'response'));
             }
         } catch (\Exception $e) {
-            Log::info('An error occured in offer3 response - ' . $e->getMessage());
-            dd('Ops! Something went wrong.');
+            Log::info($e->getMessage());
+            return redirect('/error')->with('error', 'Oops! Something went wrong.');
         }
     }
 
-    public function StarOffer()
+    public function starOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_4'))->first();
@@ -1851,7 +1803,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function StarOfferResponse(Request $request)
+    public function starOfferResponse(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -1920,7 +1872,7 @@ class SelfApplyController extends Controller
                                 $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $txnId, 1, 'self-apply', 'SA_', 7);
                                 if (!$converted) {
                                     Log::error("Conversion to customer failed for user: " . $regUser->id);
-                                    dd('check log');
+                                    return redirect('/error')->with('error', 'Oops! Something went wrong.');
                                 }
                             } else {
                                 sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
@@ -1932,7 +1884,6 @@ class SelfApplyController extends Controller
 
                     return View('cardoffer-response', compact('meta', 'response'));
                 } else {
-                    //$sent = $this->Site_Onlineprocess_Model->sendPaymentFailedGreetings($userdata->mobile, $userdata->emailid);
                     $response = FALSE;
                     return View('cardoffer-response', compact('meta', 'response'));
                 }
@@ -1942,11 +1893,11 @@ class SelfApplyController extends Controller
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-            dd('Ops! Something went wrong.');
+            return redirect('/error')->with('error', 'Oops! Something went wrong.');
         }
     }
 
-    public function GreatOffer()
+    public function greatOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_5'))->first();
@@ -2069,7 +2020,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function GreatOfferResponse(Request $request)
+    public function greatOfferResponse(Request $request)
     {
         try {
             $meta = selfApplyMeta();
@@ -2117,7 +2068,7 @@ class SelfApplyController extends Controller
                         $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $sabpaisaTxnId, 1, 'self-apply', 'SA_', 5);
                         if (!$converted) {
                             Log::error("Conversion to customer failed for user: " . $regUser->id);
-                            dd('check log');
+                            return redirect('/error')->with('error', 'Oops! Something went wrong.');
                         }
                     } else {
                         $sent = sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
@@ -2148,7 +2099,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function StandardOffer()
+    public function standardOffer()
     {
         $meta = selfApplyMeta();
         $products = Product::where('productslug', config('constant.SA_OFFER_6'))->first();
@@ -2362,7 +2313,7 @@ class SelfApplyController extends Controller
                             $converted = convertIntoCustomer($cardno, $regUser, $userData, $orderAmount, $txnId, 1, 'self-apply', 'SA_', 31);
                             if (!$converted) {
                                 Log::error("Conversion to customer failed for user: " . $regUser->id);
-                                dd('check log');
+                                return redirect('/error')->with('error', 'Oops! Something went wrong.');
                             }
                         } else {
                             $sent = sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
@@ -2386,7 +2337,7 @@ class SelfApplyController extends Controller
                 ]);
             }
         } catch (\Exception $e) {
-            dd('Oops! Something went wrong.');
+            return redirect('/error')->with('error', 'Oops! Something went wrong.');
         }
     }
 }

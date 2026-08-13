@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-md-8 col-lg-8 col-12">
                             <div class="card">
-                                <form action="{{ route('webinar.storeStep3') }}" id="personalDetailForm" class="contact-form signup-form" novalidate="novalidate" method="post" accept-charset="utf-8">
+                                <form action="{{ route('webinar.personal.details-submit') }}" id="personalDetailForm" class="contact-form signup-form" novalidate="novalidate" method="post" accept-charset="utf-8">
                                     <div class="card-body">
                                         <h5 class="fw-bolder s-16">Personal Details</h5>
                                         <p class="mb-30 color--grey">Fill in the details below to complete your registration.</p>

@@ -12,7 +12,6 @@ class ScheduleSlotController extends Controller
 {
     public function getScheduleSlotPage(Request $request)
     {
-        //dd(route('schedule-slot',['id' => encryptData(6986)]));
         //$id = encryptData($request->id);
         //$userId = $id ?? NULL;
         // $userId = $request->id ?? NULL;

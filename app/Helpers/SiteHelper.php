@@ -628,8 +628,9 @@ if(!function_exists('sendBrevoHtmlMail2')){
             )
         );
         $response = curl_exec($curl);
-
         $err = curl_error($curl);
+        Log::info('sendBrevoHtmlMail2 response : ' . $response);
+        Log::info('sendBrevoHtmlMail2 error : ' . $err);
 
         curl_close(handle: $curl);
 

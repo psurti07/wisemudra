@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 29, 2026 at 06:45 AM
+-- Generation Time: Aug 17, 2026 at 06:04 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -633,7 +633,15 @@ CREATE TABLE IF NOT EXISTS `fb_ads_entry` (
   `received_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `fb_ads_entry`
+--
+
+INSERT INTO `fb_ads_entry` (`id`, `rec_date`, `userid`, `fbclid`, `send_data`, `received_data`) VALUES
+(6, '2026-08-11 15:34:26', 4, NULL, NULL, NULL),
+(7, '2026-08-12 17:13:31', 5, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -926,7 +934,15 @@ CREATE TABLE IF NOT EXISTS `loan_applications` (
   `isDelete` tinyint NOT NULL DEFAULT '0' COMMENT '0=active, 1=delete',
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `loan_applications`
+--
+
+INSERT INTO `loan_applications` (`id`, `rec_date`, `userid`, `loan_amount`, `user_type`, `loan_type`, `monthly_income`, `cibilscore`, `loan_purpose`, `currentemi`, `emibounce`, `application_number`, `loantenure`, `status`, `isDelete`) VALUES
+(4, '2026-08-11 15:34:45', 4, 500000, 2, 1, '5000', 0, 'Personal Use', 500, 0, 'Lg8NZs2b', 0, 1, 0),
+(5, '2026-08-12 17:13:31', 5, 500000, 1, 1, '5000', 0, 'Personal Use', 500, 0, 'G99ha35L', 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1067,7 +1083,15 @@ CREATE TABLE IF NOT EXISTS `otp_verifications` (
   `otp` mediumint NOT NULL,
   `acc_type` tinyint NOT NULL DEFAULT '0' COMMENT '0=none, 1=selfapply, 2=loanagent\r\n',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `otp_verifications`
+--
+
+INSERT INTO `otp_verifications` (`id`, `rec_date`, `mobile`, `email`, `otp`, `acc_type`) VALUES
+(8, '2026-08-12', '8520000000', '', 1602, 1),
+(7, '2026-08-11', '9630000000', '', 7726, 1);
 
 -- --------------------------------------------------------
 
@@ -1318,13 +1342,11 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('4U86dpdBC1BthtJocRkrjHNGDQZCNbGTGAHDAfC0', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoid3AxZjVmVFd4V0owT0FkZG9HUTBZcXNJZFR2d2pNWW56dHhRbVNVRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3Qvd2lzZW11ZHJhL3NlbGYtYXBwbHkiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1785237212),
-('c20ib61FOwE0if244AfmOS3CdqtphZSNDs7OVQPv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNXNtSVhyMVNHSFdYNG9lWHJ5ZTR1c0E1ek42MGZ6RWFBVnNiNUZWbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1784632901),
-('FPmGlo2KjEDPThT0xu9k7P1u9RWHwK1lclheUIPq', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWlhXbFFZRUhvaktKbHM0cUtFU2N6NUVYWkN1WWpDN3lHWTVIZ0hWYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3QvbWFuYWdlX3dpc2VtdWRyYSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1784698272),
-('o78vqwiwqvNvwrSJ1qfG1Nhvhj8SAxxqWGHWhJ3p', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMHZ2TDNJZlE1Q2RDZUZoUHVReXFxYm13a0Z2THZhc0NWNWpmMmdPbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Qvd2lzZW11ZHJhIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1784695174),
-('qm7rsiekBUXuONxETruFkWooOaSQYMxmSjC9bkYm', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiQjFycDJJQVJDU3BLTXJBRkx4QjBUZFphZXM3cXVYT2V6ajhZVnlZeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDU6Imh0dHA6Ly9sb2NhbGhvc3QvbWFuYWdlX3dpc2VtdWRyYS9zZWFyY2gtZGF0YSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1785219300),
-('qNt1kt7NAdiyN0pyqCVQ76a2WDJkHMqo7eRJDMuD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidXFRdHdaaHNYem1Ic3h5bUNnaE16bGdBT01kSHdDc2RtSlp0QWVNcyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zZWxmLWFwcGx5L3N0YXItb2ZmZXIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjc6Im9yZGVyaWQiO3M6MTM6IjE3ODQ2MTQ3MzI0OTkiO30=', 1784614733),
-('qyBaeMqRHEQvzCr8lKHCOZ9EVU9rJCyg14mBFMS3', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNk9DaXpJRjZHbEk5VnNGdnplSnVtdDZqZ2cwQkxJZkZidWVWWlpwVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYXl1LXBnIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1784527042);
+('byqWhy9XHPymc3XSAUkFdkBG2tRpVmB4vpwYhN20', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNEkwU1dXTWVpM1F5VVRHcTRzbjhWYkdmVk1hajJoN1U0Z3o2aUppVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDU6Imh0dHA6Ly9sb2NhbGhvc3Qvd2lzZW11ZHJhL3NlbGYtYXBwbHkvYnV5LW5vdyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo4OiJzb3VyY2VJZCI7Tjt9', 1786442686),
+('Dyro9okYUi8Gq0VJZryKfkNpt3A1bkynLbKv5MXG', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidkxjWlZDNHZZN2J1a0M4eVpqQTZpR29aNEFLblRyd2NUeXVLOWR5OCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3QvbWFuYWdlX3dpc2VtdWRyYSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1786364160),
+('ojKw2duiStQ7S4Vk4f2hYWV37IIHZPMV8My2v2dS', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOVZQdGMyN01VVElCcGpQT0VKbjhkWmFiZUpXSmRNQm45UG5vTGtXTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Qvd2lzZW11ZHJhIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1786439132),
+('uTtl5MtyNAZDdfNmSG92MvnGeCcmqSRWZB9vQSXn', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiOGNOR3NGY2N6eGVSY3VMc2JyYnNkb1dHb2cxSWp0cWk5RDQzcW5xRSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Qvd2lzZW11ZHJhIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo4OiJzb3VyY2VJZCI7Tjt9', 1786536949),
+('zG2NQf7PrV76wE5dCjpGMhbzUpyOwUo3PvtKvPpd', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWWJwZGxPNHBTbTlVQWFtckxscDM4eGhjSWRVNEhHNjcwWWVhRUhqSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDc6Imh0dHA6Ly9sb2NhbGhvc3QvbWFuYWdlX3dpc2VtdWRyYS9zdGFmZi1hY2NvdW50Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1786364688);
 
 -- --------------------------------------------------------
 
@@ -1455,7 +1477,7 @@ CREATE TABLE IF NOT EXISTS `source_entry` (
   `utm_referral` varchar(99) DEFAULT NULL,
   `client_ip` varchar(55) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `source_entry`
@@ -1470,7 +1492,10 @@ INSERT INTO `source_entry` (`id`, `rec_date`, `user_id`, `utm_source`, `utm_camp
 (6, '2026-04-21 16:46:58', 2, 'web', '', 'direct', '', '', '127.0.0.1'),
 (7, '2026-04-21 17:10:08', 2, 'web', '', 'direct', '', '', '127.0.0.1'),
 (8, '2026-06-03 16:29:12', 2, 'web', '', 'direct', '', '', '127.0.0.1'),
-(9, '2026-06-03 16:29:45', 2, 'web', '', 'direct', '', '', '127.0.0.1');
+(9, '2026-06-03 16:29:45', 2, 'web', '', 'direct', '', '', '127.0.0.1'),
+(10, '2026-08-11 15:34:26', 4, 'web', '', 'direct', NULL, NULL, '::1'),
+(11, '2026-08-12 17:12:35', 4, 'web', '', 'direct', NULL, '', '::1'),
+(12, '2026-08-12 17:13:31', 5, 'web', '', 'direct', NULL, NULL, '::1');
 
 -- --------------------------------------------------------
 
@@ -1603,7 +1628,7 @@ CREATE TABLE IF NOT EXISTS `user_offers` (
   `userid` int NOT NULL,
   `offerdata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user_offers`
@@ -1612,7 +1637,9 @@ CREATE TABLE IF NOT EXISTS `user_offers` (
 INSERT INTO `user_offers` (`id`, `rec_date`, `userid`, `offerdata`) VALUES
 (1, '2025-12-28 15:11:45', 1, '[{\"apply_id\":32,\"rec_date\":\"2025-06-28 16:05:55\",\"bankid\":13,\"roi\":10.5,\"bank_name\":\"Faircent\",\"bank_image\":\"1746170179.png\",\"tenures\":60,\"option1\":\"100% Online Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Easy & Quick Process\",\"applyurl\":\"https:\\/\\/in.faircentpro.com\\/?utm_source=wl&utm_medium=Mailer&campaign_name=Borrower_Partner&agf=WLA113767\",\"loanAmount\":205716,\"is_recommended\":1},{\"apply_id\":7,\"rec_date\":\"2025-05-03 15:57:46\",\"bankid\":38,\"roi\":10.5,\"bank_name\":\"InCred Finance\",\"bank_image\":\"1746190862.png\",\"tenures\":60,\"option1\":\"Simple Online Process\",\"option2\":\"Low EMI Options\",\"option3\":\"Min. Documentation\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Instant Process\",\"applyurl\":\"https:\\/\\/www.incred.com\\/personal-loan\\/\",\"loanAmount\":205716,\"is_recommended\":0},{\"apply_id\":18,\"rec_date\":\"2025-05-03 17:15:19\",\"bankid\":29,\"roi\":11,\"bank_name\":\"MoneyView\",\"bank_image\":\"1746187540.png\",\"tenures\":36,\"option1\":\"Simple Online Process\",\"option2\":\"Low EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"You\\u2019re Eligible For Pre-Approved Loan Offer | Simple Process\",\"applyurl\":\"https:\\/\\/moneyview.in\\/personal-loan\",\"loanAmount\":205716,\"is_recommended\":0},{\"apply_id\":20,\"rec_date\":\"2025-05-03 17:19:02\",\"bankid\":40,\"roi\":10.5,\"bank_name\":\"Fibe\",\"bank_image\":\"1746191054.png\",\"tenures\":60,\"option1\":\"100% Digital Process\",\"option2\":\"Low EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Instant Process\",\"applyurl\":\"https:\\/\\/www.fibe.in\\/personal-loan\\/\",\"loanAmount\":205716,\"is_recommended\":0},{\"apply_id\":30,\"rec_date\":\"2025-06-07 20:56:34\",\"bankid\":45,\"roi\":10.5,\"bank_name\":\"Freo (by MoneyTap)\",\"bank_image\":\"1749300818.png\",\"tenures\":60,\"option1\":\"100% Digital Process\",\"option2\":\"Low EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"You\'re Eligible For Pre-Approved Loan Offer | Simple Process\",\"applyurl\":\"https:\\/\\/web.moneytap.com\\/\",\"loanAmount\":205716,\"is_recommended\":0}]'),
 (2, '2026-03-20 12:18:58', 2, '[{\"apply_id\":32,\"rec_date\":\"2025-06-28 16:05:55\",\"bankid\":13,\"roi\":10.5,\"bank_name\":\"Faircent\",\"bank_image\":\"1746170179.png\",\"tenures\":60,\"option1\":\"100% Online Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Easy & Quick Process\",\"applyurl\":\"https:\\/\\/in.faircentpro.com\\/?utm_source=wl&utm_medium=Mailer&campaign_name=Borrower_Partner&agf=WLA113767\",\"loanAmount\":875000,\"is_recommended\":1}]'),
-(3, '2026-03-20 12:26:09', 3, '[{\"apply_id\":32,\"rec_date\":\"2025-06-28 16:05:55\",\"bankid\":13,\"roi\":10.5,\"bank_name\":\"Faircent\",\"bank_image\":\"1746170179.png\",\"tenures\":60,\"option1\":\"100% Online Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Easy & Quick Process\",\"applyurl\":\"https:\\/\\/in.faircentpro.com\\/?utm_source=wl&utm_medium=Mailer&campaign_name=Borrower_Partner&agf=WLA113767\",\"loanAmount\":802337,\"is_recommended\":1}]');
+(3, '2026-03-20 12:26:09', 3, '[{\"apply_id\":32,\"rec_date\":\"2025-06-28 16:05:55\",\"bankid\":13,\"roi\":10.5,\"bank_name\":\"Faircent\",\"bank_image\":\"1746170179.png\",\"tenures\":60,\"option1\":\"100% Online Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Easy & Quick Process\",\"applyurl\":\"https:\\/\\/in.faircentpro.com\\/?utm_source=wl&utm_medium=Mailer&campaign_name=Borrower_Partner&agf=WLA113767\",\"loanAmount\":802337,\"is_recommended\":1}]'),
+(4, '2026-08-11 15:34:38', 4, '[{\"apply_id\":32,\"rec_date\":\"2025-06-28 16:05:55\",\"bankid\":13,\"roi\":10.5,\"bank_name\":\"Faircent\",\"bank_image\":\"1746170179.png\",\"tenures\":60,\"option1\":\"100% Online Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Easy & Quick Process\",\"applyurl\":\"https:\\/\\/in.faircentpro.com\\/?utm_source=wl&utm_medium=Mailer&campaign_name=Borrower_Partner&agf=WLA113767\",\"loanAmount\":195000,\"is_recommended\":1}]'),
+(5, '2026-08-12 17:14:24', 5, '[{\"apply_id\":16,\"rec_date\":\"2025-05-03 17:04:30\",\"bankid\":11,\"roi\":10.5,\"bank_name\":\"Werize\",\"bank_image\":\"1746170219.png\",\"tenures\":60,\"option1\":\"100% Digital Process\",\"option2\":\"Convenient EMI Options\",\"option3\":\"Min. Paperwork\",\"option4\":null,\"option5\":null,\"title\":\"Your Eligibility Matches The Criteria | Instant Process\",\"applyurl\":\"https:\\/\\/partner.werize.com\\/MyBusiness\\/KREDBAZ%20SERVICE%20INDIA%20PRIVATE%20LIMITED\\/d2266f89-d2b0-4956-ba75-e95eca9cd08a\",\"loanAmount\":195000,\"is_recommended\":1}]');
 
 -- --------------------------------------------------------
 
@@ -1673,7 +1700,15 @@ CREATE TABLE IF NOT EXISTS `user_registrations` (
   `isActive` tinyint NOT NULL DEFAULT '1' COMMENT '1= active, 0=noactive',
   PRIMARY KEY (`id`),
   KEY `mobile` (`mobile`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user_registrations`
+--
+
+INSERT INTO `user_registrations` (`id`, `staff_id`, `offerpage`, `rec_date`, `update_date`, `first_name`, `last_name`, `mobile`, `email`, `password`, `dob`, `pancard`, `pincode`, `city`, `state`, `process_step`, `refcode`, `acc_type`, `company_name`, `company_gst`, `isUser`, `iAgree`, `isDnd`, `isVerified`, `isDelete`, `isActive`) VALUES
+(4, NULL, 0, '2026-08-11 15:34:26', '2026-08-12 17:12:39', 'Uday', 'Variya', '9630000000', 'verloop.dev4@gmail.com', NULL, NULL, NULL, '395001', 'Surat', 'Gujarat', 4, NULL, 1, NULL, NULL, 1, 1, 0, 0, 0, 1),
+(5, NULL, 0, '2026-08-12 17:13:31', '2026-08-12 17:14:28', 'Verloop', 'Web', '8520000000', 'verloop.dev4@gmail.com', NULL, NULL, NULL, '395001', 'Surat', 'Goa', 4, NULL, 1, NULL, NULL, 1, 1, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1818,7 +1853,14 @@ CREATE TABLE IF NOT EXISTS `zaakpay_entry` (
   `transactionid` varchar(256) DEFAULT NULL,
   `paymentmode` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `zaakpay_entry`
+--
+
+INSERT INTO `zaakpay_entry` (`id`, `rec_date`, `entryfor`, `userid`, `orderid`, `orderamount`, `ordernote`, `statuscode`, `transactionid`, `paymentmode`) VALUES
+(14, '2026-08-11 15:34:45', 11, 4, 'ZPLive1786442685882', 234.82, 'Self Apply', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

@@ -94,11 +94,11 @@
                     </div>
                     <!-- Form Submit Button -->
                     <div class="col-md-12">
-                      <button type="submit" class="btn btn--theme hover--theme submit btn-login mt-0">Log In</button>
+                      <button type="submit" class="btn btn--theme hover--theme submit btn-login mt-0 rounded-pill">Log In</button>
                     </div>
                     <!-- Sign Up Link -->
                     <div class="col-md-12">
-                      <p class="create-account text-center">
+                      <p class="create-account text-center mt-0">
                         Don't have an account? <a href="{{ route('self.apply.main') }}" class="color--theme">Sign up</a>
                       </p>
                     </div>

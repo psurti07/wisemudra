@@ -8,18 +8,18 @@
             {{--<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>--}}
         </div>
         <!-- NAVIGATION MENU -->
-        <div class="wsmainfull menu clearfix">
+        <div class="wsmainfull menu clearfix header-top">
             <div class="wsmainwp clearfix">
                 <!-- HEADER BLACK LOGO -->
                 <div class="desktoplogo">
                     <a href="javascript:;" class="logo-black">
-                        <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ config('constant.APP_NAME') }}" />
+                        <img src="{{ asset('front/images/logo/logo-w.png') }}" alt="{{ config('constant.APP_NAME') }}" />
                     </a>
                 </div>
                 <!-- HEADER WHITE LOGO -->
                 <div class="desktoplogo">
                     <a href="javascript:;" class="logo-white">
-                        <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ config('constant.APP_NAME') }}" />
+                        <img src="{{ asset('front/images/logo/logo-w.png') }}" alt="{{ config('constant.APP_NAME') }}" />
                     </a>
                 </div>
                 <!-- MAIN MENU -->

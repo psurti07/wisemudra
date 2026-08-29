@@ -76,9 +76,9 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
+                                        <!-- <div class="input-group-prepend">
                                             <i class="fa fa-envelope"></i>
-                                        </div>
+                                        </div> -->
                                         <input type="email" name="email" id="email" class="form-control" placeholder="Email*" autocomplete="off"  value="{{ old('email') }}">
                                     </div>
                                     @component('components.ajax-error',['field'=>'email'])@endcomponent

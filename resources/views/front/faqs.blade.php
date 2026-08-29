@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md-12 text-center">
-                        <div class="txt-block left-column">
+                        <div class="txt-block left-column border-0">
                             <span class="section-id"></span>
                             <h2 class="w-700">Frequently Asked <span class="color--green-500">Questions</span></h2>
                             <p class="p-md w-400">

@@ -4,25 +4,36 @@
 @push('style-css')
 @endpush
 @section('content')
-    <section id="privacy-page" class="gr--white pt-150 pb-100 division">
+<section class="page-hero-section">
+    <div class="page-hero-section-overlay bg--green-100 bg--scroll">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="inner-page-title mb-20">
-                    <h2 class="s-28">{{ $mainTitle }}</h2>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                {!! $description !!}
-                            </div>
-                        </div>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-12 text-center">
+                    <div class="txt-block left-column">
+                        <span class="section-id"></span>
+                        <h2 class="s-28">{{ $mainTitle }}</h2>
+                        <!-- <p class="p-md w-400">
+                            Have a query? Raise a request with Arrow Capital and get quick assistance for all your loan needs.
+                        </p> -->
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <hr class="divider"/>
+    </div>
+</section>
+
+
+<section id="privacy-page" class="gr--white py-80 division">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="border p-4 r-12">
+                    {!! $description !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 @push('script-src')
 @endpush

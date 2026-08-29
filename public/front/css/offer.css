@@ -70,9 +70,7 @@
         display:block!important;
     }
 
-    .owl-carousel .owl-item img{
-        width: 100%!important;
-    }
+ 
 
     .radio:checked {
         background: #02a6fc;
@@ -80,9 +78,9 @@
     }
 
     .input-group-text {
-        color: #666;
+        color: #666 !important;
         border: none;
-        background-color: #f5f6f8;
+        background-color: #f5f6f8 !important;
         line-height: 1.3;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;

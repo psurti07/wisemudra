@@ -7,27 +7,58 @@
             pointer-events: none;
             cursor: not-allowed;
         }
-        .bank-crousel{
-            display:block!important;
-        }
-        .radio:checked{ background: #02a6fc; border-color: #02a6fc; }
-        .owl-carousel .owl-item img{
-            width: 100%!important;
-        }
-        .testimonials-carousel .owl-item img{
-            width: 100%!important;
+
+        .bank-crousel {
+            display: block !important;
         }
 
-        @media screen and (max-width: 767px){
-            .hero-section { padding-top:10px!important; }
+        .radio:checked {
+            background: #02a6fc;
+            border-color: #02a6fc;
         }
-        .input-group-text{ color:#666;border:none;background-color: #f5f6f8;line-height: 1.3;border-top-left-radius: 5px;border-bottom-left-radius: 5px;border-top-right-radius: 0px;border-bottom-right-radius: 0px; }
-        .request-form .form-control:focus{background-color:#f5f6f8;border-color:#f5f6f8;border:none;}
-        @media screen and (max-width:991px){
-            .input-group-text{ padding:1.06rem 1.06rem; }
+
+        .owl-carousel .owl-item img {
+            width: 100% !important;
         }
-        @media screen and (min-width:992px) and (max-width:1199px){
-            .input-group-text{ padding:1rem 1rem;margin-top:1px; }
+
+        .testimonials-carousel .owl-item img {
+            width: 100% !important;
+        }
+
+        @media screen and (max-width: 767px) {
+            .hero-section {
+                padding-top: 10px !important;
+            }
+        }
+
+        .input-group-text {
+            color: #666;
+            border: none;
+            background-color: #f5f6f8;
+            line-height: 1.3;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .request-form .form-control:focus {
+            background-color: #f5f6f8;
+            border-color: #f5f6f8;
+            border: none;
+        }
+
+        @media screen and (max-width:991px) {
+            .input-group-text {
+                padding: 1.06rem 1.06rem;
+            }
+        }
+
+        @media screen and (min-width:992px) and (max-width:1199px) {
+            .input-group-text {
+                padding: 1rem 1rem;
+                margin-top: 1px;
+            }
         }
     </style>
 @endpush
@@ -89,13 +120,17 @@
 
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
-                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> No Collateral Required</p>
-                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> Flexible Repayment Options</p>
+                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> No
+                                    Collateral Required</p>
+                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> Flexible
+                                    Repayment Options</p>
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12">
-                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> Pre-Approved Offers Available</p>
-                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> Minimal Documentation</p>
+                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span>
+                                    Pre-Approved Offers Available</p>
+                                <p class="btn-txt mb-3 ico-15"><span class="flaticon-check color--theme"></span> Minimal
+                                    Documentation</p>
                             </div>
                         </div>
                     </div>
@@ -105,8 +140,9 @@
                     <div id="hero-8-form" class="border border-primary r-06">
                         <h4 class="s-20 w-700 mb-2">Apply in <span class="color--green-500">5 Minutes</span></h4>
                         <p class="s-16">Get instant pre-approved offers.</p>
-                        
-                        <form method="post" action="{{ route('loan.agent.send.otp') }}" class="request-form save-form-1 needs-validation" novalidate>
+
+                        <form method="post" action="{{ route('loan.agent.send.otp') }}"
+                            class="request-form save-form-1 needs-validation" novalidate>
                             <div class="row g-2">
                                 <div class="col-md-12">
                                     <div class="form-check ps-0">
@@ -114,20 +150,22 @@
                                             <div class="col-md-6 col-lg-6 col-sm-6 mb-2">
                                                 <fieldset class="picker1">
                                                     <label class="card" for="personalloan">
-                                                        <input type="radio" name="loan_type" id="personalloan" value="1" class="radio" checked>
+                                                        <input type="radio" name="loan_type" id="personalloan"
+                                                            value="1" class="radio" checked>
                                                         <span class="plan-details">
                                                             <span class="plan-type color--green-500">Personal Loan</span>
-											            </span>
+                                                        </span>
                                                     </label>
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-6 col-lg-6 col-sm-6 mb-2">
                                                 <fieldset class="picker1">
                                                     <label class="card" for="businessloan">
-                                                        <input type="radio" name="loan_type" id="businessloan" value="2" class="radio">
+                                                        <input type="radio" name="loan_type" id="businessloan"
+                                                            value="2" class="radio">
                                                         <span class="plan-details">
                                                             <span class="plan-type color--green-500">Business Loan</span>
-											            </span>
+                                                        </span>
                                                     </label>
                                                 </fieldset>
                                             </div>
@@ -145,8 +183,10 @@
                                                 <option value="2" data-loan="personal">Self Employed</option>
 
                                                 <!-- Business Options -->
-                                                <option value="3" data-loan="business" style="display:none;">Small Business</option>
-                                                <option value="4" data-loan="business" style="display:none;">Audited Report</option>
+                                                <option value="3" data-loan="business" style="display:none;">Small
+                                                    Business</option>
+                                                <option value="4" data-loan="business" style="display:none;">Audited
+                                                    Report</option>
                                             </select>
                                         </div>
                                     </div>
@@ -156,17 +196,27 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">+91</span>
                                         </div>
-                                        <input type="text" name="mobile" id="mobile" class="numeric-input form-control name" placeholder="Enter Your Mobile*" autocomplete="off" required maxlength="10" minlength="10" inputmode="numeric">
+                                        <input type="text" name="mobile" id="mobile"
+                                            class="numeric-input form-control name" placeholder="Enter Your Mobile*"
+                                            autocomplete="off" required maxlength="10" minlength="10"
+                                            inputmode="numeric">
                                     </div>
-                                    @component('components.ajax-error',['field'=>'mobile'])@endcomponent
+                                    @component('components.ajax-error', ['field' => 'mobile'])
+                                    @endcomponent
                                 </div>
                                 <div class="col-md-12 form-btn">
-                                    <button type="submit" id="checkmodal" class="btn btn--theme hover--theme submit">Apply Now</button>
+                                    <button type="submit" id="checkmodal"
+                                        class="btn btn--theme hover--theme submit">Apply Now</button>
                                 </div>
                                 <div class="col-md-12"><span class="text-danger" id="usererrormsg"></span></div>
                             </div>
-                           
-                            <p class="mb-0 s-14 text-start text-dark">By submitting, you agree to Wisemudra's <a href="{{ route('front.terms.conditions') }}"  target="_blank"class="text-dark text-decoration-none">Terms of Use</a> and <a href="{{ route('front.privacy.policy') }}" class="text-dark text-decoration-none" target="_blank">Privacy Policy</a>, and consent to receive promotional and informational messages via email, call, or SMS.</p>
+
+                            <p class="mb-0 s-14 text-start text-dark">By submitting, you agree to Wisemudra's <a
+                                    href="{{ route('front.terms.conditions') }}"
+                                    target="_blank"class="text-dark text-decoration-none">Terms of Use</a> and <a
+                                    href="{{ route('front.privacy.policy') }}" class="text-dark text-decoration-none"
+                                    target="_blank">Privacy Policy</a>, and consent to receive promotional and
+                                informational messages via email, call, or SMS.</p>
                         </form>
                     </div>
                 </div>
@@ -181,8 +231,10 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-12">
                         <div class="section-title mb-50">
-                            <h2 class="s-28">Trusted by the <span class="color--green-500">Best in the Industry</span></h2>
-                            <p class="s-16 color--grey">Partnering with the best NBFCs to provide the best for our customers.</p>
+                            <h2 class="s-28">Trusted by the <span class="color--green-500">Best in the Industry</span>
+                            </h2>
+                            <p class="s-16 color--grey">Partnering with the best NBFCs to provide the best for our
+                                customers.</p>
                         </div>
                     </div>
                 </div>
@@ -225,7 +277,8 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">Enriching Collaboration</h4>
-                                <p>Access a wide range of financial services empowered by our industry-leading NBFC partners.</p>
+                                <p>Access a wide range of financial services empowered by our industry-leading NBFC
+                                    partners.</p>
                             </div>
                         </div>
                     </div>
@@ -238,7 +291,8 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">100% Online Process</h4>
-                                <p>Experience the convenience and power of digital provisions from the comfort of your own home.</p>
+                                <p>Experience the convenience and power of digital provisions from the comfort of your own
+                                    home.</p>
                             </div>
                         </div>
                     </div>
@@ -264,7 +318,8 @@
                             </div>
                             <div class="fbox-txt">
                                 <h4 class="s-18 w-700">Hire Loan Agent</h4>
-                                <p>Benefit from our experts' insights and strategies to increase your chances of loan approval.</p>
+                                <p>Benefit from our experts' insights and strategies to increase your chances of loan
+                                    approval.</p>
                             </div>
                         </div>
                     </div>
@@ -274,7 +329,7 @@
     </section>
     <!-- why Wisemudra section ends -->
 
-   <!-- Testimonioals section starts -->
+    <!-- Testimonioals section starts -->
     <section id="reviews-1" class="py-80 shape--06 reviews-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -295,25 +350,38 @@
         </div>
     </section>
     <!-- Testimonioals section ends -->
-   
+
     <section class="py-20 shape--06 gr--smoke">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="form-holder">
                         <div class="contact-form-notice">
-                            <p class="s-14">
-                                <strong>Disclosure:</strong> The Loan Tenure ranges from minimum 6 months to maximum of 60 months, with annual interest rates starting at 11% and going up to 34%. A processing fee up to 2% may be applicable. Representative Example: If a loan of ₹1,00,000 is availed at an interest rate of 12.5% per annum for a tenure of 12 months, and a processing fee of 2% is applied: Interest Payable: ₹6,720 approx. Processing Fee: ₹2,000. Total Loan Cost (including interest + fee): ₹1,08,720. APR (Annual Percentage Rate): 14.27% approx. Wisemudra is not a direct lender itself. Instead we provide consultation services to help users connect with right NBFCs for loan approval. *T&C Apply. All these numbers are tentative/indicative, the final loan specifics may vary depending upon the customer profile and NBFCs’ criteria, rules & regulations, and terms & conditions.
+                            <div class="border-start border-primary border-4">
+                                <p class="s-14 ms-3 d-block mb-3">
+                                    <strong>Disclaimer:</strong> <br> Private Limited is not a lender or financial
+                                    institution. We do not provide loans or make credit decisions. All loan approvals,
+                                    interest rates, fees, and disbursal are handled by third-party lenders/NBFCs. We do not
+                                    guarantee loan approval, disbursal, or specific loan terms. The amount paid is only for
+                                    the service charge. We are not lenders and do not guarantee any loan approval. Loan
+                                    approval, disbursement/sanction is entirely dependent on NBFC criteria.
+                                </p>
+                            </div>
+                            <div class="border-start border-primary border-4 mb-30">
+                                <p class="s-14 ms-3 d-block mb-3">
+                                    <strong>Pre-Application Note:</strong><br> Users are advised to read our terms and
+                                    conditions and policies before proceeding/applying/registration.
+                                </p>
+                            </div>
+
+                            <p class="s-14 d-block mb-3">
+                                <strong>Registered Office Address:</strong> {{ config('constant.COMPANY_ADDRESS') }}
+                                <br />
                             </p>
-                            <p class="s-14">
-                                <strong>Disclaimer:</strong> Wisemudra is a loan service aggregator and is authorised to provide services on behalf of its Lending Partners.The amount paid is only for the service charge. We are not lenders and do not guarantee any loan approval.
-                            </p>
-                            <p class="s-14">
-                                <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://wisemudra.com and NOT through any other source, directly or indirectly. Thanks!
-                            </p>
-                            <p class="s-14">
-                                <strong>Registered Office Address:</strong> {{ config('constant.COMPANY_ADDRESS') }} <br/> Mobile: {{ config('constant.COMPANY_MOBILE') }} | Email: {{ config('constant.INFO_EMAIL') }}
-                            </p>
+                            <div class="d-flex"><span class="me-3"> <strong>Mobile:
+                                    </strong>{{ config('constant.COMPANY_MOBILE') }}</span> |
+                                <span class="ms-3"> <strong>Email: </strong>{{ config('constant.INFO_EMAIL') }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -321,20 +389,30 @@
         </div>
     </section>
     <!-- otp modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-30 border-radius-10">
-                <form action="{{ route('loan.agent.verify.otp') }}" method="post" class="request-form save-form-2 needs-validation" novalidate>
+                <form action="{{ route('loan.agent.verify.otp') }}" method="post"
+                    class="request-form save-form-2 needs-validation" novalidate>
                     <div class="modal-body">
                         <div class="row">
                             <p class="s-24">OTP Verification</p>
-                            <p class="s-16">Enter the 4 digit OTP received on your mobile <br/>
-                                <span class="text-success w-600">+91 <span class="text-success w-600" id="mobileNumber"></span>
+                            <p class="s-16">Enter the 4 digit OTP received on your mobile <br />
+                                <span class="text-success w-600">+91 <span class="text-success w-600"
+                                        id="mobileNumber"></span>
                                     <a href="javascript:;" class="edit-phoneNumber" title="Edit Phone number">
-                                        <svg width="40px" height="18px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#949494">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.43200000000000005"/>
-                                            <g id="SVGRepo_iconCarrier"> <path d="M15.4998 5.50067L18.3282 8.3291M13 21H21M3 21.0004L3.04745 20.6683C3.21536 19.4929 3.29932 18.9052 3.49029 18.3565C3.65975 17.8697 3.89124 17.4067 4.17906 16.979C4.50341 16.497 4.92319 16.0772 5.76274 15.2377L17.4107 3.58969C18.1918 2.80865 19.4581 2.80864 20.2392 3.58969C21.0202 4.37074 21.0202 5.63707 20.2392 6.41812L8.37744 18.2798C7.61579 19.0415 7.23497 19.4223 6.8012 19.7252C6.41618 19.994 6.00093 20.2167 5.56398 20.3887C5.07171 20.5824 4.54375 20.6889 3.48793 20.902L3 21.0004Z" stroke="#949494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                                        <svg width="40px" height="18px" viewBox="0 0 24.00 24.00" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" stroke="#949494">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke="#CCCCCC" stroke-width="0.43200000000000005" />
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M15.4998 5.50067L18.3282 8.3291M13 21H21M3 21.0004L3.04745 20.6683C3.21536 19.4929 3.29932 18.9052 3.49029 18.3565C3.65975 17.8697 3.89124 17.4067 4.17906 16.979C4.50341 16.497 4.92319 16.0772 5.76274 15.2377L17.4107 3.58969C18.1918 2.80865 19.4581 2.80864 20.2392 3.58969C21.0202 4.37074 21.0202 5.63707 20.2392 6.41812L8.37744 18.2798C7.61579 19.0415 7.23497 19.4223 6.8012 19.7252C6.41618 19.994 6.00093 20.2167 5.56398 20.3887C5.07171 20.5824 4.54375 20.6889 3.48793 20.902L3 21.0004Z"
+                                                    stroke="#949494" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </g>
                                         </svg>
                                     </a>
                                 </span>
@@ -348,17 +426,23 @@
                                 </div>
                             </div>
                             <span class="mt-2 s-12 text-success" id="msg">
-                            <input type="hidden" id="verificationCode" name="otp" readonly>
-                            <input class="form-check-input" value="1" type="hidden" id="flexCheckDefault1" checked name="allow_sms"/>
-                            <input class="form-check-input" value="1" type="hidden" id="flexCheckDefault" checked name="accept_tnc"/>
-                            <span class="text-danger f-w-400" id="invalidOtp" style="font-size:14px"></span>
-                            @component('components.ajax-error',['field'=>'otp'])@endcomponent
+                                <input type="hidden" id="verificationCode" name="otp" readonly>
+                                <input class="form-check-input" value="1" type="hidden" id="flexCheckDefault1"
+                                    checked name="allow_sms" />
+                                <input class="form-check-input" value="1" type="hidden" id="flexCheckDefault"
+                                    checked name="accept_tnc" />
+                                <span class="text-danger f-w-400" id="invalidOtp" style="font-size:14px"></span>
+                                @component('components.ajax-error', ['field' => 'otp'])
+                                @endcomponent
                         </div>
                         <div class="row color--black resend-otp-div">
-                            <p class="s-12">Didn’t receive the code? <a href="javascript:;" id="resendOtp" class="text-success">Resend OTP</a>&nbsp;<span id="timer" class="text-success">(00:15)</span></p>
+                            <p class="s-12">Didn’t receive the code? <a href="javascript:;" id="resendOtp"
+                                    class="text-success">Resend OTP</a>&nbsp;<span id="timer"
+                                    class="text-success">(00:15)</span></p>
                         </div>
                     </div>
-                    <button type="submit" id="otpBtn" class="btn btn--theme hover--theme submit mt-3">Verify OTP</button>
+                    <button type="submit" id="otpBtn" class="btn btn--theme hover--theme submit mt-3">Verify
+                        OTP</button>
                 </form>
             </div>
         </div>
@@ -366,38 +450,38 @@
 @endsection
 @push('scripts')
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const personalLoan = document.getElementById("personalloan");
-        const businessLoan = document.getElementById("businessloan");
+        document.addEventListener("DOMContentLoaded", function() {
+            const personalLoan = document.getElementById("personalloan");
+            const businessLoan = document.getElementById("businessloan");
 
-        const userTypeSelect = document.getElementById("user_type");
-        const options = userTypeSelect.querySelectorAll("option");
+            const userTypeSelect = document.getElementById("user_type");
+            const options = userTypeSelect.querySelectorAll("option");
 
-        function toggleUserTypeOptions() {
-            let type = "personal";
-            if (businessLoan && businessLoan.checked) type = "business";
+            function toggleUserTypeOptions() {
+                let type = "personal";
+                if (businessLoan && businessLoan.checked) type = "business";
 
-            // Show/Hide options based on loan type
-            options.forEach(option => {
-            if (option.dataset.loan === type) {
-                option.style.display = "block";
-            } else {
-                option.style.display = "none";
+                // Show/Hide options based on loan type
+                options.forEach(option => {
+                    if (option.dataset.loan === type) {
+                        option.style.display = "block";
+                    } else {
+                        option.style.display = "none";
+                    }
+                });
+
+                // If current selected option is hidden, select first visible one
+                const selectedOption = userTypeSelect.options[userTypeSelect.selectedIndex];
+                if (selectedOption.style.display === "none") {
+                    const firstVisible = [...options].find(opt => opt.style.display !== "none");
+                    if (firstVisible) userTypeSelect.value = firstVisible.value;
+                }
             }
-            });
 
-            // If current selected option is hidden, select first visible one
-            const selectedOption = userTypeSelect.options[userTypeSelect.selectedIndex];
-            if (selectedOption.style.display === "none") {
-            const firstVisible = [...options].find(opt => opt.style.display !== "none");
-            if (firstVisible) userTypeSelect.value = firstVisible.value;
-            }
-        }
+            // Run on load
+            toggleUserTypeOptions();
 
-        // Run on load
-        toggleUserTypeOptions();
-
-        // Run on change
+            // Run on change
             if (personalLoan) personalLoan.addEventListener("change", toggleUserTypeOptions);
             if (businessLoan) businessLoan.addEventListener("change", toggleUserTypeOptions);
         });
@@ -409,14 +493,18 @@
     <!-- write or link your script file and script tag here -->
     <script src="{{ asset('front/js/loanAgent.js') }}"></script>
     <script>
-        window.onscroll = function () {
-          const btn = document.getElementById("goTopBtn");
-          btn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
+        window.onscroll = function() {
+            const btn = document.getElementById("goTopBtn");
+            btn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" :
+                "none";
         };
-        
+
         // Scroll to top smoothly
         function goToTop() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     </script>
 @endpush

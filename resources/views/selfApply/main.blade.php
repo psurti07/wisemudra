@@ -68,19 +68,16 @@
                         <div class="col">
                             <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 p-3 bg--blue-400">
                                 <div class="fbox-ico mb-2">
-
                                     <div class="fbox-image  ico-20">
                                         <span class="flaticon-shield text-white lh-1"></span>
                                     </div>
                                 </div>
-
                                 <div class="fbox-txt">
                                     <h4 class="s-16 w-700 color--white">Secure & Safe</h4>
-                                    <p class="mb-0 color--white mt-0">256-bit encryption</p>
                                 </div>
                             </div>
-
                         </div>
+
                         <div class="col">
                             <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 p-3 bg--blue-400">
                                 <div class="fbox-ico mb-2">
@@ -90,7 +87,6 @@
                                 </div>
                                 <div class="fbox-txt">
                                     <h4 class="s-16 w-700 color--white">Instant Approval</h4>
-                                    <p class="mb-0 color--white mt-0">Within 5 minutes</p>
                                 </div>
                             </div>
                         </div>
@@ -104,13 +100,10 @@
                                 </div>
                                 <div class="fbox-txt">
                                     <h4 class="s-16 w-700 color--white">Low Interest Rate</h4>
-                                    <p class="mb-0 color--white mt-0">Starting at 10.5%</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="row">
@@ -231,10 +224,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </section>
 
 <!-- Affiliate NBFCs section starts -->
@@ -280,7 +270,7 @@
             </div>
         </div>
         <div class="fbox-wrapper text-center">
-            <div class="row gx-3 gy-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row gx-3 gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col">
                     <div class="fbox-8 fbox--hover fb-1 text-start bg--blue-400 h-100">
                         <div class="fbox-ico">
@@ -326,7 +316,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                {{-- <div class="col">
                     <div class="fbox-8 fbox--hover fb-1 text-start bg--blue-400 h-100">
                         <div class="fbox-ico">
                             <div class="fbox-image  ico-20">
@@ -340,7 +330,7 @@
                                 approval.</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -377,46 +367,23 @@
                     <div class="contact-form-notice">
                         <div class="border-start border-primary border-4">
                             <p class="s-14 ms-3 d-block mb-3">
-                                <strong>Disclosure:</strong> <br> Loan Tenure ranges from minimum 6 months to maximum of
-                                72
-                                months with Annual Interest Rates ranging between 11% - 35%. Processing fee up to 2%.
-                                For
-                                Example: Taking in consideration a personal loan of Rs.1,00,000 availed at 11%* interest
-                                rate for a tenure of 6* years with 2%* processing fee, the APR will be 11.75%*.
-                                Wisemudra is
-                                not a direct lender itself. Instead we provide consultation services to help users
-                                connect
-                                with right NBFCs for loan approval. *T&C Apply. All these numbers are
-                                tentative/indicative,
-                                the final loan specifics may vary depending upon the customer profile and NBFCs’
-                                criteria,
-                                rules & regulations, and terms & conditions.
+                                <strong>Important Note:</strong> <br> We ask our customers to make payments ONLY on our website wisemudra.com and NOT through any other source, directly or indirectly.
                             </p>
-
                         </div>
                         <div class="border-start border-primary border-4">
                             <p class="s-14 ms-3 d-block mb-3">
-                                <strong>Disclaimer:</strong> <br> Wisemudra is a loan service aggregator and is
-                                authorised to
-                                provide services on behalf of its Lending Partners.The amount paid is only for the
-                                service
-                                charge. We are not lenders and do not guarantee any loan approval.
+                                <strong>Disclaimer:</strong> <br> Private Limited is not a lender or financial institution. We do not provide loans or make credit decisions. All loan approvals, interest rates, fees, and disbursal are handled by third-party lenders/NBFCs. We do not guarantee loan approval, disbursal, or specific loan terms. The amount paid is only for the service charge. We are not lenders and do not guarantee any loan approval. Loan approval, disbursement/sanction is entirely dependent on NBFC criteria.
                             </p>
                         </div>
                         <div class="border-start border-primary border-4 mb-30">
                             <p class="s-14 ms-3 d-block mb-3">
-                                <strong>Important Note:</strong><br> BE AWARE! We ask our customers to make payments
-                                ONLY on
-                                our
-                                website https://wisemudra.com and NOT through any other source, directly or indirectly.
-                                Thanks!
+                                <strong>Pre-Application Note:</strong><br> Users are advised to read our terms and conditions and policies before proceeding/applying/registration.
                             </p>
                         </div>
 
                         <p class="s-14 d-block mb-3">
                             <strong>Registered Office Address:</strong> {{ config('constant.COMPANY_ADDRESS') }}
                             <br />
-
                         </p>
                         <div class="d-flex"><span class="me-3"> <strong>Mobile:
                                 </strong>{{ config('constant.COMPANY_MOBILE') }}</span> |

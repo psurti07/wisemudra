@@ -739,7 +739,7 @@
                                 class="contact-form career-form career-form-1" enctype="multipart/form-data">
                                 <div class="row gx-2 gy-2">
                                     <div class="col-md-6 col-sm-12">
-                                        <div class="form-group form-floating s-15">
+                                        <div class="form-group form-floating">
                                             <label for="firstname" class="position-static p-0 w-500 text-uppercase">Full
                                                 Name *</label>
                                             <input id="form_name" name="fullname" type="text"

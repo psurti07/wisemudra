@@ -100,7 +100,7 @@
         </div>
     </section>
 
-    <section id="integrations-2" class="py-80 integrations-section">
+    <section id="integrations-2" class="pt-0 pb-800 integrations-section">
         <div class="container">
             <div class="r-12 text-center">
                 <div class="row justify-content-center">

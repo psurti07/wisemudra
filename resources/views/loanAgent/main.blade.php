@@ -327,8 +327,8 @@
                 <form action="{{ route('loan.agent.verify.otp') }}" method="post" class="request-form save-form-2 needs-validation" novalidate>
                     <div class="modal-body">
                         <div class="row">
-                            <p class="s-24">OTP Verification</p>
-                            <p class="s-16">Enter the 4 digit OTP received on your mobile <br/>
+              <h6 class="s-26 w-600 mb-5">Verify your mobile</h6>
+                        <p class="s-16 mb-3">We've sent a 4 digit OTP to
                                 <span class="text-success w-600">+91 <span class="text-success w-600" id="mobileNumber"></span>
                                     <a href="javascript:;" class="edit-phoneNumber" title="Edit Phone number">
                                         <svg width="40px" height="18px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#949494">
@@ -339,7 +339,9 @@
                                     </a>
                                 </span>
                             </p>
-                            <div class="otp-form">
+                            <div class="otp-form text-start">
+                                <label for="firstname" class="position-static p-0 w-500 text-uppercase mb-2">Enter
+                                OTP</label>
                                 <div class="otp-container">
                                     <input type="text" class="otp-input" pattern="\d" maxlength="1">
                                     <input type="text" class="otp-input" pattern="\d" maxlength="1" disabled>
@@ -354,9 +356,26 @@
                             <span class="text-danger f-w-400" id="invalidOtp" style="font-size:14px"></span>
                             @component('components.ajax-error',['field'=>'otp'])@endcomponent
                         </div>
-                        <div class="row color--black resend-otp-div">
-                            <p class="s-12">Didn’t receive the code? <a href="javascript:;" id="resendOtp" class="text-success">Resend OTP</a>&nbsp;<span id="timer" class="text-success">(00:15)</span></p>
+                    <div class="row color--black resend-otp-div">
+                        <div class="col-lg-6">
+                            <p class="s-12 mt-0">Didn’t receive the code? <a href="javascript:;" id="resendOtp"
+                                    class="text-success">Resend OTP</a>&nbsp;<span id="timer"
+                                    class="text-success">(00:15)</span></p>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-group form-floating">
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <div class="color--theme">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="title-text color--theme">
+                                        <p class="fw-bold mb-0 ms-1 mt-0 color--theme s-14">Encrypted</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                     </div>
                     <button type="submit" id="otpBtn" class="btn btn--theme hover--theme submit mt-3">Verify OTP</button>
                 </form>

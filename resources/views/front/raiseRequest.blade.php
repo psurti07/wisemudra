@@ -15,7 +15,7 @@
 @endpush
 @section('content')
 <section class="page-hero-section">
-    <div class="page-hero-section-overlay bg--green-100 bg--scroll">
+    <div class="page-hero-section-overlay bg--blue-100 bg--scroll">
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-12 text-center">

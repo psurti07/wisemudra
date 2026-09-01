@@ -87,13 +87,13 @@
                         </div>	
                     </div>	
 
-                    <div class="col-md-6 col-lg-6 col-12">
+                    <!-- <div class="col-md-6 col-lg-6 col-12">
                         <div class="d-flex justify-content-center align-items-start">
                             <div class="img-block">
                                 <img src="{{ asset('front/images/Login-page-1.png') }}" alt="login now" class="img-fluid">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>	  <!-- End row -->	
             </div> <!-- End container -->		
         </div>	<!-- END LOGIN PAGE -->

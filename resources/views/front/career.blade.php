@@ -6,11 +6,11 @@
 @endpush
 @section('content')
     <section class="page-hero-section">
-        <div class="page-hero-section-overlay bg--green-100 bg--scroll">
+        <div class="page-hero-section-overlay bg--blue-100 bg--scroll">
             <div class="container">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md-12 text-center">
-                        <div class="txt-block left-column">
+                        <div class="txt-block left-column border-0">
                             <span class="section-id"></span>
                             <h2 class="w-700">Career <span class="color--green-500">with us</span></h2>
                             <p class="p-md w-400">Growth. Fun. Excitement. Challenges – all in one place.</p>

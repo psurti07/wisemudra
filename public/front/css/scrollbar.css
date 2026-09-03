@@ -1,0 +1,131 @@
+.scroll-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #16847b;
+    color: white;
+    padding: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    z-index: 1000;
+}
+
+.scroll-bar.visible {
+    transform: translateY(0)!important;
+}
+
+.scroll-bar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.scroll-bar-text {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.scroll-bar-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+
+.scroll-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.scroll-bar button {
+    padding: 0.5rem;
+    background-color: #0694a2;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .scroll-bar-content {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .scroll-bar-text {
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    .scroll-bar-form {
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+    }
+
+    .scroll-bar input {
+        margin-bottom: 0;
+        //margin-right: 0.5rem;
+        width: 300px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .scroll-bar button {
+        width: 150px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+}
+@media (max-width: 991px) {
+    body{ padding-bottom:0px!important }
+    
+    /*.scroll-bar {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(0%);
+    }*/
+
+    .scroll-bar-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .scroll-bar-text {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+
+    .scroll-bar-form {
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+    }
+
+    .scroll-bar input {
+        margin-bottom: 0;
+    //margin-right: 0.5rem;
+        width: auto;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .scroll-bar button {
+        width: auto;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .scroll-bar.visible {
+        transform: translateY(0)!important;
+    }
+}

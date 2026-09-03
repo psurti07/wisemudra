@@ -1,0 +1,486 @@
+.navbar-dark .wsmenu>.wsmenu-list>li>a.h-link {
+  color: #353f4f;
+   
+}
+.wsmainwp ul  li a.h-link{
+   font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.navbar-dark .wsmenu-list>li>a.h-link:hover {
+  color: #02A6FC !important;
+}
+
+.navbar-dark.white-scroll .scroll .wsmenu-list>li>a.h-link:hover {
+  color: #1d222f !important;
+}
+
+.navbar-dark .logo-black {
+  display: none;
+}
+
+.navbar-dark .logo-white {
+  display: block;
+}
+
+.tra-menu.navbar-dark .scroll .logo-black {
+  display: block;
+}
+
+.tra-menu.navbar-dark .scroll .logo-white {
+  display: none;
+}
+
+.role-box span,
+.role-box p {
+  color: #6c757d !important
+}
+
+.tra-menu.navbar-dark .btn--purple-500 {
+  border-color: #3a3189 !important;
+  background-color: #3a3189 !important;
+}
+
+.tra-menu.navbar-dark .btn--purple-500:hover {
+  color: #fff !important;
+  border-color: #fff !important;
+  background-color: transparent !important;
+}
+
+.tra-menu.navbar-dark .scroll .btn--purple-500 {
+  border-color: #3a3189 !important;
+  background-color: #3a3189 !important;
+}
+
+.tra-menu.navbar-dark .scroll .btn--purple-500:hover {
+  color: #353f4f !important;
+  border-color: #353f4f !important;
+  background-color: transparent !important;
+}
+
+@media(max-width: 991px) {
+  .navbar-dark .wsmenu>.wsmenu-list>li>a.h-link {
+    color: #666;
+  }
+}
+
+.myModal .modal-content {
+  border-radius: 12px !important;
+}
+
+.calc-text-heading {
+  margin-bottom: 2px !important;
+}
+
+.comment-form {
+  margin-top: 25px !important;
+}
+
+.comment-form .form-control {
+  margin-bottom: 5px !important;
+}
+
+#loanamountslider,
+#loaninterestslider,
+#loantermslider {
+  top: 15px !important;
+}
+
+#loanterm {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+#loanmonths,
+#loanyears {
+  height: 24px !important;
+}
+
+#loanmonths {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+#emitotalamount {
+  padding: 0 15px !important;
+}
+
+.input-group-text {
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+
+.custm-box,
+.months-input {
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+.months-input {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.months-input span.s-14 {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .emi-details-response {
+    border-left: 1px solid #e3e3e3;
+  }
+
+  .emi-details {
+    padding-left: 25px !important;
+  }
+
+  #loaninterest,
+  #loanamount {
+    width: 115px !important;
+    flex: 0 0 115px !important;
+  }
+
+  #loanterm {
+    width: 60px !important;
+    flex: 0 0 60px !important;
+  }
+}
+
+.cbox-2-ico {
+  border: 2px solid #02a6fc !important;
+}
+
+.emi-apply-btn {
+  width: 80%;
+}
+
+.emi-apply-btn:hover {
+  color: #fff !important;
+}
+
+.section-id {
+  margin-bottom: 10px !important;
+}
+
+.main-heading {
+  margin-bottom: 60px !important;
+}
+
+.type1 {
+  margin-bottom: 15px !important;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background: #ffffff !important;
+  border: 5px solid #02a6fc !important;
+}
+
+.ui-widget-header {
+  background: #252525 !important
+}
+
+.input-group-text {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.custm-box,
+.custm-box-2 {
+  color: #252525 !important;
+  background-color: #f4f4f4 !important;
+}
+
+.company {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.company.visible {
+  display: block;
+  opacity: 1;
+}
+
+.ui-slider-horizontal {
+  height: 0.35rem !important;
+}
+
+.bc-1-wrapper {
+  padding: 80px 80px
+}
+
+.emi-details .card {
+  border-radius: 10px;
+}
+
+.emi-details .card-body {
+  padding: 2rem;
+}
+
+.emi-details .btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+@media (max-width: 767px) {
+  .d-my-none {
+    display: none !important;
+  }
+
+}
+
+.order-summary {
+  max-width: 420px;
+  padding: 20px 0;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.order-header {
+  font-weight: 600;
+  color: #777;
+  padding-bottom: 10px;
+}
+
+.order-discount span:last-child {
+  color: #d32f2f;
+}
+
+.order-divider {
+  margin: 14px 0;
+  border-top: 1px dashed #ccc;
+}
+
+.order-total {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+/* Ribbon container */
+.corner-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+/* Ribbon text */
+.corner-ribbon::before {
+  content: attr(data-offer);
+  position: absolute;
+  top: 22px;
+  right: -38px;
+  width: 160px;
+  padding: 8px 0;
+  background: #e53935;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
+.right-column:before {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-image: url(../images/stamp-mark.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+
+.feature-main-wrap span.icon-wrap .icon {
+  width: 42px;
+  background: #1C8EF924;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  bottom: 90px;
+  left: 50%;
+  width: 2px;
+  background: #1687ff;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-content {
+  width: calc(50% - 35px);
+
+}
+
+.timeline-item:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.timeline-number {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #061329;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+
+@media (max-width: 767px) {
+
+  .timeline {
+    width: 100%;
+    padding-left: 35px;
+  }
+
+  .timeline::before {
+  left: 15px;
+        transform: none;
+        bottom: 60px;
+  }
+
+  .timeline-number {
+    width: 35px;
+    height: 35px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .timeline-number {
+    left: -20px;
+    top: 50%;
+  }
+
+
+}
+
+.card-main {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.feature-main-wrap .fbox-image {
+
+  background: #1C8EF924;
+  height: 52px;
+  width: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 0;
+}
+
+.otp-input {
+  height: 64px;
+  width: 56px;
+  text-align: center;
+  font-size: 25px;
+  margin: 0 5px;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.txt-block.left-column {
+  border: 1px solid #1C8EF947;
+}
+
+.details-icon {
+  background: #02A6FC;
+  width: 54px;
+  height: 54px;
+}
+
+.details-main {
+  border-bottom: 1px solid #353D4D;
+}
+.career-form.career-form-1 .form-control,
+.career-form.career-form-1  .form-select {
+    background-color: #f5f6f8;
+}
+
+#fb-12-3 {
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+
+.subscription-card {
+  border: 1px solid #1C8EF947;
+}
+
+.subscription-card .plan-details {
+  border: none;
+}
+
+.subscription-card .cbox-1-ico {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.header-top{
+  background-color: #000;
+}

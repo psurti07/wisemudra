@@ -15,7 +15,7 @@
                 <div class="col-md-6 col-lg-6 order-2 order-md-1 order-lg-1">
                     <div class="d-flex justify-content-center align-items-start">
                         <div class="img-block">
-                            <img src="{{ asset('front/images/selfapply-nbfc-list.webp') }}" alt="selfapply nbfc list" class="img-fluid">
+                            <img src="{{ asset('front/images/hero-image.png') }}" alt="selfapply nbfc list" class="img-fluid">
                         </div>
                     </div>
                 </div>

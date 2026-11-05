@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -125,9 +125,9 @@
                                                                                                                                             <tbody>
                                                                                                                                                 <tr>
                                                                                                                                                     <td align="center"
-                                                                                                                                                        style="padding: 20px;   margin: 0; line-height: 2rem;background-color:#e5faff;border-top-right-radius:12px;border-top-left-radius:12px;">
+                                                                                                                                                        style="padding: 20px;   margin: 0; line-height: 2rem;background-color:#EEF6FF;border-top-right-radius:12px;border-top-left-radius:12px;">
                                                                                                                                                         <p
-                                                                                                                                                            style="font-size:2.2rem;color:#00a168;font-weight:600">
+                                                                                                                                                            style="font-size:2.2rem;color:02a6fc;font-weight:600">
                                                                                                                                                             Congratulations !
                                                                                                                                                         </p>
                                                                                                                                                     </td>

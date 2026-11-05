@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -115,9 +115,9 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center"
-                                                                                        style="padding: 20px; margin: 0; line-height: 2rem;    background-color: #e5faff;border-top-right-radius:12px;border-top-left-radius:12px;">
+                                                                                        style="padding: 20px; margin: 0; line-height: 2rem;    background-color: #EEF6FF;border-top-right-radius:12px;border-top-left-radius:12px;">
                                                                                         <p
-                                                                                            style="font-size:2.2rem;color:#02a6fc;font-weight:600">
+                                                                                            style="font-size:2.2rem;color:02a6fc;font-weight:600">
                                                                                             Congratulations !
                                                                                         </p>
                                                                                     </td>
@@ -167,7 +167,7 @@
                                                         style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                         <table cellpadding="0" cellspacing="0" class="es-left"
                                                             align="left"
-                                                            style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #e5faff;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
+                                                            style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #EEF6FF;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
                                                             <tbody>
                                                                 <tr>
                                                                     <td class="es-m-p20b" align="left"
@@ -183,7 +183,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td
-                                                                                        style="padding:0  20px; margin: 0; line-height: 1.5rem;background-color: #e5faff; color:#000;font-size:16px; border-radius: 12px;">
+                                                                                        style="padding:0  20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF; color:#000;font-size:16px; border-radius: 12px;">
                                                                                         <p style="margin: 0;">Full Name
                                                                                             :<span></span>
                                                                                         <h5 style="margin:0;">
@@ -201,7 +201,7 @@
                                                                                         </p>
                                                                                     </td>
                                                                                     <td align="left"
-                                                                                        style="padding:0 20px; margin: 0; line-height: 1.5rem;background-color: #e5faff;  color:#000;font-size:16px;border-radius: 12px;">
+                                                                                        style="padding:0 20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF;  color:#000;font-size:16px;border-radius: 12px;">
                                                                                         <p style="margin: 0;">Mobile :
                                                                                         <h5 style="margin: 0;">
                                                                                             +91&nbsp;{{ $mobile }}

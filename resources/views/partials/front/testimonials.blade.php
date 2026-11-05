@@ -3,9 +3,10 @@
     <div class="review-1 border r-16 bg-white">
         <div class="review-txt pt-30">
             <div>
-                           <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
-</div>
-            <p class="p-md"><i>A trustworthy loan assistance platform with a professional team. Highly satisfied with the service.</i></p>
+                <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
+            </div>
+            <p class="p-md"><i>A trustworthy loan assistance platform with a professional team. Highly satisfied with
+                    the service.</i></p>
             <div class="author-data clearfix border-top pt-3">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
@@ -26,9 +27,10 @@
     <div class="review-1 border r-16 bg-white">
         <div class="review-txt pt-30">
             <div>
-                           <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
-</div>
-            <p class="p-md"><i>I had a great experience with Wise Mudra. Their guidance helped me complete my loan application without any hassle.</i></p>
+                <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
+            </div>
+            <p class="p-md"><i>I had a great experience with Wise Mudra. Their guidance helped me complete my loan
+                    application without any hassle.</i></p>
             <div class="author-data clearfix border-top pt-3">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
@@ -49,9 +51,10 @@
     <div class="review-1 border r-16 bg-white">
         <div class="review-txt pt-30">
             <div>
-                           <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
-</div>
-            <p class="p-md"><i>Fast, reliable, and easy to use. I had a very positive experience with the entire process.</i></p>
+                <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
+            </div>
+            <p class="p-md"><i>Fast, reliable, and easy to use. I had a very positive experience with the entire
+                    process.</i></p>
             <div class="author-data clearfix border-top pt-3">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
@@ -72,9 +75,10 @@
     <div class="review-1 border r-16 bg-white">
         <div class="review-txt pt-30">
             <div>
-                           <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
-</div>
-            <p class="p-md"><i>"A trustworthy loan assistance platform with a professional team. Highly satisfied with the service."</i></p>
+                <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
+            </div>
+            <p class="p-md"><i>"A trustworthy loan assistance platform with a professional team. Highly satisfied with
+                    the service."</i></p>
             <div class="author-data clearfix border-top pt-3">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
@@ -95,9 +99,10 @@
     <div class="review-1 border r-16 bg-white">
         <div class="review-txt pt-30">
             <div>
-               <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
-</div>
-            <p class="p-md"><i>“I had a great experience with Wise Mudra. Their guidance helped me complete my loan application without any hassle.”</i></p>
+                <img src="{{ asset('front/images/quote-img.png') }}" alt="review-avatar" class="img-fluid w-auto">
+            </div>
+            <p class="p-md"><i>“I had a great experience with Wise Mudra. Their guidance helped me complete my loan
+                    application without any hassle.”</i></p>
             <div class="author-data clearfix border-top pt-3">
                 <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">

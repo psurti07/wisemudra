@@ -3,7 +3,7 @@
 @endpush
 
 @section('content')
-    <!-- <section id="contacts" class="bg--blue-400 personal-details-form pb-80 inner-page-hero contacts-section division">
+<!-- <section id="contacts" class="bg--blue-400 personal-details-form pb-80 inner-page-hero contacts-section division">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="row mb-35">
@@ -71,7 +71,7 @@
 
 
 
-    <section class="bg--blue-400 bg--fixed pb-80 personal-details-form d-flex align-items-center success-section">
+<section class="bg--blue-400 bg--fixed pb-80 personal-details-form d-flex align-items-center success-section">
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-lg-7 col-12 m-auto">
@@ -83,12 +83,14 @@
                             </div>
                             <h4 class="fw-bolder text-danger mb-15">Payment Unsuccessful!</h4>
                             <p class="mb-0 color--grey">We're sorry, but your payment could not be processed.</p>
-                            <p class="mt-0 color--grey"> Please try again or contact our support team for assistance.</p>
-                            <p class="color--grey">हमें खेद है, लेकिन आपका भुगतान प्रोसेस नहीं हो सका। कृपया पुनः प्रयास करें या सहायता के
+                            <p class="mt-0 color--grey"> Please try again or contact our support team for assistance.
+                            </p>
+                            <p class="color--grey">हमें खेद है, लेकिन आपका भुगतान प्रोसेस नहीं हो सका। कृपया पुनः प्रयास
+                                करें या सहायता के
                                 लिए हमारी सपोर्ट टीम से संपर्क करें।</p>
                         </div>
-       <hr class="divider my-3"/>
-                         
+                        <hr class="divider my-3" />
+
 
                         <div class="text-center mb-20">
                             <p class="color--grey mb-4">Common Reasons for Payment Failure:</p>
@@ -123,10 +125,13 @@
                         </div>
 
                         <div class="text-center">
-                             <a href="{{ route('self.apply.star.offer') }}" class="btn btn-sm btn--theme hover--theme r-100">Try another payment method</a>
-                                        
+                            <a href="{{ route('self.apply.star.offer') }}"
+                                class="btn btn-sm btn--theme hover--theme r-100">Try another payment method</a>
 
-                          <p class="text-center s-12 mt-20  color--grey">If you've any queries/ issues, kindly raise a request here: <a href="{{ route('front.raise.request') }}" class="color--white">Click Here</a></p>
+
+                            <p class="text-center s-12 mt-20  color--grey">If you've any queries/ issues, kindly raise a
+                                request here: <a href="{{ route('front.raise.request') }}" class="color--white">Click
+                                    Here</a></p>
                         </div>
 
                     </div>

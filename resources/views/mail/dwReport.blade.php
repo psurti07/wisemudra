@@ -1,4 +1,4 @@
-
+  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -123,7 +123,7 @@
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table cellpadding="0" cellspacing="0" class="es-left"
                                                                 align="left"
-                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #e5faff;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
+                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #EEF6FF;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
                                                                 <tbody>
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
@@ -139,7 +139,7 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td
-                                                                                            style="padding:0  20px; margin: 0; line-height: 1.5rem;background-color: #e5faff; color:#000;font-size:16px; border-radius: 12px;font-family: Poppins, sans-serif;">
+                                                                                            style="padding:0  20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF; color:#000;font-size:16px; border-radius: 12px;font-family: Poppins, sans-serif;">
                                                                                             <p style="margin: 0;">Full Name :<span></span>
                                                                                                 <h5 style="margin:0;">{{ $userData->first_name }}&nbsp;{{ $userData->last_name }}</h5>
                                                                                             </p>
@@ -151,7 +151,7 @@
                                                                                             </p>
                                                                                         </td>
                                                                                         <td align="left"
-                                                                                            style="padding:0 20px; margin: 0; line-height: 1.5rem;background-color: #e5faff;  color:#000;font-size:16px;border-radius: 12px;font-family: Poppins, sans-serif;">
+                                                                                            style="padding:0 20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF;  color:#000;font-size:16px;border-radius: 12px;font-family: Poppins, sans-serif;">
                                                                                             <p style="margin: 0;">Subscription Name / Invoice No :
                                                                                             <h5 style="margin: 0;">{{ $plan }} / {{ $invoice->inv_prefix }}{{ $invoice->inv_number }}</h5>
                                                                                             </p>
@@ -195,7 +195,7 @@
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table cellpadding="0" cellspacing="0" class="es-left"
                                                                 align="left"
-                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #e5faff;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
+                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #EEF6FF;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
                                                                 <tbody>
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
@@ -206,7 +206,7 @@
                                                                             <hr>
                                                                             <table width="100%" bgcolor="#ffffff" style="border-radius: 15px; background-color: transparent;margin-bottom:15px;">
                                                                                 <tr>
-                                                                                    <td style="padding: 0 20px; background-color: #e5faff; color: #000; font-size: 16px; border-radius: 12px;font-family: Poppins, sans-serif;">
+                                                                                    <td style="padding: 0 20px; background-color: #EEF6FF; color: #000; font-size: 16px; border-radius: 12px;font-family: Poppins, sans-serif;">
                                                                                         <table width="100%" style="width: 100%;">
                                                                                             <tr>
                                                                                                 <td><p style="margin:0">Agent Name :</p></td>
@@ -252,7 +252,7 @@
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table cellpadding="0" cellspacing="0" class="es-left"
                                                                 align="left"
-                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #e5faff;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
+                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #EEF6FF;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
                                                                 <tbody>
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"
@@ -316,7 +316,7 @@
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table cellpadding="0" cellspacing="0" class="es-left"
                                                                 align="left"
-                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #e5faff;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
+                                                                style="mso-table-lspace: 0;mso-table-rspace: 0;border-collapse: collapse;border-spacing: 0;float: left;background-color: #EEF6FF;border: 1px solid #02a6fc;  border-radius: 12px; display: block;">
                                                                 <tbody>
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"

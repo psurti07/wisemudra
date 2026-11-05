@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -111,7 +111,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td align="left"
-                                                                style="padding: 20px; margin: 0; line-height: 1.5rem;background-color: #e5faff; border-radius:12px;color:#000;font-size:16px">
+                                                                style="padding: 20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF; border-radius:12px;color:#000;font-size:16px">
                                                                 <p style="font-size:15px"><strong>Dear {{ $fullname }},</strong></p>
                                                                 <p style="font-size:15px">Your password has been successfully reset.</p>
                                                                 <p style="font-size:15px">

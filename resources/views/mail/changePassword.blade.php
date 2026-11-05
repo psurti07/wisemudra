@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -116,7 +116,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left"
-                                                                                        style="padding: 20px; margin: 0; line-height: 1.5rem;background-color: #e5faff; border-radius:12px;color:#000;font-size:16px">
+                                                                                        style="padding: 20px; margin: 0; line-height: 1.5rem;background-color: #EEF6FF; border-radius:12px;color:#000;font-size:16px">
                                                                                         <p><strong>Dear
                                                                                                 {{ $fullname }},</strong>
                                                                                         </p>
@@ -355,3 +355,4 @@
 </body>
 
 </html>
+ 

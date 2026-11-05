@@ -24,7 +24,9 @@
                         </p>
                         <div>
                             <a href="{{ route('self.apply.main') }}"
-                                class="btn r-04 btn--theme hover--tra-white last-link rounded-pill">Self Apply <span class="fbox-ico ico-10"> <span class="flaticon-right-arrow  ico-20 ms-1"></span></span></a>
+                                class="btn r-04 btn--theme hover--tra-white last-link rounded-pill">Self Apply <span
+                                    class="fbox-ico ico-10"> <span
+                                        class="flaticon-right-arrow  ico-20 ms-1"></span></span></a>
                             {{-- <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-white
                             last-link">Hire an Agent</a> --}}
                         </div>
@@ -33,9 +35,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-12">
-                    <div class="home-img text-center">
-                        <img src="{{ asset('front/images/hero-image.png') }}" alt="wisemudra" class="w-100">
-                    </div>
+                         
                 </div>
             </div>
         </div>
@@ -782,8 +782,9 @@
                                         <div class="form-group form-floating">
                                             <label for="form_message"
                                                 class="position-static p-0 w-500 text-uppercase">Message *</label>
-                                            <textarea id="form_message" name="desc" class="mb-0 form-control message pt-3"
-                                                placeholder="" style="height: 150px"></textarea>
+                                            <textarea id="form_message" name="desc"
+                                                class="mb-0 form-control message pt-3" placeholder=""
+                                                style="height: 150px"></textarea>
 
                                         </div>
                                         @component('components.ajax-error',['field'=>'desc'])@endcomponent
@@ -791,7 +792,8 @@
                                     <div class="col-12 text-center">
                                         <button type="submit"
                                             class="s-14 btn btn--green-400 hover--tra-black submit rounded-pill w-100"
-                                            id="submit-btn">Submit Request <span class="fbox-ico ico-10"> <span class="flaticon-right-arrow  ico-20 ms-1"></span></span></button>
+                                            id="submit-btn">Submit Request <span class="fbox-ico ico-10"> <span
+                                                    class="flaticon-right-arrow  ico-20 ms-1"></span></span></button>
                                     </div>
                                 </div>
                             </form>

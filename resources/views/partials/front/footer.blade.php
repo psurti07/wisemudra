@@ -55,9 +55,6 @@
                         <li>
                             <p><a href="{{ route('front.home') }}#contact">Contact Us</a></p>
                         </li>
-                        <li>
-                            <p><a href="{{ route('webinar.index') }}" >Webinar</a></p>
-                        </li>
                     </ul>
                 </div>
             </div>
